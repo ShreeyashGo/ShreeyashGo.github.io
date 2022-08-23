@@ -58,7 +58,7 @@ header: no
 <div class = "small-2 large-3 proj column end" style="min-width: 200px"> 
     <centre>
     <a href="/projects/bayesNN/"> 
-        <img class ="center" src="/images/projects/bayesthumbn.jpg" style="max-height:90%">
+        <img class ="center" src="/images/projects/Bayesthumbn.jpg" style="max-height:90%">
     </a>
     </centre>
     <h5> Bayesian Neural Network for Noisy XOR </h5>
