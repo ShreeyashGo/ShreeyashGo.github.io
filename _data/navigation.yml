@@ -1,0 +1,27 @@
+- title: Overview
+  url: "/"
+  side: left
+
+# - title: Getting Started
+#   url: "/getting-started/"
+#   side: left
+
+- title: About Me
+  url: "/aboutMe/"
+  side: left
+
+- title: Projects
+  url: "/projects/"
+  side: left
+
+- title: Extra-Curriculars
+  url: "/hobbies/"
+  side: left
+
+- title: "Contact"
+  url: "/contact/"
+  side: right
+
+- title: "CV"
+  url: "https://drive.google.com/file/d/1Keaya8ZSjcTrkynv6oNHutYLj1RCH5Wm/view?usp=sharing"
+  side: right

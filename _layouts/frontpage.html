@@ -1,0 +1,83 @@
+---
+layout: default
+format: frontpage
+---
+<div id="header-home">
+    <div class="row">
+        <div class="small-12 columns">
+        </div><!-- /.medium-4.columns -->
+    </div><!-- /.row -->
+</div><!-- /#header-home -->
+
+
+
+{% comment %}
+*
+* Finally, if there is content, spit it out.
+*
+{% endcomment %}
+
+<div class="row">
+    <img src="images\Photo_whiteBG1.jpg" style="float: left; margin:25px 10px 10px 10px; height:280px">
+    {{ content }}
+</div><!-- /.row -->
+
+<hr class="row">
+<br>
+
+<div class="row" style="overflow-y:scroll; max-height: 200px;">
+    <h4 style="margin:0px"> Recent News:</h4>
+    <ul>
+      <!-- <li><b><emp> 2022: </emp></b></li> -->
+      <li><b><emp>September 2022: </emp></b> Will be starting my Study Oriented Project under the supervision of Prof. Veeky Baths</li>
+      <li><b><emp>May 2022: </emp></b>Started my Summer Research Internship at CSIR-CEERI Pilani under the Supervision of Dr.Dhiraj. I will be working on Inpaiting Techniques for Ancient Image Restoration</li>
+    </ul>
+</div>
+<br>
+<hr class = "row">
+
+
+{% comment %}
+*
+* First check, if widget is empty or not by checking if there is a title
+*
+{% endcomment %}
+<div class="row t60">
+	{% if page.widget1.image or page.widget1.video or page.widget1.title %}
+		{% include _frontpage-widget.html widget=page.widget1 %}
+	{% endif %}
+
+	{% if page.widget2.image or page.widget2.video or page.widget2.title %}
+		{% include _frontpage-widget.html widget=page.widget2 %}
+	{% endif %}
+
+	{% if page.widget3.image or page.widget3.video or page.widget3.title %}
+		{% include _frontpage-widget.html widget=page.widget3 %}
+	{% endif %}
+
+    <!-- {% if page.widget4.image or page.widget4.video or page.widget4.title %}
+		{% include _frontpage-widget.html widget=page.widget4 %}
+	{% endif %} -->
+
+
+</div><!-- /.row -->
+
+
+
+{% comment %}
+*
+* First check, if there is a call for action-button
+*
+{% endcomment %}
+{% if page.callforaction.url contains 'http' %}
+{% assign url = '' %}
+{% else %}
+{% capture url %}{{ site.url }}{{ site.baseurl }}{% endcapture %}
+{% endif %}
+{% if page.callforaction %}
+    <div class="row t60 b60">
+        <div class="small-12 text-center columns">
+            <a class="button large radius {{ page.callforaction.style }}" href="{{ url }}{{ page.callforaction.url }}"{% if page.callforaction.url contains 'http' %} target="_blank" {% endif %}>{{ page.callforaction.text }}</a>
+        </div><!-- /.small-12.columns -->
+    </div><!-- /.row -->
+{% endif %}

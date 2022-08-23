@@ -1,0 +1,61 @@
+---
+#
+# Use the widgets beneath and the content will be
+# inserted automagically in the webpage. To make
+# this work, you have to use › layout: frontpage
+#
+layout: frontpage
+header: no
+widget1:
+  title: "More about Me"
+  url: '/aboutMe/'
+  image: "/images/widget-1-302x182.jpg"
+  text: 'I recently completed a Summer Research Internship at CSIR-CEERI Pilani, where I got first-hand experience in Machine Learning and Computer Vision. 
+  <br> I am also the Treasurer and Publicity and Design Head of Nirmaan Goa Chapter, a student run NGO impacting more than 100 people every year. My tryst with Nirmaan helped me gain important soft-skills!'
+
+widget2:
+  title: "Projects"
+  url: '/projects/'
+  image: "/images/widget-2-302x182.jpg"
+  text: 'Over here you can find a select few of my projects. Some of them include the following: <ul style="font-family:georgia,garamond,serif;">
+    <li> <a href="/projects/inpainting/">Image Inpainting with Partial Convolutional UNets</li>
+    <li> <a href="/projects/vivit/">Frames Video Vision Transformer</li>
+    <li> <a href="/projects/superRes/">Study of Super-Resolution Techniques</li>
+    <li> <a href="/projects/bayesNN/">Bayesian Neural Network on Noisy XOR</li>
+    
+    </ul>'
+
+widget3:
+  title: "Extra Curriculars"
+  url: '/hobbies/'
+  shadows: Black
+  image: "/images/widget-3.jpg"
+  text: 'When you dont find me coding or studying for a nearby exam, you can find me doing stargazing, photography and videography or definitely petting some cats as I love cats'
+
+
+#
+# Use the call for action to show a button on the frontpage
+#
+# To make internal links, just use a permalink like this
+# url: /getting-started/
+#
+# To style the button in different colors, use no value
+# to use the main color or success, alert or secondary.
+# To change colors see sass/_01_settings_colors.scss
+#
+callforaction: no
+permalink: /index.html
+
+# This is a nasty hack to make the navigation highlight
+# this page as active in the topbar navigation
+#
+homepage: true
+---
+<h3> Hello! </h3> 
+<p style="font-family:georgia,garamond,serif; margin:2px 0px 0px 0px">
+Welcome to my website! I am Shreeyash Gowaikar. I am a pre-final year student at the Birla Institute of Technology and Science, Pilani, Goa Campus. I am pursuing a major in Computer Science with a minor in Data Science.
+<p style="font-family:georgia,garamond,serif;">
+My research interest lies in Computer Vision and Generative Adversarial Networks and I would really like to learn Reinforcement Learning. I have had experience with multiple GAN architectures and find GANs really intriguing. In the upcoming semester I am working on BCI Applications with Prof. Veeky Baths, as Cognitive Neuroscience is a really interesting field in my opinion.
+I am actively looking for Academic and Corporate Research Internships which could create a positive impact in the research communinty!
+<br>
+

@@ -1,0 +1,13 @@
+# Author details
+#
+# 1. Edit information below
+# 2. Change site author in config.yml
+# 3. Change default post/page authors in config.yml
+#
+# Resource › http://blog.sorryapp.com/blogging-with-jekyll/2014/02/06/adding-authors-to-your-jekyll-site.html
+Shreeyash: # replace this with your info
+  name: "Shreeyash Gowaikar"
+  siterole: "webmaster, developer, copywriter"
+  email: shreeyashgo@gmail.com
+  web: https://ShreeyashGo.github.io/
+# you can add more authors here
