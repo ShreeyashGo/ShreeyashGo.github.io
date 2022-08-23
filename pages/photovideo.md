@@ -3,7 +3,7 @@ layout: page-fullwidth
 title:  "My Photos and Videos"
 subheadline:  no
 teaser: "Special thanks to DoPy for helping me inculcate my hobby"
-permalink: "/hobbies/DoPY"
+permalink: "/hobbies/DoPY/"
 header: no
 ---
 

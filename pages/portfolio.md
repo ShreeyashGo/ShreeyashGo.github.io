@@ -3,7 +3,7 @@ layout: page-fullwidth
 title: "Portfolio"
 subheadline: no
 teaser: "About Me"
-permalink: "/AboutMe/"
+permalink: "/aboutMe/"
 ---
 <div class="row">
 <div class="medium-4 medium-push-8 columns" markdown="1">
