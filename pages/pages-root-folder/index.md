@@ -59,6 +59,9 @@ My research interest lies in Computer Vision and Generative Adversarial Networks
 I am actively looking for Academic and Corporate Research Internships which could create a positive impact in the research communinty!
 <br>
 
+<br>
+<hr class = "row">
+
 <div class="row" style="overflow-y:scroll; max-height: 200px;">
     <h4 style="margin:0px"> Recent News:</h4>
     <ul>
@@ -68,5 +71,3 @@ I am actively looking for Academic and Corporate Research Internships which coul
       <li><b><emp>May 2022: </emp></b>Started my Summer Research Internship at CSIR-CEERI Pilani under the Supervision of Dr.Dhiraj. I will be working on Inpaiting Techniques for Ancient Image Restoration</li>
     </ul>
 </div>
-<br>
-<hr class = "row">
