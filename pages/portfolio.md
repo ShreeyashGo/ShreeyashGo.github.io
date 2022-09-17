@@ -23,7 +23,7 @@ permalink: "/aboutMe/"
 ## Experience {#experience}
 <ul>
 <li> <h5><u> CSIR-CEERI Pilani:</u></h5> 
-<p style="color: grey; margin: 2px;">May 2022 - July 2022</p>
+<p style="color: grey; margin: 2px;">May 2022 - July 2022</p><br>
 I was working on Image Inpainting Using Partial Convolutional U-Nets for Ancient Image Restoration.</li>
 </ul>
 
