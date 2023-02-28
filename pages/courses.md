@@ -21,36 +21,40 @@ header: no
 <div class="medium-8 medium-pull-4 columns" markdown="1">
 
 
-# These are the courses I am currently doing {#curr}
-### Foundations of Data Science(CS F320) {#FDS}
+#### These are the courses I am currently doing {#curr}
 
+##### Machine Learning {#ML}
+##### Deep Learning {#DL}
 
-# These are the courses I have completed {#comp}
-### Foundations of Data Science(CS F320) {#FDS}
+##### Compiler Construction {#CC}
+##### Computer Networks {#CN}
 
-### Applied Statistical Methods(MATH F432) {#ASM}
+#### These are the courses I have completed {#comp}
+##### Foundations of Data Science {#FDS}
+
+##### Applied Statistical Methods {#ASM}
  
-### Operating Systems(CS F372) {#OS}
+##### Operating Systems {#OS}
  
-### Theory of Computation(CS F351) {#TOC}
+##### Theory of Computation {#TOC}
 
-### Computer Architecture(CS F342) {#CArch} 
+##### Computer Architecture {#CArch} 
 
-### Principles of Programming Languages(CS F301) {#PoPL} 
+##### Principles of Programming Languages {#PoPL} 
 
-### Data Structures & Algorithms(CS F211) {#DSA} 
+##### Data Structures & Algorithms {#DSA} 
 
-### Logic in Computer Science(CS  F214) {#LCS} 
+##### Logic in Computer Science {#LCS} 
 
-### Database Systems(CS F212) {#DBMS} 
+##### Database Systems {#DBMS} 
 
-### Object Oriented Programming(CS F213) {#OOP} 
+##### Object Oriented Programming {#OOP} 
 
-### Discrete Structures for Computer Science(CS F222) {#DISCO} 
+##### Discrete Structures for Computer Science {#DISCO} 
 
-### Microprocessors and Interfacing(CS F241) {#MuP} 
+##### Microprocessors and Interfacing {#MuP} 
 
-### Digital Design(CS F215) {#DD}
+##### Digital Design {#DD}
 
 </div>
 

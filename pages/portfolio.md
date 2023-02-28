@@ -101,15 +101,15 @@ Learnt about ONNX and TensorRT models for optimized GPU training of a language m
 <ul>
 
 <li>
-<h6> CS F211 </h6>
+<h6> CS F211 - Data Structures and Algorithms </h6>
 <p style="color: grey; margin: 2px;">January 2023 - Present</p>
-<p> Working a TA for the course Data Structures and Algorithms</p></li>
+</li>
 
 
 <li>
-<h6> CS F214 </h6>
+<h6> CS F214 - Logic in Computer Science </h6>
 <p style="color: grey; margin: 2px;">July 2022 - December 2022</p>
-<p> Worked a TAship for the course Logic in Computer Science.</p></li>
+</li>
 
 </ul>
 
