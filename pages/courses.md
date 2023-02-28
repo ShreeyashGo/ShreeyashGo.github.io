@@ -20,6 +20,12 @@ header: no
 
 <div class="medium-8 medium-pull-4 columns" markdown="1">
 
+
+# These are the courses I am currently doing {#curr}
+### Foundations of Data Science(CS F320) {#FDS}
+
+
+# These are the courses I have completed {#comp}
 ### Foundations of Data Science(CS F320) {#FDS}
 
 ### Applied Statistical Methods(MATH F432) {#ASM}
