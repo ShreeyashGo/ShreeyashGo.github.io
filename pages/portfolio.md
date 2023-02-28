@@ -24,7 +24,7 @@ permalink: "/aboutMe/"
 <ul>
 <li> <h5><u> Research Intern @ AIISC:</u></h5> 
 <p style="color: grey; margin: 2px;">September 2022 - Present</p><br>
-I am working on some cool NLP topics to find flaws in LLMs in accordance to the impossible triangle.
+I am working on some cool NLP topics to find flaws in LLMs in accordance to the impossible triangle.</li>
 
 <li> <h5><u> Summer Research Intern @ CSIR-CEERI Pilani:</u></h5> 
 <p style="color: grey; margin: 2px;">May 2022 - July 2022</p><br>
