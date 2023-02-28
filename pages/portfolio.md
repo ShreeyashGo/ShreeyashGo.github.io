@@ -22,7 +22,11 @@ permalink: "/aboutMe/"
 
 ## Experience {#experience}
 <ul>
-<li> <h5><u> CSIR-CEERI Pilani:</u></h5> 
+<li> <h5><u> Research Intern @ AIISC:</u></h5> 
+<p style="color: grey; margin: 2px;">September 2022 - Present</p><br>
+I am working on some cool NLP topics to find flaws in LLMs in accordance to the impossible triangle.
+
+<li> <h5><u> Summer Research Intern @ CSIR-CEERI Pilani:</u></h5> 
 <p style="color: grey; margin: 2px;">May 2022 - July 2022</p><br>
 I was working on Image Inpainting Using Partial Convolutional U-Nets for Ancient Image Restoration.</li>
 </ul>
@@ -81,14 +85,31 @@ Learnt about ONNX and TensorRT models for optimized GPU training of a language m
 <ul>
 
 <li>
-<p style="color: grey; margin: 2px;">December 2021 - May 2022</p>
-Mentored juniors through the <i>Academic Assistance Program 2021-2022</i> for the course Engineering Graphics
+<p style="color: grey; margin: 2px;">December 2021 - May 2022</p> 
+<p> Mentored juniors through the <i>Academic Assistance Program 2021-2022</i> for the course Engineering Graphics </p> 
 </li>
 
 <li>
 <p style="color: grey; margin: 2px;">November 2020 - April 2022</p>
-Tutoring and mentoring students from 5<sup>th</sup> standard from the urban slums near our university campus
+<p> Tutoring and mentoring students from 5<sup>th</sup> standard from the urban slums near our university campus </p>
 </li>
+
+</ul>
+
+## Teaching Experience {#TExp}
+
+<ul>
+
+<li>
+<h6> CS F211 </h6>
+<p style="color: grey; margin: 2px;">January 2023 - Present</p>
+<p> Working a TA for the course Data Structures and Algorithms</li> </p>
+
+
+<li>
+<h6> CS F214 </h6>
+<p style="color: grey; margin: 2px;">July 2022 - December 2022</p>
+<p> Worked a TAship for the course Logic in Computer Science.</li> </p>
 
 </ul>
 
@@ -132,7 +153,7 @@ I was part of a 7 student team from India at the first Asien-Pazifik-Deutscholym
 
 ## Relevant Electives Completed {#subjects}
 <p>
-Data Structures & Algorithms(CS F211) | Logic in Computer Science(CS  F214) | Database Systems(CS F212) | Object Oriented Programming(CS F213) | Discrete Structures for Computer Science(CS F222) | Microprocessors and Interfacing(CS F241) | Digital Design(CS F215) 
+Foundations of Data Science(CS F320) | Applied Statistical Methods(MATH F432) | Operating Systems(CS F372) | Theory of Computation(CS F351) | Computer Architecture(CS F342) | Principles of Programming Languages(CS F301) | Data Structures & Algorithms(CS F211) | Logic in Computer Science(CS  F214) | Database Systems(CS F212) | Object Oriented Programming(CS F213) | Discrete Structures for Computer Science(CS F222) | Microprocessors and Interfacing(CS F241) | Digital Design(CS F215)
 </p>
 
 

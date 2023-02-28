@@ -66,6 +66,7 @@ I am actively looking for Academic and Corporate Research Internships which coul
     <h4 style="margin:0px"> Recent News:</h4>
     <ul>
       <!-- <li><b><emp> 2022: </emp></b></li> -->
+      <li><b><emp>September 2022: </emp></b> Will be starting my Study Oriented Project under the supervision of Prof. Tanmay Verlekar on Facial Emotion Recognition</li>
       <li><b><emp>September 2022: </emp></b> Will be starting my research internship at AIISC@UoSc</li>
       <li><b><emp>September 2022: </emp></b> Will be starting my Study Oriented Project under the supervision of Prof. Veeky Baths</li>
       <li><b><emp>May 2022: </emp></b>Started my Summer Research Internship at CSIR-CEERI Pilani under the Supervision of Dr.Dhiraj. I will be working on Inpaiting Techniques for Ancient Image Restoration</li>
