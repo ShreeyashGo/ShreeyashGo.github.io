@@ -55,7 +55,7 @@ homepage: true
 <p style="font-family:georgia,garamond,serif; margin:2px 0px 0px 0px">
 Welcome to my website! I am Shreeyash Gowaikar. I am a pre-final year student at the Birla Institute of Technology and Science, Pilani, Goa Campus. I am pursuing a major in Computer Science with a minor in Data Science.
 <p style="font-family:georgia,garamond,serif;">
-My research interest lies in Computer Vision and Generative Adversarial Networks and I would really like to learn Reinforcement Learning. I have had experience with multiple GAN architectures and find GANs really intriguing. In the upcoming semester I am working on BCI Applications with Prof. Veeky Baths, as Cognitive Neuroscience is a really interesting field in my opinion.
+My research interest lies in Computer Vision and Generative Adversarial Networks and I would really like to learn Reinforcement Learning. I have had experience with multiple GAN architectures and find GANs really intriguing. I am currently working with Prof. Tanmay Verlekar on a Study oriented Project with APPCAIR, BITS Pilani Goa Campus. I am working on Image to Video Transfer Learning for Transformer-based models.
 I am actively looking for Academic and Corporate Research Internships which could create a positive impact in the research communinty!
 <br>
 
@@ -66,8 +66,8 @@ I am actively looking for Academic and Corporate Research Internships which coul
     <h4 style="margin:0px"> Recent News:</h4>
     <ul>
       <!-- <li><b><emp> 2022: </emp></b></li> -->
-      <li><b><emp>January 2022: </emp></b> Will be starting my Study Oriented Project under the supervision of Prof. Tanmay Verlekar on Facial Emotion Recognition</li>
-      <li><b><emp>September 2022: </emp></b> Will be starting my research internship at AIISC@UoSc</li>
+      <li><b><emp>January 2022: </emp></b> Will be starting my Study Oriented Project under the supervision of Prof. Tanmay Verlekar on Facial Emotion Recognition with Transformer Based models</li>
+      <li><b><emp>September 2022: </emp></b> Will be starting my research internship at AIISC@UoSc where I will be working with LLMs!</li>
       <li><b><emp>September 2022: </emp></b> Will be starting my Study Oriented Project under the supervision of Prof. Veeky Baths</li>
       <li><b><emp>May 2022: </emp></b>Started my Summer Research Internship at CSIR-CEERI Pilani under the Supervision of Dr.Dhiraj. I will be working on Inpaiting Techniques for Ancient Image Restoration</li>
     </ul>
