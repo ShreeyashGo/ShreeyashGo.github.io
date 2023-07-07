@@ -156,8 +156,8 @@ defaults:
 #   ___/ / /___/ /_/ /
 #  /____/_____/\____/    Verify Website to Webmaster Tools
 
-google-site-verification: /assets/google73ae2039158eb4ef.html
-# bing_webmastertools_id          : '0FB4C028ABCF07C908C54386ABD2D97F'
+# google_site_verification        : ''
+# bing_webmastertools_id          : ''
 # yandex_site_verification      : ''
 # alexa_verify_id               : ''
 
