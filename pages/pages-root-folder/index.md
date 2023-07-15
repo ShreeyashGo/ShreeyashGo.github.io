@@ -66,7 +66,10 @@ I am actively looking for Academic and Corporate Research Internships which coul
     <h4 style="margin:0px"> Recent News:</h4>
     <ul>
       <!-- <li><b><emp> 2022: </emp></b></li> -->
-      <li><b><emp>January 2022: </emp></b> Will be starting my Study Oriented Project under the supervision of Prof. Tanmay Verlekar on Facial Emotion Recognition with Transformer Based models</li>
+      <li><b><emp>August 2023: </emp></b>Will be starting my MITACS Globalink Research Internship in AI for Public Spaces, under Prof. Shin Koseki and Hugo Berard, at the University of Montreal(UdeM)!</li>
+      <li><b><emp>July 2023: </emp></b> Elated to share my first publication(ANALOGICAL) accepted at ACL Findings!</li>
+      <li><b><emp>June 2023: </emp></b> Will be starting a Summer Internship at Atlassian! I am working on cool applications of AI/ML for Jira Service Management</li>
+      <li><b><emp>January 2023: </emp></b> Will be starting my Study Oriented Project under the supervision of Prof. Tanmay Verlekar on Facial Emotion Recognition with Transformer Based models</li>
       <li><b><emp>September 2022: </emp></b> Will be starting my research internship at AIISC@UoSc where I will be working with LLMs!</li>
       <li><b><emp>September 2022: </emp></b> Will be starting my Study Oriented Project under the supervision of Prof. Veeky Baths</li>
       <li><b><emp>May 2022: </emp></b>Started my Summer Research Internship at CSIR-CEERI Pilani under the Supervision of Dr.Dhiraj. I will be working on Inpaiting Techniques for Ancient Image Restoration</li>
