@@ -8,8 +8,34 @@ header: no
 ---
 
 <div class= "row">
+<div class = "small-2 large-3 proj column" style="min-width: 200px"> 
+    <centre>
+    <a href="/projects/ai4public/"> 
+        <img class ="center" src="/images/projects/AI4Public/cover.jpg" style="max-height:100%">
+    </a>
+    </centre>
+    <h5> AI for Public Spaces </h5>
+    <p style="font-size: 15px;"> 
+        Using Computer Vision Algorithms to evaluate the Equity, Diversity and Inclusion of Public Spaces.
+    </p>
+    <p><a class="button tiny radius" href="/projects/ai4public/">Know more >></a></p>
+</div>
 
 <div class = "small-2 large-3 proj column" style="min-width: 200px"> 
+    <centre>
+    <a href="/projects/microExp/"> 
+        <img class ="center" src="/images/projects/MicroExp/cover.jpg" style="max-height:100%">
+    </a>
+    </centre>
+    <h5> Micro-Expression Analysis using Transformers </h5>
+    <p style="font-size: 15px;"> 
+        Worked with Vision Transformers for Micro-Expression Analysis
+    </p>
+    <p><a class="button tiny radius" href="/projects/microExp/">Know more >></a></p>
+</div>
+
+
+<div class = "small-2 large-3 proj column end" style="min-width: 200px"> 
     <centre>
     <a href="/projects/inpainting/"> 
         <img class ="center" src="/images/projects/Inpainting/results.jpg" style="max-height:50%">
@@ -22,6 +48,9 @@ header: no
     <p><a class="button tiny radius" href="/projects/inpainting/">Know more >></a></p>
 </div>
 
+</div>
+
+<div class="row">
 
 <div class = "small-2 large-3 proj column" style="min-width: 200px"> 
     <centre>
@@ -36,8 +65,7 @@ header: no
     <p><a class="button tiny radius" href="/projects/superRes/">Know more >></a></p>
 </div>
 
-
-<div class = "small-2 large-3 proj column end" style="min-width: 200px"> 
+<div class = "small-2 large-3 proj column" style="min-width: 200px"> 
     <centre>
     <a href="/projects/vivit/"> 
         <img class ="center" src="/images/projects/ViVit/thumbn.jpg" style="max-height:90%">
@@ -49,11 +77,6 @@ header: no
     </p>
     <p><a class="button tiny radius" href="/projects/vivit/">Know more >></a></p>
 </div>
-
-</div>
-
-<div class="row">
-
 
 <div class = "small-2 large-3 proj column end" style="min-width: 200px"> 
     <centre>

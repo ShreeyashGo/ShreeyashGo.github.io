@@ -2,7 +2,7 @@
 layout: page-fullwidth
 title: "Portfolio"
 subheadline: no
-teaser: "About Me"
+teaser: "A brief introduction About Me"
 permalink: "/aboutMe/"
 ---
 <div class="row">
@@ -19,28 +19,40 @@ permalink: "/aboutMe/"
 
 <div class="medium-8 medium-pull-4 columns" markdown="1">
 
-
+___
 ## Experience {#experience}
+
 <ul>
+
+<li> <h5><u> Visiting Student Researcher @ UdeM:</u></h5> 
+<p style="color: grey; margin: 1px;">July 2023 - Present</p>
+Wokring on my Undergraduate thesis under the supervision of Prof. Shin Koseki and under the mentorship of Dr. Hugo Berard. I am workin on "Evaluating the Equity of AI Algorithms while Learning-to-Rank". I am also working on evaluating the EDI of Public Spaces!</li>
+
+<li> <h5><u> Software Development Intern @ Atlassian:</u></h5> 
+<p style="color: grey; margin: 1px;">June 2023 - July 2023</p>
+Leveraged the power of Generative AI for Knowledge Base Assistance and Creation. The tool aimed to reduce the time for resolution of self-serviceable tickets by almost 35%. The tool is supposed to enhance user support for Atlassian Suite of Tools like Jira and Confluence.</li>
+
 <li> <h5><u> Research Intern @ AIISC:</u></h5> 
-<p style="color: grey; margin: 2px;">September 2022 - Present</p><br>
-I am working on some cool NLP topics to find flaws in LLMs in accordance to the impossible triangle.</li>
+<p style="color: grey; margin: 1px;">September 2022 - March 2023</p>
+I worked on some cool NLP topics like Physics Inspired Neural Networks to find flaws and improve performance of LLMs. The research was influenced by the impossible triangle of the Pre-trained LLMs. I was also able to contribute to a publication on LLMs and linguistic analogical reasoning!</li>
 
 <li> <h5><u> Summer Research Intern @ CSIR-CEERI Pilani:</u></h5> 
-<p style="color: grey; margin: 2px;">May 2022 - July 2022</p><br>
+<p style="color: grey; margin: 1px;">May 2022 - July 2022</p>
 I was working on Image Inpainting Using Partial Convolutional U-Nets for Ancient Image Restoration.</li>
 </ul>
 
-
+---
 ## Projects   {#projects}
+
 To know about my projects please head on to the [Projects Tab](/projects/)!
 
-
+---
 ## Education {#education}
+
 <ul>
 <li> <h5><u> BITS Pilani, Goa Campus (Goa, India):</u></h5> 
 <h6>B.E.Computer Science with a minor in Data Science</h6>
-<p style="color: grey; margin: 2px;">2020 - Present</p>
+<p style="color: grey; margin: 2px;">2020 - Present (Expected 2024)</p>
 </li>
 
 <li> <h5><u> Late P.B. Jog Junior College of Science and Commerce (Maharashtra, India):</u></h5> 
@@ -53,22 +65,23 @@ To know about my projects please head on to the [Projects Tab](/projects/)!
 <p style="color: grey; margin: 2px;">2017 - 2018</p>
 </li>
 
-
-
 </ul>
 
+---
 ## Positions of Responsibilities {#PORs}
+
 <ul>
 
 <li> <h5><u> Treasurer and Publicity & Design Head</u></h5> 
 <h6>Nirmaan Goa Chapter</h6>
-<p style="color: grey; margin: 2px;">March 2022 - Present</p>
+<p style="color: grey; margin: 2px;">March 2022 - April 2023</p>
 </li>
 
 </ul>
 
-
+---
 ## Certifications {#certi}
+
 <ul>
 
 <li> <h5><u> Building Transfomer-Based Natural Language Processing Applications</u></h5> 
@@ -79,7 +92,7 @@ Learnt about ONNX and TensorRT models for optimized GPU training of a language m
 
 </ul>
 
-
+---
 ## Volunteer Experience {#VExp}
 
 <ul>
@@ -96,6 +109,7 @@ Learnt about ONNX and TensorRT models for optimized GPU training of a language m
 
 </ul>
 
+---
 ## Teaching Experience {#TExp}
 
 <ul>
@@ -113,8 +127,9 @@ Learnt about ONNX and TensorRT models for optimized GPU training of a language m
 
 </ul>
 
-
+---
 ## Technological Proficiency {#TProf}
+
 <ul>
 
 <li>
@@ -122,7 +137,7 @@ Learnt about ONNX and TensorRT models for optimized GPU training of a language m
 </li>
 
 <li>
-<emp><b> Python Modules: </b></emp> TensorFlow | Keras | PyTorch | Scikit-learn | Numpy | Matplotlib | BeautifulSoup | PIL-Image | OpenCV
+<emp><b> Python Modules: </b></emp> TensorFlow | Keras | PyTorch | PyTorch Lightning | Scikit-learn | Numpy | Matplotlib | BeautifulSoup | PIL-Image | OpenCV
 </li>
 
 <li>
@@ -130,33 +145,46 @@ Learnt about ONNX and TensorRT models for optimized GPU training of a language m
 </li>
 
 <li>
-<emp><b> Operating Systems: </b></emp> Windows | Linux (Ubuntu)
+<emp><b> Operating Systems: </b></emp> Windows | Linux (Ubuntu) | MacOS (Unix)
 </li>
 
 </ul>
 
-
+---
 ## Awards {#awards}
+
 <ul>
 <li> 
-<p style="color: grey; margin: 2px;">2021</p>
-First Place on private Leader board in ML Hackathon during CTE TechWeekend 2021 amongst all majors and years.
+    <p style="color: grey; margin: 2px;"> July 2023 </p>
+    <p>MITACS Globalink Research Fellowship - One of the top 10% applicants to be selected for fully funded research internship in partner Canadian Institutes</p>
+</li>
+
+<li> 
+    <p style="color: grey; margin: 2px;">2021</p>
+    <p>First Place on private Leader board in ML Hackathon during CTE TechWeekend 2021 amongst all majors and years.</p>
 </li>
 
 <li>
-<p style="color: grey; margin: 2px;">August 2017</p>
-I was part of a 7 student team from India at the first Asien-Pazifik-Deutscholympiade (APDO) (Asia Pacific German Language Olympics) organised by GOETHE-INSTITUT
+    <p style="color: grey; margin: 2px;">August 2017</p> 
+    <p>I was part of a 7 student team from India at the first Asien-Pazifik-Deutscholympiade (APDO) (Asia Pacific German Language Olympics) organised by GOETHE-INSTITUT</p>
 </li>
 
 </ul>
 
-
+---
 ## Relevant Electives Completed {#subjects}
+
 <p>
-Foundations of Data Science(CS F320) | Applied Statistical Methods(MATH F432) | Operating Systems(CS F372) | Theory of Computation(CS F351) | Computer Architecture(CS F342) | Principles of Programming Languages(CS F301) | Data Structures & Algorithms(CS F211) | Logic in Computer Science(CS  F214) | Database Systems(CS F212) | Object Oriented Programming(CS F213) | Discrete Structures for Computer Science(CS F222) | Microprocessors and Interfacing(CS F241) | Digital Design(CS F215)
+Machine Learning (BITS F464) | Deep Learning (CS F425) | Foundations of Data Science(CS F320) | Applied Statistical Methods(MATH F432) | Operating Systems(CS F372) | Theory of Computation(CS F351) | Computer Networks (CS F303) | Compiler Construction (CS F363) | Computer Architecture(CS F342) | Design and Analysis of Algorithms (CS F364) | Principles of Programming Languages(CS F301) | Data Structures & Algorithms(CS F211) | Logic in Computer Science(CS  F214) | Database Systems(CS F212) | Object Oriented Programming(CS F213) | Discrete Structures for Computer Science(CS F222) | Microprocessors and Interfacing(CS F241) | Digital Design(CS F215)
 </p>
 
 
 </div><!--/.medium-8.columns-->
 </div><!-- /.row -->
 
+
+<style>
+    h2{
+        margin: 1rem;
+    }
+</style>

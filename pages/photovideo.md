@@ -9,25 +9,25 @@ header: no
 
 ## Photos
 
-These are a few of my photos I took from my phone. It has a 13MP front camera and I have tried my best to not let that stand in the way of a good photograph! 
+These are a few of my photos I took from my phone. I have tried my best to not let lack of equipment stand in the way of a good photograph! 
 
 <div class="row">
     <div class="medium-4 columns t30">
     <figure>
       <img src="/images/photos/kitten.jpeg" onContextMenu="alert('If you want the images please contact me!!');return false;">
-      <figcaption> A feral cat and her kitten who we fostered. Taken from my Samsung Galaxy J7 Prime </figcaption>
+      <figcaption> A feral cat and her kitten who we fostered. </figcaption>
     </figure>
     </div><!-- /.medium-4.columns -->
     <div class="medium-4 columns t30">
     <figure>  
       <img src="/images/photos/landscape.jpg" onContextMenu="alert('If you want the images please contact me!!');return false;">
-      <figcaption> A Potrait photograph of beautiful cloud formation. Taken from my Samsung Galaxy J7 Prime</figcaption>
+      <figcaption> A Potrait photograph of beautiful cloud formation.</figcaption>
     </figure>
     </div><!-- /.medium-4.columns -->
     <div class="medium-4 columns t30">
       <figure>  
       <img src="/images/photos/ganga.jpg" onContextMenu="alert('If you want the images please contact me!!');return false;">
-      <figcaption> An edited photo of the Ganga River flowing through the valley. Captured on Micromax Canvas Mega 2</figcaption>
+      <figcaption> An edited photo of the Ganga River flowing through the valley.</figcaption>
     </figure>
     </div><!-- /.medium-4.columns -->
 
@@ -38,21 +38,44 @@ These are a few of my photos I took from my phone. It has a 13MP front camera an
     <div class="medium-8 columns t30">
     <figure>  
       <img src="/images/photos/campus.jpeg" onContextMenu="alert('If you want the images please contact me!!');return false;">
-      <figcaption> A photo of my Campus main academic building (B-Dome). Captured from my Samsung Galaxy J7 Prime</figcaption>
+      <figcaption> A photo of my Campus main academic building (B-Dome). </figcaption>
     </figure>
     </div><!-- /.medium-8.columns -->
+     <div class="medium-4 columns t30">
+    <figure>  
+      <img src="/images/photos/cabin.jpeg" onContextMenu="alert('If you want the images please contact me!!');return false;">
+      <figcaption> A cabin atop of Mount Royal, in its fall glory. </figcaption>
+    </figure>
+    </div><!-- /.medium-8.columns -->
+</div><!-- /.row -->
+
+<div class="row">
     <div class="medium-4 columns t30">
+    <figure>  
+      <img src="/images/photos/lighthouse.jpeg" onContextMenu="alert('If you want the images please contact me!!');return false;">
+      <figcaption> The Lachine Lighthouse! </figcaption>
+    </figure>
+    </div><!-- /.medium-4.columns -->
+    <div class="medium-4 columns t30">
+    <figure>  
+      <img src="/images/photos/bench.jpeg" onContextMenu="alert('If you want the images please contact me!!');return false;">
+      <figcaption> A photo set in evening across a lighthouse, using the rule of the golden spiral.</figcaption>
+    </figure>
+    <figure>  
+      <img src="/images/photos/key.jpeg" onContextMenu="alert('If you want the images please contact me!!');return false;">
+      <figcaption> The Keychain.</figcaption>
+    </figure>
+    </div><!-- /.medium-4.columns -->
+    <div class="medium-4 columns b30">
     <figure>  
       <img src="/images/photos/moon.jpeg" onContextMenu="alert('If you want the images please contact me!!');return false;">
-      <figcaption> Our only moon captured through a Dobsonian telescope! Captured through my Samsung Galaxy J7 Prime</figcaption>
+      <figcaption> Our only moon captured through a Dobsonian telescope! </figcaption>
     </figure>
-    </div><!-- /.medium-8.columns -->
-    <div class="medium-4 columns t30">
     <figure>  
       <img src="/images/photos/lens.jpeg" onContextMenu="alert('If you want the images please contact me!!');return false;">
-      <figcaption> A 18-55mm Nikon Lens from DoPy inventory with the shutter visible. Taken from my Samsung Galaxy J7 Prime</figcaption>
+      <figcaption> A 18-55mm Nikon Lens from DoPy inventory with the shutter visible.</figcaption>
     </figure>
-    </div><!-- /.medium-8.columns -->
+    </div><!-- /.medium-4.columns -->
 
 </div><!-- /.row -->
 
