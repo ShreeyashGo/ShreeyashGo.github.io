@@ -2,10 +2,6 @@
   url: "/"
   side: left
 
-# - title: Getting Started
-#   url: "/getting-started/"
-#   side: left
-
 - title: About Me
   url: "/aboutMe/"
   side: left
@@ -16,6 +12,10 @@
 
 - title: Extra-Curriculars
   url: "/hobbies/"
+  side: left
+
+- title: Blogs
+  url: "/blog/"
   side: left
 
 - title: "Contact"
