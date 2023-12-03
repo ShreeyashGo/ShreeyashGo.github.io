@@ -11,7 +11,7 @@ header: no
 <div class = "small-2 large-3 proj column" style="min-width: 200px"> 
     <centre>
     <a href="/projects/ai4public/"> 
-        <img class ="center" src="/images/projects/AI4Public/cover.jpg" style="max-height:100%">
+        <img class ="center" src="/images/projects/ai4public/cover.jpg" style="max-height:100%">
     </a>
     </centre>
     <h5> AI for Public Spaces </h5>
