@@ -10,6 +10,7 @@ categories:
 tags: 
     - Super Resolution
     - Computer Vision
+noindex: true
 
 ---
 

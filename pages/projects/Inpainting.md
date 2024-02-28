@@ -11,6 +11,7 @@ tags:
     - U-Nets
     - Computer Vision
     - Generative Networks
+noindex: true
 
 ---
 <b>Under the supervision of: </b> Dr. Dhiraj Sangwan, Principal Scientist, CSIR-CEERI Pilani.

@@ -11,7 +11,7 @@ tags:
     - Bayesian ML
     - Noisy XOR
     - MCMC Sampling
-
+noindex: true
 ---
 This project was done as a submission to the SAiDL induction assignment.
 

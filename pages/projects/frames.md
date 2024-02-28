@@ -11,6 +11,7 @@ tags:
     - Transformers
     - ViViTs
     - Computer Vision
+noindex: true
 
 ---
 

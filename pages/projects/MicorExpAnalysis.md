@@ -11,6 +11,7 @@ tags:
     - Micro Expression Analysis
     - Vision Transformers 
     - Computer Vision
+noindex: true
 
 ---
 
