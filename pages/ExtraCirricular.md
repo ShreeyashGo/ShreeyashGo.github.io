@@ -48,12 +48,3 @@ I was an active participant of Department of Photography (DoPY BITS Pilani Goa C
 I was an active part of SEDS Celestia, the Astrophysics and Astronomy Club of my college. SEDS Celestia is a group of space enthusiasts who have long discussions, meetings and projects about the universe and STEM in general! Being a part of this club has helped me socialize with my peers and has incuclated my hobby of Stargazing. 
 
 </div>
-
-<div class = "row">
-<hr>
-<div class="radius b30" style="margin:auto; width: 50%; padding:0px 100px">
-		<img src="http://placekitten.com/271/270" alt="uh, Placekitten">
-    <p class="text-left">
-        A little random but I also adore cats! <a href="http://placekitten.com/">If you are like me please click here for more random cat photos!</a>
-    </p>
-</div>
