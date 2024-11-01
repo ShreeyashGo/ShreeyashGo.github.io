@@ -20,19 +20,18 @@ header: no
 
 <div class="medium-8 medium-pull-4 columns" markdown="1">
 
+#### These are the courses I have completed {#comp}
 
-#### These are the courses I am currently doing {#curr}
+##### Reinforcement Learning {#RL}
 
 ##### Machine Learning {#ML}
+
 ##### Deep Learning {#DL}
 
 ##### Compiler Construction {#CC}
+
 ##### Computer Networks {#CN}
 
-
-
-
-#### These are the courses I have completed {#comp}
 ##### Foundations of Data Science {#FDS}
 
 ##### Applied Statistical Methods {#ASM}

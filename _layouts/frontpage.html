@@ -17,14 +17,61 @@ format: frontpage
 *
 {% endcomment %}
 
+<div id="header-home" style="display: flex; align-items: center; padding: 50px; background-color: #f7f7f7;">
+    <!-- Image Section: Rounded with a border -->
+    <img src="images/Photo_whiteBG1.jpg" alt="Shreeyash Gowaikar" style="
+        height: 280px;
+        border-radius: 12px;
+        border: 2px solid #E0E0E0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        margin-right: 30px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    ">
+
+    <!-- Text Section: Left-aligned Header and Subheader -->
+    <div>
+        <h1 style="font-size: 2em; color: #3A6351; margin: 0;">Shreeyash Gowaikar</h1>
+        
+        <!-- Revised Introduction Text -->
+        <p style="font-size: 1.1em; color: #555; margin-top: 10px;">
+            Hi there! I'm a research intern at Microsoft Research India, working on Generative AI applications in the Energy sector. I recently graduated in Computer Science from BITS Pilani, Goa with a minor in data science. My passion lies in AI Evaluations, Interpretive AI, and AI for Social Good.
+        </p>
+        
+        <p style="font-size: 1em; color: #555; margin-top: 20px;">
+            <strong>Current and Past Affiliations</strong><br>
+            <span style="display: flex; align-items: center; margin-top: 10px;">
+                <img src="images/microsoft_logo.webp" alt="Microsoft Research India" style="height: 25px; margin-right: 10px;">
+                Collaborating with Sameer Segal, Srinivasan Iyengar, and Shivkumar Kalyanaraman on a super impactful Generative AI application in the Energy Sector.
+            </span>
+            <span style="display: flex; align-items: center; margin-top: 10px;">
+                <img src="images/udem_logo.webp" alt="University of Montréal" style="height: 35px; margin-right: 10px;">
+                Collaborated with Prof. Shin Koseki and Dr. Hugo Berard, on fairness and preference learning tasks with applications in AI for Urban Planning.
+            </span>
+            <span style="display: flex; align-items: center; margin-top: 10px;">
+                <img src="images/atlas_logo.webp" alt="Atlassian" style="height: 35px; margin-right: 10px;">
+                Worked in the Grimlock AI team for using Generative AI for Jira Service Management and Knowledge Base Automation!
+            </span>
+            <span style="display: flex; align-items: center; margin-top: 10px;">
+                <img src="images/aiisc_logo.webp" alt="AIISC" style="height: 35px; margin-right: 10px;">
+                Collaborated with Prof. Amit Sheth and Prof. Amitava Das for creating novel evaluations for Language Models.
+            </span>
+            <span style="display: flex; align-items: center; margin-top: 10px;">
+                <img src="images/bits_logo.webp" alt="BITS Pilani, Goa" style="height: 45px; margin-right: 10px;">
+                Collaborated with Prof. Tanmay Tulsidas Verlekar as a part of the APPCAIR lab at BITS Goa. 
+            </span>
+        </p>
+
+        <!-- Call-to-Action -->
+        <p style="font-size: 1em; color: #555; margin-top: 20px;">
+            I'm open to collaborations in academia and industry, driven to create meaningful research impact. Let's connect!
+        </p>
+    </div>
+</div>
+
 <div class="row">
-    <img src="images\Photo_whiteBG1.jpg" style="float: left; margin:25px 10px 10px 10px; height:280px">
     {{ content }}
-</div><!-- /.row -->
-
+</div>
 <hr class="row">
-<br>
-
 
 {% comment %}
 *
@@ -70,3 +117,40 @@ format: frontpage
         </div><!-- /.small-12.columns -->
     </div><!-- /.row -->
 {% endif %}
+
+<style>
+    img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    #header-home {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    }
+    
+    /* Image styles */
+    #header-home img {
+        flex-shrink: 0; /* Prevent the image from shrinking */
+    }
+
+    /* Text Section Styles */
+    #header-home div {
+        flex: 1; /* Allow text to take up available space */
+        min-width: 300px; /* Minimum width to maintain readability */
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        #header-home {
+            flex-direction: column; /* Stack the elements vertically */
+            align-items: center; /* Center items */
+        }
+
+        #header-home img {
+            margin-right: 0; /* Remove right margin on smaller screens */
+            margin-bottom: 20px; /* Add bottom margin */
+        }
+    }
+</style>

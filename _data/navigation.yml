@@ -1,18 +1,35 @@
-- title: Overview
-  url: "/"
-  side: left
-
 - title: About Me
   url: "/aboutMe/"
   side: left
-
-- title: Projects
-  url: "/projects/"
+  dropdown:
+    - title: "Experience"
+      url: "/aboutMe/#experience"
+    - title: "Technical Skills"
+      url: "/aboutMe/#TProf"
+    - title: "Education"
+      url: "/aboutMe/#education"
+    
+- title: Research 
+  url: "/research/"
   side: left
+  dropdown:
+    - title: "Publications"
+      url: "/publications/"
+    - title: "Projects"
+      url: "/projects/"
+    - title: "Teaching"
+      url: "/teaching/"
 
 - title: Extra-Curriculars
   url: "/hobbies/"
   side: left
+  dropdown:
+    - title: "Nirmaan NGO"
+      url: "/hobbies/#nirmG"
+    - title: "Photography"
+      url: "/hobbies/#dopy"
+    - title: "Stargazing"
+      url: "/hobbies/#sedsC"
 
 - title: Blogs
   url: "/blog/"

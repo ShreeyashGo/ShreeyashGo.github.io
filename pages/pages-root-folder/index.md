@@ -10,27 +10,28 @@ widget1:
   title: "More about Me"
   url: '/aboutMe/'
   image: "/images/widget-1-302x182.jpg"
-  text: 'I am currently pursuing an undergraduate thesis in the domain of Fairness in ML. I am a MITACS GRI Fellow and have also worked with Atlassian! 
-  <br> I was also the Treasurer and Publicity and Design Head of Nirmaan Goa Chapter, a student run NGO impacting more than 100 people every year. My tryst with Nirmaan helped me gain important soft-skills!'
+  text: 'I am currently pursuing a predoctoral opportunity at Microsoft Research. I was a MITACS GRI Fellow and have also worked with Atlassian and AIISC! 
+  <br> I was also the Treasurer and Publicity and Design Head of Nirmaan Goa Chapter, a student run NGO impacting more than 100 people every year!'
 
 widget2:
-  title: "Projects"
-  url: '/projects/'
+  title: "Projects and Publications"
+  url: '/research/'
   image: "/images/widget-2-302x182.jpg"
   text: 'Over here you can find a select few of my projects. Some select projects are: <ul style="font-family:georgia,garamond,serif;">
     <li> <a href="/projects/ai4public/">AI for Public Spaces</li>
     <li> <a href="/projects/microExp/">Micro-Expression Analysis Using Transformers</li>
     <li> <a href="/projects/inpainting/">Image Inpainting with Partial Convolutional UNets</li>
     <li> <a href="/projects/superRes/">Study of Super-Resolution Techniques</li>
-    
-    </ul>'
+    </ul>
+    For my Publications and Pre-prints <a href="/publications/"> <u>head over here </u> </a>.
+    '
 
 widget3:
   title: "Extra Curriculars"
   url: '/hobbies/'
   shadows: Black
   image: "/images/widget-3.jpg"
-  text: 'When you dont find me coding or studying for a nearby exam, you can find me doing stargazing, photography and videography or definitely petting some cats as I love cats'
+  text: 'When you dont find me coding or studying for a nearby exam, you can find me doing stargazing, photography and videography or definitely petting some cats'
 
 
 #
@@ -51,15 +52,6 @@ permalink: /index.html
 #
 homepage: true
 ---
-<h3> Shreeyash Gowaikar </h3> 
-<p style="font-family:georgia,garamond,serif; margin: 4px">
-Welcome to my Website! I am currently a research intern at Microsoft Research India! I am working on interesting applications of Generative AI in the Energy Domain! I recently completed my undergraduate studies majoring in Computer Science and with a minor in Data Science, form BITS Pilani, Goa Campus.
-<p style="font-family:georgia,garamond,serif;margin:2px">
-My research interest lies in Interpretive AI, AI for Social Good and Computational Social Science. I have vast experience, including interdisciplinary applicative AI research with great minds in the Energy as well as Architecture domain! I completed my undergraduate thesis, working with Prof. Shin Koseki and Dr. Hugo Berard while visiting the University of Montréal. We worked on introducing crucial metrics for measuring the equity in preference learning tasks! I have also worked on using Computer Vision Algorithms to evaluate the (Equity, Diversity and Inclusion) EDI of Public Spaces.
-I am open to academic and corporate research collaborations which could create a positive impact in the research communinty!
-<br>
-
-<br>
 
 <h4 class="news-header"> Latest Updates </h4>
 <div class="news-timeline">
