@@ -57,6 +57,24 @@ homepage: true
 <div class="news-timeline">
     <div class="news-item">
         <div class="news-date">
+            <p>Dec 2024</p>
+        </div>
+        <div class="news-content">
+            <h5>AAAI'25 Workshop Acceptance</h5>
+            <p>Elated to share that the preliminary work from my Microsoft Research Internship will be presented at AAAI'25 AI2SE Workshop! Stay tuned for more updates.</p>
+        </div>
+    </div>
+    <div class="news-item">
+        <div class="news-date">
+            <p>Nov 2024</p>
+        </div>
+        <div class="news-content">
+            <h5>Joined Microsoft Research on a long term research contract!</h5>
+            <p>Transitioning into Pre-Doctoral Researcher (on contract) role Microsoft Research India as a to research on Scalable code generation and translation!</p>
+        </div>
+    </div>
+    <div class="news-item">
+        <div class="news-date">
             <p>June 2024</p>
         </div>
         <div class="news-content">

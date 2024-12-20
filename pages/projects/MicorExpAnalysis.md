@@ -22,7 +22,7 @@ This project was done as under the supervision of Prof. Tanmay Verlekar, in coll
 <div class = "row">
 <div class ="small-12 large-12 column">
     <figure>
-        <img src="/images/projects/microExp/cover.jpg" style="width:100%" class="figbig">
+        <img src="/images/projects/MicroExp/cover.jpg" style="width:100%" class="figbig">
         <figcaption>An Example of MicroExpressions from the SAMM Long Dataset</figcaption>
     </figure>   
 </div>

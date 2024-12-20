@@ -109,6 +109,17 @@ header: no
             <p>Additional information about the methods, experiments, and results in detail.</p>
         </div> -->
     </div>
+    <!-- Workshop Publication Example -->
+    <div class="publication">
+        <h2>3. An Agentic Approach to Automatic Creation of P&ID Diagrams from Natural Language Descriptions</h2>
+        <p class="meta-info">
+            Type: Workshop Presentation | Venue: AAAI'25 Workshop on AI to Accelerate Science and Engineering | <a href="https://arxiv.org/abs/2412.12898" target="_blank">Link</a> | <a href="https://notebooklm.google.com/notebook/32c243b3-10f3-4654-b9b9-00ee5d1711cc/audio" target="_blank">NotebookLM Link</a>
+            <span class="comment">(This NotebookLM recap is decent!)</span>
+        </p>
+        <div class="abstract">
+            <strong>Abstract:</strong> The Piping and Instrumentation Diagrams (P&IDs) are foundational to the design, construction, and operation of workflows in the engineering and process industries. However, their manual creation is often labor-intensive, error-prone, and lacks robust mechanisms for error detection and correction. While recent advancements in Generative AI, particularly Large Language Models (LLMs) and Vision-Language Models (VLMs), have demonstrated significant potential across various domains, their application in automating generation of engineering workflows remains underexplored. In this work, we introduce a novel copilot for automating the generation of P&IDs from natural language descriptions. Leveraging a multi-step agentic workflow, our copilot provides a structured and iterative approach to diagram creation directly from Natural Language prompts. We demonstrate the feasibility of the generation process by evaluating the soundness and completeness of the workflow, and show improved results compared to vanilla zero-shot and few-shot generation approaches.
+        </div>
+    </div>
     <!-- Arxiv Preprints Section -->
     <h2>Arxiv Preprints</h2>
     <div class="publication">
@@ -125,6 +136,8 @@ header: no
             <p>Detailed description for the Arxiv preprint with additional insights.</p>
         </div> -->
     </div>
+
+    More information on my <a href="https://scholar.google.com/citations?user=zuL9nnwAAAAJ&hl=en">GoogleScholar</a>!
 </div>
 
 <script>

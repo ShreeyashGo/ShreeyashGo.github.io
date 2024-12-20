@@ -24,8 +24,13 @@ ___
 
 <div class="timeline">
     <div class="timeline-item">
+        <h5><u>Pre-doctoral researcher (contract) @ Microsoft Research India</u></h5>
+        <p class="date">November 2024 - Present</p>
+        <p>Researching on applications of AI for Scalable Code generation and translation. Collaborating with Arun Iyer, BASH, and Sriram Rajamani!</p>
+    </div>
+    <div class="timeline-item">
         <h5><u>Research Intern @ Microsoft Research India</u></h5>
-        <p class="date">July 2024 - Present</p>
+        <p class="date">July 2024 - November 2024</p>
         <p>Working on applications of AI in Industry and Energy. Collaborating with Sameer Segal, Srinivasan Iyengar, and Shivkumar Kalyanaraman to develop Generative AI solutions for industrial use.</p>
     </div>
     <div class="timeline-item">
@@ -33,28 +38,35 @@ ___
         <p class="date">July 2023 - December 2023</p>
         <p>Thesis on "Evaluating the Equity of AI Algorithms while Learning-to-Rank," supervised by Prof. Shin Koseki. Also contributed to urban planning research on public space equity through the MITACS GRI Fellowship.</p>
     </div>
-    <div class="timeline-item">
-        <h5><u>Software Development Intern @ Atlassian</u></h5>
-        <p class="date">June 2023 - July 2023</p>
-        <p>Developed a Knowledge Base Assistance prototype, leveraging Generative AI to improve resolution time for self-service tickets by ~35%, enhancing support for the Atlassian Suite.</p>
-    </div>
-    <div class="timeline-item">
-        <h5><u>Research Intern @ AIISC:</u></h5>
-        <p class="date">September 2022 - March 2023</p>
-        <p>Worked on creating a novel analogical reasoning benchmark for evaluating analogical reasoning capabilities of LLMs inspired from cognitive science. Also contributed to a project in Physics Inspired Neural Networks to find flaws and improve performance of LLMs, influenced by the impossible triangle of the Pre-trained LLMs.</p>
-    </div>
-    <div class="timeline-item">
-        <h5><u>Summer Research Intern @ CSIR-CEERI Pilani:</u></h5>
-        <p class="date">May 2022 - July 2022</p>
-        <p>Worked on Image Inpainting Using Partial Convolutional U-Nets for Ancient Image Restoration. I used different types of GANs and UNets to restore Ancient Indian Mural Images for virtual culture preservation.</p>
-    </div>
+    <!-- Additional Experiences (Initially Hidden) -->
+    <div id="more-experiences" style="display: none;">
+        <div class="timeline-item">
+            <h5><u>Software Development Intern @ Atlassian</u></h5>
+            <p class="date">June 2023 - July 2023</p>
+            <p>Developed a Knowledge Base Assistance prototype, leveraging Generative AI to improve resolution time for self-service tickets by ~35%, enhancing support for the Atlassian Suite.</p>
+        </div>
+        <div class="timeline-item">
+            <h5><u>Research Intern @ AIISC:</u></h5>
+            <p class="date">September 2022 - March 2023</p>
+            <p>Worked on creating a novel analogical reasoning benchmark for evaluating analogical reasoning capabilities of LLMs inspired from cognitive science. Also contributed to a project in Physics Inspired Neural Networks to find flaws and improve performance of LLMs, influenced by the impossible triangle of the Pre-trained LLMs.</p>
+        </div>
+        <div class="timeline-item">
+            <h5><u>Summer Research Intern @ CSIR-CEERI Pilani:</u></h5>
+            <p class="date">May 2022 - July 2022</p>
+            <p>Worked on Image Inpainting Using Partial Convolutional U-Nets for Ancient Image Restoration. I used different types of GANs and UNets to restore Ancient Indian Mural Images for virtual culture preservation.</p>
+        </div>
+     </div>
+
+    <!-- View More Button -->
+    <button id="view-more-btn" onclick="toggleExperiences()">View More</button>
 </div>
 
 ---
 
-## Projects {#projects}
+## Projects and Publications {#projects}
 
 To view my detailed projects, visit the [Projects Page](/projects/).
+To view my publications, visit the [Publications Page](/publications/)
 
 ---
 
@@ -263,3 +275,18 @@ To view my detailed projects, visit the [Projects Page](/projects/).
         }
     }
 </style>
+
+
+<script>
+    function toggleExperiences() {
+        const moreExperiences = document.getElementById('more-experiences');
+        const button = document.getElementById('view-more-btn');
+        if (moreExperiences.style.display === 'none') {
+            moreExperiences.style.display = 'block';
+            button.textContent = 'View Less';
+        } else {
+            moreExperiences.style.display = 'none';
+            button.textContent = 'View More';
+        }
+    }
+</script>
