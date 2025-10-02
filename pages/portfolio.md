@@ -20,12 +20,35 @@ permalink: "/aboutMe/"
 <div class="medium-8 medium-pull-4 columns" markdown="1">
 
 ___
+
+## Education {#education}
+
+<div class="timeline">
+    <div class="timeline-item">
+        <h5><u>Georgia Tech (Atlanta, USA)</u></h5>
+        <h6>M.S. Computer Science, Machine Learning Specialization</h6>
+        <p class="date">2025 - 2027 (Expected)</p>
+    </div>
+    <div class="timeline-item">
+        <h5><u>BITS Pilani, Goa Campus (Goa, India)</u></h5>
+        <h6>B.E. Computer Science, Minor in Data Science</h6>
+        <p class="date">2020 - 2024</p>
+    </div>
+    <!-- <div class="timeline-item">
+        <h5><u>Late P.B. Jog Junior College of Science and Commerce (Maharashtra, India)</u></h5>
+        <h6>Maharashtra State Board of Higher Secondary Education (HSC)</h6>
+        <p class="date">2019 - 2020</p>
+    </div> -->
+    <!-- Additional education here -->
+</div>
+
+---
 ## Experience {#experience}
 
 <div class="timeline">
     <div class="timeline-item">
         <h5><u>Pre-doctoral researcher (contract) @ Microsoft Research India</u></h5>
-        <p class="date">November 2024 - Present</p>
+        <p class="date">November 2024 - August 2025</p>
         <p>Researching on applications of AI for Scalable Code generation and translation. Collaborating with Arun Iyer, BASH, and Sriram Rajamani!</p>
     </div>
     <div class="timeline-item">
@@ -108,24 +131,6 @@ To view my publications, visit the [Publications Page](/publications/)
 
 ---
 
-## Education {#education}
-
-<div class="timeline">
-    <div class="timeline-item">
-        <h5><u>BITS Pilani, Goa Campus (Goa, India)</u></h5>
-        <h6>B.E. Computer Science, Minor in Data Science</h6>
-        <p class="date">2020 - 2024</p>
-    </div>
-    <div class="timeline-item">
-        <h5><u>Late P.B. Jog Junior College of Science and Commerce (Maharashtra, India)</u></h5>
-        <h6>Maharashtra State Board of Higher Secondary Education (HSC)</h6>
-        <p class="date">2019 - 2020</p>
-    </div>
-    <!-- Additional education here -->
-</div>
-
----
-
 ## Positions of Responsibility {#PORs}
 
 <ul class="timeline">
@@ -170,6 +175,8 @@ To view my publications, visit the [Publications Page](/publications/)
 
 <div class="grid-layout">
     <div class="column">
+        <p class="grad_elective">Machine Learning Theory (CS 7545)</p>
+        <p class="grad_elective">Machine Learning with Graphs (CSE 8803)</p>
         <p class="elective">Machine Learning (BITS F464)</p>
         <p class="elective">Deep Learning (CS F425)</p>
         <p class="elective">Reinforcement Learning (CS F317)</p>
@@ -182,6 +189,7 @@ To view my publications, visit the [Publications Page](/publications/)
         <p class="elective">Compiler Construction (CS F363)</p>
     </div>
     <div class="column">
+        <p class="grad_elective">Computational Data Analysis (CSE 6740)</p>
         <p class="elective">Computer Architecture (CS F342)</p>
         <p class="elective">Design and Analysis of Algorithms (CS F364)</p>
         <p class="elective">Principles of Programming Languages (CS F301)</p>
@@ -271,6 +279,35 @@ To view my publications, visit the [Publications Page](/publications/)
     /* Media Query for Small Displays */
     @media (max-width: 600px) {
         .elective {
+            width: 100%; /* Make each elective take full width on small screens */
+        }
+    }
+
+    .grad_elective {
+        display: inline-block;
+        background-color: #f0f4f8; /* Light background color for contrast */
+        padding: 8px 12px;
+        margin: 4px 0;
+        border-left: 4px solid #b66a00ff; /* Accent border for emphasis */
+        border-radius: 6px; /* Smooth, rounded corners */
+        font-size: 1rem;
+        color: #333; /* Darker text for readability */
+        font-weight: 500; /* Slightly bold to make text stand out */
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+        width: 250px; /* Fixed width for all electives */
+        transition: all 0.2s ease-in-out; /* Smooth transition for hover effect */
+    }
+
+    /* Hover effect for .elective */
+    .grad_elective:hover {
+        background-color: #e1ecf4; /* Slightly darker shade on hover */
+        border-left-color: #874a00ff; /* Darker accent on hover */
+        transform: translateY(-3px); /* Subtle lift effect */
+    }
+
+    /* Media Query for Small Displays */
+    @media (max-width: 600px) {
+        .grad_elective {
             width: 100%; /* Make each elective take full width on small screens */
         }
     }

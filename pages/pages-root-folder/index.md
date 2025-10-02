@@ -10,8 +10,7 @@ widget1:
   title: "More about Me"
   url: '/aboutMe/'
   image: "/images/widget-1-302x182.jpg"
-  text: 'I am currently pursuing a predoctoral opportunity at Microsoft Research. I was a MITACS GRI Fellow and have also worked with Atlassian and AIISC! 
-  <br> I was also the Treasurer and Publicity and Design Head of Nirmaan Goa Chapter, a student run NGO impacting more than 100 people every year!'
+  text: 'I am currently a grad student at GeorgiaTech (Go Jackets!). Prior to this I was a predoctoral researcher at Microsoft Research and a MITACS GRI Fellow with the University of Montreal! I have also worked with Atlassian and AIISC in the past! '
 
 widget2:
   title: "Projects and Publications"
@@ -57,11 +56,38 @@ homepage: true
 <div class="news-timeline">
     <div class="news-item">
         <div class="news-date">
+            <p>Sept 2025</p>
+        </div>
+        <div class="news-content">
+            <h5>🔬 NeurIPS'25 Workshop Acceptance</h5>
+            <p>Elated to share our work during my time at Microsoft will be presented at NeurIPS'25 FoRLM Workshop!</p>
+        </div>
+    </div>
+    <div class="news-item">
+        <div class="news-date">
+            <p>Aug 2025</p>
+        </div>
+        <div class="news-content">
+            <h5>🎓 Started my Grad School!</h5>
+            <p>After a very fruitful year at Microsoft Research, I have joined GeorgiaTech for my graduate studies!</p>
+        </div>
+    </div>
+    <div class="news-item">
+        <div class="news-date">
+            <p>May 2025</p>
+        </div>
+        <div class="news-content">
+            <h5>📄 AIES'25 Acceptance</h5>
+            <p>Very excited to share my undergraduate thesis has been accepted at the AAAI/ACM AI Ethics and Society Conference!</p>
+        </div>
+    </div>
+    <div class="news-item">
+        <div class="news-date">
             <p>Dec 2024</p>
         </div>
         <div class="news-content">
-            <h5>AAAI'25 Workshop Acceptance</h5>
-            <p>Elated to share that the preliminary work from my Microsoft Research Internship will be presented at AAAI'25 AI2SE Workshop! Stay tuned for more updates.</p>
+            <h5>🔬 AAAI'25 Workshop Acceptance</h5>
+            <p>Elated to share that the preliminary work from my Microsoft Research Internship will be presented at AAAI'25 AI2SE Workshop!</p>
         </div>
     </div>
     <div class="news-item">
@@ -69,8 +95,8 @@ homepage: true
             <p>Nov 2024</p>
         </div>
         <div class="news-content">
-            <h5>Joined Microsoft Research on a long term research contract!</h5>
-            <p>Transitioning into Pre-Doctoral Researcher (on contract) role Microsoft Research India as a to research on Scalable code generation and translation!</p>
+            <h5>👨🏽‍💻 Joined Microsoft Research!</h5>
+            <p>Joined Mircrosoft Research. I will be working on some cool AI for Large-Scale Software Engineering Tasks!</p>
         </div>
     </div>
     <div class="news-item">
@@ -78,7 +104,7 @@ homepage: true
             <p>June 2024</p>
         </div>
         <div class="news-content">
-            <h5>Research Intern at Microsoft Research</h5>
+            <h5>👨🏽‍💻 Research Intern at Microsoft Research</h5>
             <p>Joining Microsoft Research India as a Research Intern to research on some cool applications of Generative AI for the Energy domain!</p>
         </div>
     </div>
@@ -87,7 +113,7 @@ homepage: true
             <p>June 2024</p>
         </div>
         <div class="news-content">
-            <h5>Graduated!</h5>
+            <h5>🎓 Graduated!</h5>
             <p>Completed my undergraduate studies in Computer Science from BITS Pilani Goa Campus with a 9.15/10 CGPA and a minor in Data Science (minor GPA: 9.4/10).</p>
         </div>
     </div>
@@ -96,7 +122,7 @@ homepage: true
             <p>May 2024</p>
         </div>
         <div class="news-content">
-            <h5>First Author Paper in CVPR 2024 Workshop!</h5>
+            <h5>🔬 First Author Paper in CVPR 2024 Workshop!</h5>
             <p>Elated to share my first first-author work (AI-EDI-SPACE: A Co-designed Dataset for Evaluating the Quality of Public Spaces) accepted for presentation at CVPR 2024 Workshop on Responsible Data.</p>
         </div>
     </div>
@@ -105,7 +131,7 @@ homepage: true
             <p>August 2023</p>
         </div>
         <div class="news-content">
-            <h5>MITACS Research Internship</h5>
+            <h5>🔧 MITACS Research Internship</h5>
             <p>Started my MITACS Globalink Research Internship in AI for Public Spaces under Prof. Shin Koseki and Hugo Berard at the University of Montreal (UdeM)!</p>
         </div>
     </div>
@@ -114,7 +140,7 @@ homepage: true
             <p>July 2023</p>
         </div>
         <div class="news-content">
-            <h5>Publication in Findings of ACL!</h5>
+            <h5>📄 Publication in Findings of ACL!</h5>
             <p>My first publication (ANALOGICAL: A Novel Benchmark for Long Text Analogy Evaluation in Large Language Models) was accepted at ACL Findings!</p>
         </div>
     </div>
@@ -123,11 +149,11 @@ homepage: true
             <p>June 2023</p>
         </div>
         <div class="news-content">
-            <h5>Summer Internship at Atlassian</h5>
+            <h5>👨🏽‍💻 Summer Internship at Atlassian</h5>
             <p>Started a summer internship at Atlassian, working on cool applications of Generative AI for Jira Service Management.</p>
         </div>
     </div>
-    <div class="news-item">
+    <!-- <div class="news-item">
         <div class="news-date">
             <p>Sept 2022</p>
         </div>
@@ -135,8 +161,8 @@ homepage: true
             <h5>Research Internship at AIISC@UoSc</h5>
             <p>Started my research internship, working with LLMs (Large Language Models).</p>
         </div>
-    </div>
-    <div class="news-item">
+    </div> -->
+    <!-- <div class="news-item">
         <div class="news-date">
             <p>May 2022</p>
         </div>
@@ -144,8 +170,13 @@ homepage: true
             <h5>Summer Internship at CSIR-CEERI Pilani</h5>
             <p>Started working on Inpainting Techniques for Ancient Image Restoration under Dr. Dhiraj.</p>
         </div>
-    </div>
+    </div> -->
 </div>
+
+<div style="margin:6px 0; padding:8px 10px; border:1px solid #eaeaea; border-radius:8px; font-size:0.95rem; color:#444;">
+  📄 Conference Paper • 🔬 Workshop Paper • 👨🏽‍💻 Job Update • 🎓 Academic Update • 🔧 Research Update
+</div>
+
 
 <!-- Add your CSS -->
 <style>
@@ -164,7 +195,7 @@ homepage: true
         display: flex;
         flex-direction: column;
         gap: 10px; /* Reduced gap for smaller cells */
-        max-height: 300px;
+        max-height: 280px;
         overflow-y: auto;
         padding-right: 10px;
     }

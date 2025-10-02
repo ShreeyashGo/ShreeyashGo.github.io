@@ -120,17 +120,17 @@ header: no
             <strong>Abstract:</strong> The Piping and Instrumentation Diagrams (P&IDs) are foundational to the design, construction, and operation of workflows in the engineering and process industries. However, their manual creation is often labor-intensive, error-prone, and lacks robust mechanisms for error detection and correction. While recent advancements in Generative AI, particularly Large Language Models (LLMs) and Vision-Language Models (VLMs), have demonstrated significant potential across various domains, their application in automating generation of engineering workflows remains underexplored. In this work, we introduce a novel copilot for automating the generation of P&IDs from natural language descriptions. Leveraging a multi-step agentic workflow, our copilot provides a structured and iterative approach to diagram creation directly from Natural Language prompts. We demonstrate the feasibility of the generation process by evaluating the soundness and completeness of the workflow, and show improved results compared to vanilla zero-shot and few-shot generation approaches.
         </div>
     </div>
-    <!-- Arxiv Preprints Section -->
-    <h2>Arxiv Preprints</h2>
     <div class="publication">
         <h2>From Efficiency to Equity: Measuring Fairness in Preference Learning</h2>
         <p class="meta-info">
-            <a href="https://arxiv.org/pdf/2410.18841v1.pdf" target="_blank">Arxiv Link</a> | <a href="https://notebooklm.google.com/notebook/c0afb83e-ec48-4bdc-b8c1-e37ff3707a7d/audio" target="_blank">NotebookLM Link</a>
+                Type: Conference Presentation | Venue: AAAI/ACM AI Ethics and Society'25 | <a href="https://arxiv.org/pdf/2410.18841v1.pdf" target="_blank">Link</a> | <a href="https://notebooklm.google.com/notebook/c0afb83e-ec48-4bdc-b8c1-e37ff3707a7d/audio" target="_blank">NotebookLM Link</a>
             <span class="comment">(This NotebookLM recap is decent!)</span>
         </p>
         <div class="abstract">
             <strong>Abstract:</strong> As AI systems, particularly generative models, increasingly influence decision-making, ensuring that they are able to fairly represent diverse human preferences becomes crucial. This paper introduces a novel framework for evaluating epistemic fairness in preference learning models inspired by economic theories of inequality and Rawlsian justice. We propose metrics adapted from the Gini Coefficient, Atkinson Index, and Kuznets Ratio to quantify fairness in these models. We validate our approach using two datasets: a custom visual preference dataset (AI-EDI-Space) and the Jester Jokes dataset. Our analysis reveals variations in model performance across users, highlighting potential epistemic injustices. We explore pre-processing and in-processing techniques to mitigate these inequalities, demonstrating a complex relationship between model efficiency and fairness. This work contributes to AI ethics by providing a framework for evaluating and improving epistemic fairness in preference learning models, offering insights for developing more inclusive AI systems in contexts where diverse human preferences are crucial.
         </div>
+    <!-- Arxiv Preprints Section -->
+    <!-- <h2>Arxiv Preprints</h2> -->
         <!-- <div class="toggle" onclick="toggleContent(this)">Read More...</div>
         <div class="dropdown-content">
             <p>Detailed description for the Arxiv preprint with additional insights.</p>
