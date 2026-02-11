@@ -2,186 +2,380 @@
 layout: default
 format: frontpage
 ---
-<div id="header-home">
-    <div class="row">
-        <div class="small-12 columns">
-        </div><!-- /.medium-4.columns -->
-    </div><!-- /.row -->
-</div><!-- /#header-home -->
-
-
-
-{% comment %}
-*
-* Finally, if there is content, spit it out.
-*
-{% endcomment %}
-
-<div id="header-home" style="display: flex; align-items: center; padding: 50px; background-color: #f7f7f7;">
-    <!-- Image Section: Rounded with a border -->
-    <img src="images/Photo_whiteBG1.jpg" alt="Shreeyash Gowaikar" style="
-        height: 280px;
-        border-radius: 12px;
-        border: 2px solid #E0E0E0;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        margin-right: 30px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    ">
-
-    <!-- Text Section: Left-aligned Header and Subheader -->
-    <div>
-        <h1 style="font-size: 2em; color: #3A6351; margin: 0;">Shreeyash Gowaikar</h1>
-        
-        <!-- Revised Introduction Text -->
-        <p style="font-size: 1.1em; color: #555; margin-top: 10px;">
-            Hi there! I'm a <b>Computer Science Masters</b> student at <b>Georgia Tech</b>! I am working in the AI for Social Impact Team under the guidance of Prof. Kai Wang. 
-            <br><br>
-            Before my grad school, I was a pre-doctoral researcher (on contract) at <b>Microsoft Research India</b>, working on Generative AI applications for Automatic Knowledge Base creation for scalable code generation. In the (not-so-distant) past I graduated in Computer Science from BITS Pilani, Goa with a minor in data science. 
-
-            My passion lies in <b>AI Evaluations</b>, <b>Robust AI</b>, and <b>AI for Social Good</b>.
-        </p>
-        
-        <p style="font-size: 1em; color: #555; margin-top: 20px;">
-            <strong>Current and Past Affiliations</strong><br>
-            <!-- Replace the affiliation <span> rows with a semantic list -->
-        <ul class="affils">
-        <li class="affil">
-            <img class="affil-logo" src="images/microsoft_logo.webp" alt="Microsoft Research India">
-            <p>Collaborated with Arun Iyer, Sameer Segal, Srinivasan Iyengar, and Shivkumar Kalyanaraman on a super interesting Generative AI research.</p>
-        </li>
-        <li class="affil">
-            <img class="affil-logo" src="images/udem_logo.webp" alt="Université de Montréal">
-            <p>Collaborated with Prof. Shin Koseki and Dr. Hugo Berard, on fairness and preference learning tasks with applications in AI for Urban Planning.</p>
-        </li>
-        <li class="affil">
-            <img class="affil-logo" src="images/atlas_logo.webp" alt="Atlassian">
-            <p>Worked in the Grimlock AI team for using Generative AI for Jira Service Management and Knowledge Base Automation!</p>
-        </li>
-        <li class="affil">
-            <img class="affil-logo" src="images/aiisc_logo.webp" alt="AIISC">
-            <p>Collaborated with Prof. Amit Sheth and Prof. Amitava Das for creating novel evaluations for Language Models.</p>
-        </li>
-        <li class="affil">
-            <img class="affil-logo" src="images/bits_logo.webp" alt="BITS Pilani, Goa">
-            <p>Collaborated with Prof. Tanmay Tulsidas Verlekar as a part of the APPCAIR lab at BITS Goa.</p>
-        </li>
-        </ul>
-        </p>
-
-        <!-- Call-to-Action -->
-        <p style="font-size: 1em; color: #555; margin-top: 20px;">
-            I'm open to collaborations in academia and industry, driven to create meaningful research impact. Let's connect!
-        </p>
-    </div>
-</div>
-
-<div class="row">
-    {{ content }}
-</div>
-<hr class="row">
-
-{% comment %}
-*
-* First check, if widget is empty or not by checking if there is a title
-*
-{% endcomment %}
-<div class="row t60">
-	{% if page.widget1.image or page.widget1.video or page.widget1.title %}
-		{% include _frontpage-widget.html widget=page.widget1 %}
-	{% endif %}
-
-	{% if page.widget2.image or page.widget2.video or page.widget2.title %}
-		{% include _frontpage-widget.html widget=page.widget2 %}
-	{% endif %}
-
-	{% if page.widget3.image or page.widget3.video or page.widget3.title %}
-		{% include _frontpage-widget.html widget=page.widget3 %}
-	{% endif %}
-
-    <!-- {% if page.widget4.image or page.widget4.video or page.widget4.title %}
-		{% include _frontpage-widget.html widget=page.widget4 %}
-	{% endif %} -->
-
-
-</div><!-- /.row -->
-
-
-
-{% comment %}
-*
-* First check, if there is a call for action-button
-*
-{% endcomment %}
-{% if page.callforaction.url contains 'http' %}
-{% assign url = '' %}
-{% else %}
-{% capture url %}{{ site.url }}{{ site.baseurl }}{% endcapture %}
-{% endif %}
-{% if page.callforaction %}
-    <div class="row t60 b60">
-        <div class="small-12 text-center columns">
-            <a class="button large radius {{ page.callforaction.style }}" href="{{ url }}{{ page.callforaction.url }}"{% if page.callforaction.url contains 'http' %} target="_blank" {% endif %}>{{ page.callforaction.text }}</a>
-        </div><!-- /.small-12.columns -->
-    </div><!-- /.row -->
-{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-    img:hover {
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    /* --- VARIABLES --- */
+    :root {
+        --fp-font: 'Inter', sans-serif;
+        --fp-primary: #3A6351;
+        --fp-text-main: #1a202c;
+        --fp-text-sub: #58687a;
+        --fp-bg-card: #ffffff;
+        --radius: 12px;
     }
 
-    /* existing */
-    .affil-row { display: flex; align-items: center; gap: 32px; margin-top: 10px; }  /* bump gap if needed */
+    /* --- GLOBAL LAYOUT --- */
+    .fp-wrapper {
+        font-family: var(--fp-font);
+        color: var(--fp-text-main);
+        max-width: 1050px;
+        margin: 0 auto;
+        padding: 60px 20px;
+    }
+
+    h1, h2, h3, h4, p { margin: 0; }
+    a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
+
+    /* --- 1. HERO SECTION --- */
+    .hero-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+    @media (min-width: 850px) {
+        .hero-section { grid-template-columns: 1.4fr 0.6fr; }
+    }
+    .hero-content { order: 2; }
+    @media (min-width: 850px) { .hero-content { order: 1; } }
     
-    .affil-logo {
-        width: 40px;                /* keeps the “cell” width */
-        height: 20px;
-        object-fit: contain;        /* preserve aspect ratio */
-        transform: scale(1);     /* visually bigger, layout width unchanged */
-        transform-origin: left center; /* grow from the left edge */
+    .hero-name {
+        font-size: 3.5rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: var(--fp-primary);
+        margin-bottom: 20px;
+        line-height: 1.1;
+    }
+    .hero-intro {
+        font-size: 1.05rem;
+        line-height: 1.75;
+        color: var(--fp-text-sub);
+        margin-bottom: 30px;
+        font-weight: 400;
+        max-width: 680px;
     }
 
+    .highlight {
+        background: rgba(161, 208, 68, 0.15);
+        color: var(--fp-primary);
+        font-weight: 600;
+        padding: 1px 6px;
+        border-radius: 4px;
+        display: inline-block;
+    }
+    
+    /* Social Icons */
+    .social-row { display: flex; gap: 15px; margin-top: 25px; justify-content: left; }
+    .social-btn {
+        display: flex; align-items: center; justify-content: center;
+        width: 49px; height: 49px; border-radius: 50%;
+        background: #f7fafc; border: 1px solid #edf2f7;
+        color: var(--fp-primary); transition: all 0.2s ease;
+    }
+    .social-btn:hover {
+        background: var(--fp-primary); color: white; border-color: var(--fp-primary);
+        transform: translateY(-2px); box-shadow: 0 4px 12px rgba(58, 99, 81, 0.2);
+    }
+    .social-btn svg { width: 18px; height: 18px; fill: currentColor; }
 
-    /* Grid container: fixed logo column + flexible text column */
-    .affils {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;                       /* enables two‑column grid */
-        grid-template-columns: 56px 1fr;     /* fixed icon track + fluid text */
-        gap: 12px 16px;                      /* row gap | column gap */
-        align-items: center;                 /* vertical centering per row */
+    /* HERO IMAGE */
+    .hero-image-wrapper {
+        order: 1; position: relative; justify-self: center; width: 100%; max-width: 210px;
+    }
+    @media (min-width: 850px) { .hero-image-wrapper { order: 2; justify-self: end; } }
+
+    .hero-photo {
+        width: 100%; height: auto; border-radius: var(--radius);
+        box-shadow: 0 28px 49px -21px rgba(0,0,0,0.15); display: block;
+        transform: rotate(2deg); transition: transform 0.3s ease;
+    }
+    .hero-photo:hover { transform: rotate(0deg) scale(1.02); }
+
+
+    /* --- 2. LOGO DOCK --- */
+    .logo-section { margin-bottom: 80px; text-align: center; }
+
+    .section-divider {
+        display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 30px;
+    }
+    .section-divider::before, .section-divider::after {
+        content: ''; height: 1px; background: #e2e8f0; width: 60px; display: block;
+    }
+    .divider-text {
+        font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: #a0aec0; font-weight: 700;
     }
 
-    /* Make each <li> contribute two cells (logo + text) */
-    .affil {
-        display: contents;                   /* let children flow into the grid cells */
+    .logo-dock { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px; }
+    .dock-item { position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .dock-logo {
+        height: 42px; width: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.4; transition: all 0.3s ease;
+    }
+    .dock-item:hover .dock-logo { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
+    .dock-tooltip {
+        position: absolute; bottom: 150%; left: 50%; transform: translateX(-50%) translateY(10px);
+        background: #2D3748; color: white; padding: 6px 10px; border-radius: 6px;
+        font-size: 0.7rem; font-weight: 600; white-space: nowrap; pointer-events: none;
+        opacity: 0; visibility: hidden; transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1); z-index: 10;
+    }
+    .dock-tooltip::after {
+        content: ''; position: absolute; top: 100%; left: 50%; margin-left: -5px;
+        border-width: 5px; border-style: solid; border-color: #2D3748 transparent transparent transparent;
+    }
+    .dock-item:hover .dock-tooltip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+
+    /* --- 3. TIMELINE (INTERNAL SCROLL BUTTON) --- */
+    .section-header {
+        display: flex; align-items: center; justify-content: space-between;
+        margin-bottom: 25px; border-bottom: 2px solid #f7fafc; padding-bottom: 15px;
+    }
+    .section-title { font-size: 1.5rem; font-weight: 800; color: var(--fp-primary); letter-spacing: -0.02em; }
+    .timeline-legend { display: flex; gap: 15px; font-size: 0.75rem; color: #718096; font-weight: 600; }
+    .legend-item { display: flex; align-items: center; gap: 4px; }
+
+    .timeline-window {
+        max-height: 400px; 
+        overflow-y: auto; 
+        padding-right: 15px;
+        scrollbar-width: thin; scrollbar-color: #cbd5e0 #f7fafc;
+        margin-bottom: 50px;
+    }
+    .timeline-window::-webkit-scrollbar { width: 5px; }
+    .timeline-window::-webkit-scrollbar-track { background: transparent; }
+    .timeline-window::-webkit-scrollbar-thumb { background-color: #cbd5e0; border-radius: 10px; }
+
+    .timeline-container { position: relative; padding-top: 10px; }
+    .timeline-container::before {
+        content: ''; position: absolute; top: 0; bottom: 0; left: 15px; width: 2px; background: #edf2f7; z-index: 0;
     }
 
-    /* Tighten text spacing */
-    .affil p {
-        margin: 5pt;
-        color: #555;
-        font-size: 1em;
+    .tl-item { position: relative; margin-bottom: 35px; padding-left: 55px; }
+    .tl-icon {
+        position: absolute; left: 0; top: 0; width: 32px; height: 32px;
+        background: #fff; border: 2px solid #edf2f7; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center; font-size: 16px; z-index: 1;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    }
+    .tl-date {
+        font-size: 0.75rem; font-weight: 700; color: #a0aec0;
+        text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; margin-top: 5px; 
+    }
+    .tl-title { font-size: 1.05rem; font-weight: 700; color: var(--fp-text-main); margin-bottom: 5px; }
+    .tl-desc { font-size: 0.95rem; color: var(--fp-text-sub); line-height: 1.5; }
+
+    /* Internal Loader Button */
+    .internal-load-wrapper {
+        padding-left: 55px; /* Alignment with axis content */
+        margin-bottom: 30px;
+    }
+    .btn-load-more {
+        background: white;
+        border: 1px solid #e2e8f0;
+        padding: 8px 16px;
+        border-radius: 8px;
+        color: #718096;
+        font-size: 0.8rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    .btn-load-more:hover {
+        border-color: var(--fp-primary);
+        color: var(--fp-primary);
     }
 
+    #older-events { display: none; }
 
-    /* Base: mobile layout (single column) */
-    #header-home { display:flex; flex-direction: column; align-items: center; gap: 20px; }
-    .profile-photo { width: min(90vw, 420px); height: auto; display:block; margin: 0 auto 20px; } /* mobile centering */
 
-    /* Tablet / medium and up: restore row layout */
-    @media (min-width: 768px) {
-        #header-home { flex-direction: row; align-items: center; }
-        .profile-photo { width: 260px; margin: 0 30px 0 0; } /* no mobile centering on tablet */
-        .affil-row { gap: 16px; }
-        .affil-logo { width: 72px; height: 44px; object-fit: contain; transform: scale(1.15); transform-origin: center; }
+    /* --- 4. WIDGETS --- */
+    .widgets-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 60px; }
+    @media (min-width: 768px) { .widgets-grid { grid-template-columns: repeat(3, 1fr); } }
+    
+    .widget-card {
+        background: white; border-radius: var(--radius); overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.03); display: flex; flex-direction: column;
+        height: 100%; transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);
     }
-
-    /* Desktop / large and up */
-    @media (min-width: 1024px) {
-        .profile-photo { width: 280px; }
-        .affil-logo { transform: scale(1.25); }
-    }
+    .widget-card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1); }
+    .widget-img { width: 100%; height: 180px; object-fit: cover; }
+    .widget-content { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; }
+    .widget-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; color: var(--fp-primary); }
+    .widget-desc { font-size: 0.95rem; color: #666; margin-bottom: 20px; line-height: 1.5; }
+    .widget-link { margin-top: auto; font-weight: 700; font-size: 0.9rem; color: var(--fp-primary); display: flex; align-items: center; gap:5px; }
+    .widget-link::after { content: '→'; transition: transform 0.2s; }
+    .widget-card:hover .widget-link::after { transform: translateX(4px); }
 
 </style>
+
+<div class="fp-wrapper">
+    
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-name">Shreeyash Gowaikar</h1>
+            
+            <div class="hero-intro">
+                <p>
+                    Hi there! I'm a <span class="highlight">Computer Science Masters student</span> at <span class="highlight">Georgia Tech</span> specializing in Machine Learning, and working in the <strong>AI for Social Impact Team</strong> under <a href="https://guaguakai.com" target="_blank">Prof. Kai Wang</a>.
+                </p>
+                <br>
+                <p>
+                    Through my experiences at <strong>UdeM</strong> and <strong>Microsoft Research</strong>, I witnessed the immense potential AI holds to solve seemingly difficult but highly socially relevant questions.
+                </p>
+                <br>
+                <p>
+                    However, seeing these systems in action also revealed a critical gap in their reliability. This drove me toward my current research focus on <span class="highlight">AI Robustness</span>, where I am specifically investigating <span class="highlight">Fine-tuning Robustness</span> to ensure models remain safe and stable as they adapt.
+                </p>
+            </div>
+            
+            <div class="social-row">
+                <a href="scholar.google.com/citations?user=zuL9nnwAAAAJ&hl=en" target="_blank" class="social-btn" title="Google Scholar">
+                    <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                </a>
+                <a href="www.linkedin.com/in/shreeyash-gowaikar" target="_blank" class="social-btn" title="LinkedIn">
+                    <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="https://github.com/ShreeyashGo" target="_blank" class="social-btn" title="GitHub">
+                    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="mailto:shreeyashgo@gmail.com" class="social-btn" title="Email">
+                    <svg viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg>
+                </a>
+            </div>
+
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="images/Photo_whiteBG1.jpg" alt="Shreeyash Gowaikar" class="hero-photo">
+        </div>
+    </header>
+
+    <div class="logo-section">
+        <div class="section-divider">
+            <span class="divider-text">Research & Work History</span>
+        </div>
+        
+        <div class="logo-dock">
+            <div class="dock-item">
+                <img src="images/gt_logo.webp" alt="GT" class="dock-logo" onerror="this.style.display='none'">
+                <div class="dock-tooltip">AI Robustness & Reliability</div>
+            </div>
+            <div class="dock-item">
+                <img src="images/microsoft_logo.webp" alt="Microsoft" class="dock-logo">
+                <div class="dock-tooltip">AI for Large Scale Software Eng.</div>
+            </div>
+            <div class="dock-item">
+                <img src="images/udem_logo.webp" alt="UdeM" class="dock-logo">
+                <div class="dock-tooltip">AI for Urban Planning</div>
+            </div>
+            <div class="dock-item">
+                <img src="images/atlas_logo.webp" alt="Atlassian" class="dock-logo">
+                <div class="dock-tooltip">Knowledge Base Enhancement</div>
+            </div>
+            <div class="dock-item">
+                <img src="images/aiisc_logo.webp" alt="AIISC" class="dock-logo">
+                <div class="dock-tooltip">Analogical Discovery</div>
+            </div>
+            <div class="dock-item">
+                <img src="images/bits_logo.webp" alt="BITS" class="dock-logo">
+                <div class="dock-tooltip">Undergraduate Studies</div>
+            </div>
+        </div>
+    </div>
+
+    {% if page.news %}
+    <div class="section-header">
+        <h3 class="section-title">Latest Updates</h3>
+        <div class="timeline-legend">
+            <span class="legend-item">📄 Paper Update</span>
+            <span class="legend-item">👨🏽‍💻 Position Update</span>
+            <span class="legend-item">🎓 Academic Update</span>
+        </div>
+    </div>
+    
+    <div class="timeline-window">
+        <div class="timeline-container">
+            
+            {% for item in page.news %}
+                {% unless item.hidden %}
+                    {% assign icon = "📌" %}
+                    {% if item.type == 'paper' %}{% assign icon = "📄" %}{% elsif item.type == 'job' %}{% assign icon = "👨🏽‍💻" %}{% elsif item.type == 'academic' %}{% assign icon = "🎓" %}{% endif %}
+
+                    <div class="tl-item">
+                        <div class="tl-icon">{{ icon }}</div>
+                        <div class="tl-content">
+                            <div class="tl-date">{{ item.date }}</div>
+                            <div class="tl-title">{{ item.title }}</div>
+                            <div class="tl-desc">{{ item.desc }}</div>
+                        </div>
+                    </div>
+                {% endunless %}
+            {% endfor %}
+
+            {% assign hidden_items = page.news | where: "hidden", true %}
+            {% if hidden_items.size > 0 %}
+                <div class="internal-load-wrapper" id="load-trigger">
+                    <button class="btn-load-more" onclick="document.getElementById('older-events').style.display='block'; document.getElementById('load-trigger').style.display='none'">
+                        + Load Archived Events
+                    </button>
+                </div>
+
+                <div id="older-events">
+                    {% for item in hidden_items %}
+                        {% assign icon = "📌" %}
+                        {% if item.type == 'paper' %}{% assign icon = "📄" %}{% elsif item.type == 'job' %}{% assign icon = "👨🏽‍💻" %}{% elsif item.type == 'academic' %}{% assign icon = "🎓" %}{% endif %}
+
+                        <div class="tl-item">
+                            <div class="tl-icon">{{ icon }}</div>
+                            <div class="tl-content">
+                                <div class="tl-date">{{ item.date }}</div>
+                                <div class="tl-title">{{ item.title }}</div>
+                                <div class="tl-desc">{{ item.desc }}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="widgets-grid">
+        {% if page.widget1.title %}
+        <a href="{{ page.widget1.url }}" class="widget-card">
+            <img src="{{ page.widget1.image }}" class="widget-img">
+            <div class="widget-content">
+                <h4 class="widget-title">{{ page.widget1.title }}</h4>
+                <p class="widget-desc">{{ page.widget1.text }}</p>
+                <span class="widget-link">Read More</span>
+            </div>
+        </a>
+        {% endif %}
+        {% if page.widget2.title %}
+        <a href="{{ page.widget2.url }}" class="widget-card">
+            <img src="{{ page.widget2.image }}" class="widget-img">
+            <div class="widget-content">
+                <h4 class="widget-title">{{ page.widget2.title }}</h4>
+                <p class="widget-desc">{{ page.widget2.text }}</p>
+                <span class="widget-link">View Projects</span>
+            </div>
+        </a>
+        {% endif %}
+        {% if page.widget3.title %}
+        <a href="{{ page.widget3.url }}" class="widget-card">
+            <img src="{{ page.widget3.image }}" class="widget-img">
+            <div class="widget-content">
+                <h4 class="widget-title">{{ page.widget3.title }}</h4>
+                <p class="widget-desc">{{ page.widget3.text }}</p>
+                <span class="widget-link">Check Hobbies</span>
+            </div>
+        </a>
+        {% endif %}
+    </div>
+
+</div>
