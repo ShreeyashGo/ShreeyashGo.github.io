@@ -1,0 +1,155 @@
+---
+layout: default
+format: page-fullwidth
+---
+<div class="row t30">
+    <div class="medium-12 columns">
+        <article>
+            <header>
+                {% if page.subheadline %}<p class="subheadline">{{ page.subheadline }}</p>{% endif %}
+                <h1>{{ page.title }}</h1>
+            </header>
+
+            {% if page.teaser %}
+            <p class="teaser">
+                {{ page.teaser }}
+            </p>
+            {% endif %}
+
+            <div class="project-grid">
+                {% for project in page.projects %}
+                <div class="project-card">
+                    <a href="{{ project.url }}" class="card-image-link">
+                        <div class="img-container">
+                            <img src="{{ project.image }}" alt="{{ project.title }}">
+                        </div>
+                    </a>
+                    <div class="card-content">
+                        <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
+                        
+                        {% if project.tags %}
+                        <div class="tags">
+                            {% for tag in project.tags %}
+                            <span class="tag">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        <p>{{ project.description }}</p>
+                        <a href="{{ project.url }}" class="read-more">View Project &rarr;</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            {{ content }}
+        </article>
+    </div>
+</div>
+
+<style>
+/* Grid Container */
+.project-grid {
+    display: grid;
+    /* This creates a responsive grid that fits as many 300px cards as possible */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+/* Card Structure */
+.project-card {
+    background: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Hover Effects */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+    border-color: #A1D044; /* Your accent color */
+}
+
+/* Image Handling */
+.img-container {
+    width: 100%;
+    height: 180px; /* Fixed height for uniformity */
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers area without stretching */
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .img-container img {
+    transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+/* Content Typography */
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.card-content h3 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    flex-grow: 1; /* Pushes the button to the bottom */
+    margin-bottom: 1rem;
+}
+
+/* Tags Styling */
+.tags {
+    margin-bottom: 10px;
+}
+
+.tag {
+    display: inline-block;
+    background: #eff3f6;
+    color: #555;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-right: 5px;
+    font-weight: 600;
+}
+
+/* Link Button */
+.read-more {
+    display: inline-block;
+    color: #A1D044;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: auto; /* Pushes to bottom */
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+</style>
