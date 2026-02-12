@@ -5,7 +5,7 @@
     - title: "Experience"
       url: "/aboutMe/#experience"
     - title: "Technical Skills"
-      url: "/aboutMe/#TProf"
+      url: "/aboutMe/#skills"
     - title: "Education"
       url: "/aboutMe/#education"
     
@@ -20,16 +20,14 @@
     - title: "Teaching"
       url: "/teaching/"
 
-- title: Extra-Curriculars
-  url: "/hobbies/"
+- title: Hobbies
+  url: "/hobbies/photography/"
   side: left
   dropdown:
-    - title: "Nirmaan NGO"
-      url: "/hobbies/#nirmG"
     - title: "Photography"
-      url: "/hobbies/#dopy"
-    - title: "Stargazing"
-      url: "/hobbies/#sedsC"
+      url: "/hobbies/photography/"
+    # - title: "Stargazing"
+    #   url: "/hobbies/#sedsC"
 
 - title: Blogs
   url: "/blog/"

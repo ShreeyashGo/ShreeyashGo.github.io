@@ -1,0 +1,322 @@
+---
+layout: default
+---
+
+<div class="row">
+    <div class="medium-3 medium-push-9 columns">
+        <div class="toc-wrapper">
+            <p class="toc-header">Contents</p>
+            <ul class="toc-list">
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#electives">Electives</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="medium-9 medium-pull-3 columns">
+        <article>
+            <header>
+                {% if page.subheadline %}<p class="subheadline">{{ page.subheadline }}</p>{% endif %}
+                <h1>{{ page.title }}</h1>
+            </header>
+
+            <hr>
+
+            <h2 id="education">Education</h2>
+            <div class="modern-timeline">
+                {% for edu in page.education %}
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h5 class="timeline-title">{{ edu.school }}</h5>
+                        <span class="timeline-place">{{ edu.location }}</span>
+                        <div class="timeline-details">
+                            <h6>{{ edu.degree }}</h6>
+                            <p class="date">{{ edu.dates }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <hr>
+
+            <h2 id="experience">Experience</h2>
+            <div class="modern-timeline">
+                {% for job in page.experience %}
+                    {% unless job.hidden %}
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h5 class="timeline-title">{{ job.company }}</h5>
+                            <span class="timeline-role">{{ job.role }}</span>
+                            <span class="date">{{ job.dates }} | {{ job.location }}</span>
+                            
+                            <ul class="experience-points">
+                                {% for point in job.points %}
+                                <li>{{ point }}</li>
+                                {% endfor %}
+                            </ul>
+
+                        </div>
+                    </div>
+                    {% endunless %}
+                {% endfor %}
+
+                {% assign hidden_jobs = page.experience | where: "hidden", true %}
+                {% if hidden_jobs.size > 0 %}
+                <div id="hidden-experience" class="hidden-content">
+                    {% for job in hidden_jobs %}
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h5 class="timeline-title">{{ job.company }}</h5>
+                            <span class="timeline-role">{{ job.role }}</span>
+                            <span class="date">{{ job.dates }} | {{ job.location }}</span>
+                            
+                            <ul class="experience-points">
+                                {% for point in job.points %}
+                                <li>{{ point }}</li>
+                                {% endfor %}
+                            </ul>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <button id="btn-exp" class="btn-load-more">View Full Experience ↓</button>
+                {% endif %}
+            </div>
+
+            <hr>
+
+            <h2 id="skills">Technological Proficiency</h2>
+            <div class="skills-section">
+                {% for category in page.skills %}
+                <div class="skill-category">
+                    <span class="skill-label">{{ category.name }}</span>
+                    <div class="skill-tags">
+                        {% for item in category.items %}
+                        <span class="tag">{{ item }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <hr>
+
+            <h2 id="teaching">Teaching Experience</h2>
+            <div class="cards-grid">
+                {% for teach in page.teaching %}
+                    {% unless teach.hidden %}
+                    <div class="card">
+                        <div class="card-header">{{ teach.code }}</div>
+                        <div class="card-body">
+                            <h6>{{ teach.name }}</h6>
+                            <p class="date">{{ teach.dates }}</p>
+                        </div>
+                    </div>
+                    {% endunless %}
+                {% endfor %}
+            </div>
+
+            {% assign hidden_teaching = page.teaching | where: "hidden", true %}
+            {% if hidden_teaching.size > 0 %}
+            <div id="hidden-teaching" class="cards-grid hidden-content" style="margin-top: 15px;">
+                {% for teach in hidden_teaching %}
+                <div class="card">
+                    <div class="card-header">{{ teach.code }}</div>
+                    <div class="card-body">
+                        <h6>{{ teach.name }}</h6>
+                        <p class="date">{{ teach.dates }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <button id="btn-teach" class="btn-load-more">View More Teaching ↓</button>
+            {% endif %}
+
+            <hr>
+
+            <h2 id="awards">Awards</h2>
+            {% for award in page.awards %}
+            <div class="award-box" style="margin-bottom: 15px;">
+                <div class="award-icon">🏆</div>
+                <div class="award-content">
+                    <h5>{{ award.title }}</h5>
+                    <span class="date">{{ award.date }}</span>
+                    <p>{{ award.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+
+            <hr>
+
+            <h2 id="electives">Relevant Coursework</h2>
+            <div class="coursework-wrapper" id="elective-container">
+                <div class="row coursework-grid">
+                    <div class="medium-6 columns">
+                        <h5 class="course-header grad-text">Graduate Specialization</h5>
+                        <ul class="course-list grad-border">
+                            {% for elective in page.electives %}
+                                {% if elective.grad %}
+                                <li>{{ elective.name }}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="medium-6 columns">
+                        <h5 class="course-header">Undergraduate Foundation</h5>
+                        <ul class="course-list">
+                            {% for elective in page.electives %}
+                                {% unless elective.grad %}
+                                <li>{{ elective.name }}</li>
+                                {% endunless %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="list-overlay" id="elective-overlay"></div>
+            </div>
+
+            <div class="expand-btn-container">
+                <button class="btn-load-more" id="elective-toggle">View All Coursework ↓</button>
+            </div>
+
+            <hr>
+
+            <h2 id="projects">Projects & Publications</h2>
+            <div class="action-buttons">
+                <a href="/projects/" class="btn-action">View Detailed Projects &rarr;</a>
+                <a href="/publications/" class="btn-action">View Publications &rarr;</a>
+            </div>
+        </article>
+    </div>
+</div>
+
+<style>
+    /* Experience Bullets */
+    .experience-points {
+        margin-top: 10px;
+        margin-left: 15px; /* Indent the list */
+        padding-left: 0;
+        list-style-type: disc;
+    }
+
+    .experience-points li {
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 6px; /* Space between bullet points */
+        line-height: 1.5;
+        padding-left: 5px;
+    }
+    
+    /* Optional: Make the bullets a specific color */
+    .experience-points li::marker {
+        color: #0077b6; 
+    }
+    
+    /* LAYOUT & SPACING */
+    .row { margin-top: 60px !important; padding-top: 20px; display: flex !important; flex-direction: row; align-items: stretch; flex-wrap: wrap; }
+    .medium-3.columns { height: auto; min-height: 100%; }
+    .toc-wrapper { position: -webkit-sticky; position: sticky; top: 100px; background: #ffffff; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #0077b6; box-shadow: 0 4px 20px rgba(0,0,0,0.08); z-index: 10; }
+    .toc-header { font-weight: bold; text-transform: uppercase; color: #888; font-size: 0.8rem; margin-bottom: 12px; }
+    .toc-list { list-style: none; margin-left: 0; }
+    .toc-list li { margin-bottom: 10px; }
+    .toc-list a { color: #0077b6; text-decoration: none; font-weight: 500; }
+    article header h1 { margin-top: 0px !important; font-size: 2.5rem; font-weight: 700; color: #222; }
+    h2 { scroll-margin-top: 110px; border-bottom: 2px solid #eaeaea; padding-bottom: 10px; margin-top: 50px; margin-bottom: 25px; font-weight: 600; color: #222; font-size: 1.8rem; }
+    h5 { font-weight: 700; color: #333; margin-top: 0; }
+    p { color: #555; line-height: 1.6; }
+
+    /* TIMELINE & COURSEWORK */
+    .modern-timeline { position: relative; padding-left: 20px; border-left: 2px solid #e0e0e0; margin-left: 10px; }
+    .timeline-item { position: relative; margin-bottom: 30px; padding-left: 20px; }
+    .timeline-marker { position: absolute; left: -29px; top: 5px; width: 16px; height: 16px; background: #fff; border: 3px solid #0077b6; border-radius: 50%; z-index: 1; }
+    .date { color: #888; font-size: 0.9rem; display: block; margin-bottom: 8px; }
+    
+    .coursework-wrapper { position: relative; max-height: 320px; overflow: hidden; transition: max-height 0.5s ease-in-out; background: #fff; padding: 10px; }
+    .coursework-wrapper.expanded { max-height: 2000px; }
+    .course-header { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: #999; letter-spacing: 1.5px; margin-bottom: 20px; padding-left: 15px; }
+    .grad-text { color: #d62828; }
+    .course-list { list-style: none; margin-left: 0; border-left: 1px solid #eee; padding-left: 15px; }
+    .course-list.grad-border { border-left: 2px solid #d62828; }
+    .course-list li { font-size: 0.95rem; color: #444; margin-bottom: 12px; position: relative; line-height: 1.2; }
+    .course-list li::before { content: ''; position: absolute; left: -19px; top: 6px; width: 7px; height: 7px; background: #eee; border-radius: 50%; }
+    .grad-border li::before { background: #d62828; left: -20px; }
+    .list-overlay { position: absolute; bottom: 0; left: 0; width: 100%; height: 80px; background: linear-gradient(transparent, white); pointer-events: none; transition: opacity 0.3s; }
+    .coursework-wrapper.expanded .list-overlay { opacity: 0; }
+    .expand-btn-container { text-align: center; margin-top: -10px; position: relative; z-index: 5; }
+
+    /* SKILLS, CARDS, BUTTONS */
+    .skill-category { margin-bottom: 15px; display: flex; align-items: baseline; flex-wrap: wrap; }
+    .skill-label { font-weight: bold; width: 100px; flex-shrink: 0; color: #444; }
+    .tag { display: inline-block; background: #e3f2fd; color: #0277bd; padding: 4px 10px; border-radius: 50px; font-size: 0.9rem; margin-right: 5px; margin-bottom: 5px; font-weight: 500; }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+    .card { background: #fff; border: 1px solid #eee; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .card-header { background: #0077b6; color: white; padding: 8px 15px; font-weight: bold; }
+    .card-body { padding: 15px; }
+    .hidden-content { display: none; }
+    .btn-load-more { background: transparent; border: 1px solid #0077b6; color: #0077b6; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-size: 0.9rem; font-weight: 600; margin-top: 15px; transition: 0.2s; }
+    .btn-load-more:hover { background: #0077b6; color: white; }
+    .btn-action { display: inline-block; padding: 10px 20px; background: #0077b6; color: white; border-radius: 5px; text-decoration: none; font-weight: 500; }
+    .action-buttons { margin-top: 20px; display: flex; gap: 15px; }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    /* COURSEWORK TOGGLE */
+    var courseBtn = document.getElementById('elective-toggle');
+    var courseContainer = document.getElementById('elective-container');
+    if (courseBtn && courseContainer) {
+        courseBtn.addEventListener('click', function() {
+            if (courseContainer.classList.contains('expanded')) {
+                courseContainer.classList.remove('expanded');
+                this.innerHTML = "View All Coursework ↓";
+                var header = document.getElementById('electives');
+                if(header) header.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                courseContainer.classList.add('expanded');
+                this.innerHTML = "Show Less ↑";
+            }
+        });
+    }
+
+    /* EXPERIENCE TOGGLE */
+    var expBtn = document.getElementById('btn-exp');
+    var expContent = document.getElementById('hidden-experience');
+    if (expBtn && expContent) {
+        expBtn.addEventListener('click', function() {
+            /* Check computed style to handle hidden elements robustly */
+            if (window.getComputedStyle(expContent).display !== 'none') {
+                expContent.style.display = 'none';
+                this.innerHTML = 'View Full Experience ↓';
+            } else {
+                expContent.style.display = 'block';
+                this.innerHTML = 'Show Less ↑';
+            }
+        });
+    }
+
+    /* TEACHING TOGGLE */
+    var teachBtn = document.getElementById('btn-teach');
+    var teachContent = document.getElementById('hidden-teaching');
+    if (teachBtn && teachContent) {
+        teachBtn.addEventListener('click', function() {
+            if (window.getComputedStyle(teachContent).display !== 'none') {
+                teachContent.style.display = 'none';
+                this.innerHTML = 'View More Teaching ↓';
+            } else {
+                teachContent.style.display = 'grid';
+                this.innerHTML = 'Show Less ↑';
+            }
+        });
+    }
+});
+</script>
