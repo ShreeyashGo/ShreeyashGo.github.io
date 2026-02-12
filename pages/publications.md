@@ -7,7 +7,7 @@ header: no
 
 publications:
   - title: "COSMIR: Chain Orchestrated Structured Memory for Iterative Reasoning"
-    authors: "N. Gupta, **S. Gowaikar**, A. Iyer, K. Shiragur, R. Bairi, R. Maurya, R. Maiti, S. Damle, S.M. Gupta"
+    authors: "Gupta, N., **Gowaikar, S.**, Iyer, A., Shiragur, K., Bairi, R. B., Maurya, R., Maiti, R., Damle, S., Mishra Gupta, S."
     venue: "NeurIPS'25 Workshop on Foundations of Reasoning in Language Models (FoRLM@NeurIPS'25)"
     type: "Workshop"
     paper_link: "https://arxiv.org/pdf/2510.04568"
@@ -16,6 +16,7 @@ publications:
     abstract: "Reasoning over very long inputs remains difficult for LLMs. We introduce COSMIR, a chain-style framework that replaces ad hoc messages with a structured memory. A Planner agent turns a query into sub-questions, and worker agents process chunks via a fixed micro-cycle (Extract, Infer, Refine). This yields higher faithfulness and better long-range aggregation on datasets like HELMET."
 
   - title: "An Agentic Approach to Automatic Creation of P&ID Diagrams"
+    authors: "**Gowaikar, S.**, Iyengar, S., Segal, S., Kalyanaraman, S."
     venue: "AAAI'25 Workshop on AI for Science (AI2SE@AAAI'25)"
     type: "Workshop"
     paper_link: "https://arxiv.org/abs/2412.12898"
@@ -24,6 +25,7 @@ publications:
     abstract: "We introduce a novel copilot for automating the generation of P&IDs from natural language descriptions. Leveraging a multi-step agentic workflow, our copilot provides a structured and iterative approach to diagram creation directly from Natural Language prompts."
 
   - title: "From Efficiency to Equity: Measuring Fairness in Preference Learning"
+    authors: "**Gowaikar, S.**, Berard, H., Mushkani, R., Koseki, S."
     venue: "AAAI/ACM AI Ethics and Society'25 (AIES'25)"
     type: "Conference"
     paper_link: "https://arxiv.org/pdf/2410.18841v1.pdf"
@@ -32,6 +34,7 @@ publications:
     abstract: "We introduce a novel framework for evaluating epistemic fairness in preference learning models inspired by economic theories of inequality and Rawlsian justice. We propose metrics adapted from the Gini Coefficient and Atkinson Index to quantify fairness in these models."
 
   - title: "AI-EDI-SPACE: A Co-designed Dataset for Public Spaces"
+    authors: "**Gowaikar, S.**, Berard, H., Mushkani, R., Marchand, E., Ammar, T., Koseki, S."
     venue: "CVPR'24 Workshop on Responsible Data"
     type: "Workshop"
     paper_link: "https://responsibledata.github.io/#accepted_papers"
@@ -40,6 +43,7 @@ publications:
     abstract: "We propose a methodology involving a co-design model that actively engages stakeholders, integrating principles of Equity, Diversity, and Inclusion (EDI). We apply this to develop a dataset and AI model for evaluating public space quality using street view images, demonstrating effectiveness in capturing diverse perspectives."
 
   - title: "ANALOGICAL: A Novel Benchmark for Long Text Analogy Evaluation"
+    authors: "Wijesiriwardene, T., Wickramarachchi, R., Gajera, B., **Gowaikar, S.**, Gupta, C., Chadha, A., Reganti, A., Sheth, A., Das, A."
     venue: "Findings of ACL'23"
     type: "Conference"
     paper_link: "https://aclanthology.org/2023.findings-acl.218/"
