@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<link rel="stylesheet" href="{{ '/assets/css/teaching.css' | relative_url }}">
 
 <div class="row">
     <div class="medium-3 medium-push-9 columns">
@@ -115,13 +116,7 @@ layout: default
             <div class="cards-grid">
                 {% for teach in page.teaching %}
                     {% unless teach.hidden %}
-                    <div class="card">
-                        <div class="card-header">{{ teach.code }}</div>
-                        <div class="card-body">
-                            <h6>{{ teach.name }}</h6>
-                            <p class="date">{{ teach.dates }}</p>
-                        </div>
-                    </div>
+                    {% include _teaching-card.html teach=teach %}
                     {% endunless %}
                 {% endfor %}
             </div>
@@ -130,13 +125,7 @@ layout: default
             {% if hidden_teaching.size > 0 %}
             <div id="hidden-teaching" class="cards-grid hidden-content" style="margin-top: 15px;">
                 {% for teach in hidden_teaching %}
-                <div class="card">
-                    <div class="card-header">{{ teach.code }}</div>
-                    <div class="card-body">
-                        <h6>{{ teach.name }}</h6>
-                        <p class="date">{{ teach.dates }}</p>
-                    </div>
-                </div>
+                {% include _teaching-card.html teach=teach %}
                 {% endfor %}
             </div>
             <button id="btn-teach" class="btn-load-more">View More Teaching ↓</button>
@@ -243,13 +232,13 @@ layout: default
     
     .coursework-wrapper { position: relative; max-height: 320px; overflow: hidden; transition: max-height 0.5s ease-in-out; background: #fff; padding: 10px; }
     .coursework-wrapper.expanded { max-height: 2000px; }
-    .course-header { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: #999; letter-spacing: 1.5px; margin-bottom: 20px; padding-left: 15px; }
-    .grad-text { color: #d62828; }
-    .course-list { list-style: none; margin-left: 0; border-left: 1px solid #eee; padding-left: 15px; }
-    .course-list.grad-border { border-left: 2px solid #d62828; }
+    .course-header { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: #0077b6; letter-spacing: 1.5px; margin-bottom: 20px; padding-left: 15px; }
+    .grad-text { color: #b85d1d; }
+    .course-list { list-style: none; margin-left: 0; border-left: 2px solid #0077b6; padding-left: 15px; }
+    .course-list.grad-border { border-left-color: #b85d1d; }
     .course-list li { font-size: 0.95rem; color: #444; margin-bottom: 12px; position: relative; line-height: 1.2; }
-    .course-list li::before { content: ''; position: absolute; left: -19px; top: 6px; width: 7px; height: 7px; background: #eee; border-radius: 50%; }
-    .grad-border li::before { background: #d62828; left: -20px; }
+    .course-list li::before { content: ''; position: absolute; left: -20px; top: 6px; width: 7px; height: 7px; background: #0077b6; border-radius: 50%; }
+    .grad-border li::before { background: #b85d1d; }
     .list-overlay { position: absolute; bottom: 0; left: 0; width: 100%; height: 80px; background: linear-gradient(transparent, white); pointer-events: none; transition: opacity 0.3s; }
     .coursework-wrapper.expanded .list-overlay { opacity: 0; }
     .expand-btn-container { text-align: center; margin-top: -10px; position: relative; z-index: 5; }

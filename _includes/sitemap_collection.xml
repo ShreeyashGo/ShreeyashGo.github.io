@@ -1,25 +1,20 @@
-<!-- {{ include.name }}: {{ include.links | size }} links with priority={{ include.priority }}, changefreq={{ include.changefreq }} -->
 {% for link in include.links %}
-	{% unless link.sitemap.exclude or link.published == false %}
-	<url>
-	<loc>{{ site.url }}{{ site.baseurl }}{{ link.url | remove: 'index.html' }}</loc>
-	{% if link.sitemap.lastmod %}
-		<lastmod>{{ link.sitemap.lastmod | date: '%Y-%m-%d' }}</lastmod>
-	{% elsif link.date %}
-		<lastmod>{{ link.date | date_to_xmlschema }}</lastmod>
-	{% else %}
-		<lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
-	{% endif %}
-	{% if link.sitemap.changefreq %}
-		<changefreq>{{ link.sitemap.changefreq }}</changefreq>
-	{% else %}
-		<changefreq>{{ include.changefreq }}</changefreq>
-	{% endif %}
-	{% if link.sitemap.priority %}
-		<priority>{{ link.sitemap.priority }}</priority>
-	{% else %}
-		<priority>{{ include.priority }}</priority>
-	{% endif %}
-	</url>
-	{% endunless %}
+  {% assign extension = link.url | split: '.' | last %}
+  {% assign last_character = link.url | slice: -1, 1 %}
+  {% assign is_html = false %}
+  {% if last_character == '/' or extension == 'html' %}{% assign is_html = true %}{% endif %}
+  {% unless link.sitemap == false or link.sitemap.exclude == true or link.published == false or link.noindex == true or link.layout == 'redirect' or link.layout == 'blog' %}
+    {% if is_html %}
+    <url>
+      <loc>{{ site.url }}{{ site.baseurl }}{{ link.url | remove: 'index.html' | xml_escape }}</loc>
+      {% if link.sitemap.lastmod %}
+      <lastmod>{{ link.sitemap.lastmod | date: '%Y-%m-%d' }}</lastmod>
+      {% elsif link.last_modified_at %}
+      <lastmod>{{ link.last_modified_at | date_to_xmlschema }}</lastmod>
+      {% elsif link.date %}
+      <lastmod>{{ link.date | date_to_xmlschema }}</lastmod>
+      {% endif %}
+    </url>
+    {% endif %}
+  {% endunless %}
 {% endfor %}

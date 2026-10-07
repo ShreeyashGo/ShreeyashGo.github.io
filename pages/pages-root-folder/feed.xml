@@ -2,6 +2,7 @@
 layout: null
 title: "RSS Feed"
 permalink: /feed.xml
+sitemap: false
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="{{ site.url }}{{ site.baseurl }}/assets/xslt/rss.xslt" ?>
@@ -12,7 +13,8 @@ permalink: /feed.xml
 		<description>{{ site.description | xml_escape }}</description>
 		<link>{{ site.url }}{{ site.baseurl }}/</link>
 		<atom:link href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" rel="self" type="application/rss+xml" />
-		{% for post in site.posts limit:10 %}
+		{% assign feed_posts = site.posts | where_exp: 'post', 'post.noindex != true' %}
+		{% for post in feed_posts limit:10 %}
 			<item>
 				<title>{{ post.title | xml_escape }}</title>
 				<link>{{ site.url }}{{ site.baseurl }}{{ post.url }}</link>

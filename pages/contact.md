@@ -1,11 +1,11 @@
 ---
-layout              : page
+layout              : contact
 title               : "Contact Me"
-meta_title          : "Contact Me"
+meta_title          : "Contact Shreeyash Gowaikar | Research & Collaboration"
+meta_description    : "Get in touch with Shreeyash Gowaikar about AI robustness, reliable agents, research collaborations, or applied machine learning opportunities."
 header              : no
-teaser              : "Get in touch with me?"
+teaser              : "Have a research question, a collaboration idea, or an applied ML opportunity? I’d love to hear about it."
 permalink           : "/contact/"
+hide_email_contact  : true
 ---
-I am available at my [LinkedIn](https://www.linkedin.com/in/shreeyash-gowaikar/) just send me a message and we can talk!
-
-Also checkout my [GoogleScholar](https://scholar.google.com/citations?user=zuL9nnwAAAAJ&hl=en)!
+I’m always up for a thoughtful conversation about conversational and agentic AI, robustness and safety, or AI applications with societal impact.

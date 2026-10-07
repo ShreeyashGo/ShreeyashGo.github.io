@@ -1,0 +1,14 @@
+// Optional: only for later command-line deployments. Dashboard setup does not need this.
+// If your actual D1 database name differs, update database_name before using Wrangler.
+{
+    "name": "portfolio-visitors",
+    "main": "worker.mjs",
+    "compatibility_date": "2026-10-07",
+    "workers_dev": true,
+    "d1_databases": [{
+        "binding": "DB",
+        "database_name": "portfolio-visitors",
+        "database_id": "110b0720-b5ed-4eb6-884d-b27c6a0c2401"
+    }],
+    "observability": {"enabled": false}
+}

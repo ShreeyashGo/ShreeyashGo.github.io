@@ -5,3 +5,21 @@ _site
 .jekyll-metadata
 .sass-cache
 Gemfile.lock
+
+# Local credentials and Worker development state must never enter Git.
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+.wrangler/
+node_modules/
+credentials.json
+secrets.yml
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite
+*.sqlite3
+*.db
