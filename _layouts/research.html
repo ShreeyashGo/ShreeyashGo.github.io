@@ -1,0 +1,17 @@
+---
+layout: default
+format: research
+---
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">
+<main class="research-page">
+    {{ content }}
+    <section class="research-explore" aria-labelledby="research-explore-title">
+        <h2 id="research-explore-title">Explore my work</h2>
+        <div class="research-links">
+            {% for item in page.research_links %}
+            {% include _research-link-card.html item=item index=forloop.index %}
+            {% endfor %}
+        </div>
+    </section>
+</main>

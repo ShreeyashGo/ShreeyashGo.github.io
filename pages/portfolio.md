@@ -46,6 +46,7 @@ experience:
       - "Presented findings at the AAAI 2025 Workshop on AI to Accelerate Science and Engineering, demonstrating robust time management and the ability to quickly assimilate emerging AI methodologies."
 
   - company: "Atlassian"
+    hidden: true
     role: "Software Engineering Intern - AI Team"
     dates: "Jun 2023 - Jul 2023"
     location: "Bangalore, India"

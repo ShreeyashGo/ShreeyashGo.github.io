@@ -1,0 +1,36 @@
+---
+layout: default
+format: blog-notes
+---
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/blog-notes.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<main class="blog-notes-page">
+    <header class="blog-notes-header">
+        <h1>{{ page.title | escape }}</h1>
+        <p>{{ page.teaser | escape }}</p>
+    </header>
+    {% comment %}Theme demonstration posts are noindex and are not personal blog entries.{% endcomment %}
+    {% assign blog_posts = site.posts | where_exp: 'post', 'post.noindex != true' %}
+    {% if blog_posts.size > 0 %}
+    <div class="blog-notes-list">
+        {% for post in blog_posts %}
+        {% include _blog-note-card.html post=post %}
+        {% endfor %}
+    </div>
+    {% else %}
+    <section class="blog-empty" aria-labelledby="blog-empty-title">
+        <div class="blog-empty-visual" data-blog-dots aria-hidden="true">
+            <img src="{{ '/images/blog-dot-waves.svg' | relative_url }}" alt="" width="600" height="340" decoding="async">
+            <canvas width="600" height="340" hidden></canvas>
+        </div>
+        <div class="blog-empty-copy">
+            <p class="blog-empty-label">{{ page.empty_label | escape }}</p>
+            <h2 id="blog-empty-title">{{ page.empty_heading | escape }}</h2>
+            <p>{{ page.empty_text | escape }}</p>
+            <a href="{{ page.empty_link_url | relative_url }}">{{ page.empty_link_text | escape }}</a>
+        </div>
+    </section>
+    {% endif %}
+    {{ content }}
+</main>
+<script src="{{ '/assets/js/blog-dots.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

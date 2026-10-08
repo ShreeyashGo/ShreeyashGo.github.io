@@ -136,6 +136,28 @@
     .legend-item { display: flex; align-items: center; gap: 4px; }
 
     .timeline-window { margin-bottom: 40px; }
+    .timeline-desktop-wrapper { position: relative; margin-bottom: 40px; }
+    .timeline-desktop {
+        margin-bottom: 0;
+        max-height: 400px;
+        overflow-y: auto;
+        padding-right: 15px;
+        scrollbar-width: thin;
+        scrollbar-color: #cbd5e0 #f7fafc;
+    }
+    .timeline-desktop::-webkit-scrollbar { width: 5px; }
+    .timeline-desktop::-webkit-scrollbar-track { background: transparent; }
+    .timeline-desktop::-webkit-scrollbar-thumb { background: #cbd5e0; border-radius: 10px; }
+    .timeline-desktop:focus-visible { outline: 2px solid var(--fp-primary); outline-offset: 5px; }
+    .timeline-top:not([hidden]) {
+        display: grid; place-items: center; position: absolute; right: 20px; bottom: 14px;
+        width: 36px; height: 36px; margin: 0; padding: 0; border: 1px solid #e2e8f0;
+        border-radius: 8px; background: #fff; color: var(--fp-primary); cursor: pointer;
+        font-family: inherit; font-size: 1.15rem; box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .timeline-top:hover { background: #f2f7f3; border-color: var(--fp-primary); }
+    .timeline-top:focus-visible { outline: 2px solid var(--fp-primary); outline-offset: 4px; }
+    .timeline-mobile { display: none; }
 
     .timeline-container { position: relative; padding-top: 10px; }
     .timeline-container::before {
@@ -164,7 +186,8 @@
     .updates-archive .archive-items { padding-top: 24px; margin-left: -55px; }
     .explore-nav {
         display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
-        padding: 22px 0; margin-bottom: 18px; border-top: 1px solid #edf2f7;
+        padding: 18px 20px; margin-bottom: 18px; border: 1px solid #edf2f7;
+        border-radius: 14px; background: #f8faf9;
     }
     .explore-label { font-size: .8rem; color: var(--fp-text-sub); margin-right: 8px; }
     .explore-nav a, .globe-button {
@@ -175,7 +198,15 @@
     .fp-wrapper a:focus-visible, .globe-button:focus-visible, .visitor-canvas:focus-visible, .updates-archive summary:focus-visible { outline: 2px solid var(--fp-primary); outline-offset: 4px; }
     .fp-wrapper a.section-link, .fp-wrapper a.preview-link { color: var(--fp-primary); font-size: .85rem; font-weight: 600; }
     .fp-wrapper a.section-link:hover, .fp-wrapper a.preview-link:hover, .research-preview h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
-    .homepage-section { margin-top: 48px; scroll-margin-top: 85px; }
+    /* Vary the section shapes while keeping content in the same reading order. */
+    .homepage-section { margin-top: 76px; scroll-margin-top: 85px; }
+    .homepage-section p, .homepage-section h2, .homepage-section h3 { -webkit-hyphens: none; hyphens: none; }
+    .homepage-section--surface { padding: 32px; border: 1px solid #e4ebe6; border-radius: 22px; background: #f4f8f5; }
+    .homepage-section .section-header { align-items: end; padding-bottom: 0; border-bottom: 0; margin-bottom: 28px; }
+    .homepage-section .section-title { font-size: clamp(1.8rem, 3.5vw, 2.25rem); line-height: 1.25; }
+    .homepage-section h3 { font-family: var(--fp-font); }
+    .fp-wrapper .section-label { font-family: var(--fp-font); font-size: .7rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--fp-primary); line-height: 1.5; margin: 0 0 10px; }
+    .section-heading { min-width: 0; }
     .section-header { flex-wrap: wrap; gap: 14px; }
     .experience-previews { display: grid; gap: 18px; }
     .experience-preview, .research-preview {
@@ -194,10 +225,11 @@
     .research-preview h3 { font-size: 1.15rem; font-weight: 700; color: var(--fp-primary); line-height: 1.45; }
     .paper-venue { font-size: .8rem; color: var(--fp-text-sub); margin-top: auto; }
     .research-preview .preview-link { border-top: 1px solid #edf2f7; padding-top: 12px; }
-    .projects-link { display: inline-block; margin-top: 20px; }
-    .beyond-preview { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 34px; align-items: center; }
+    .research-overview-link { display: inline-block; margin-top: 20px; }
+    .beyond-preview { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,.9fr); gap: 44px; align-items: center; }
     .beyond-image-link { display: block; border-radius: var(--radius); overflow: hidden; }
-    .beyond-preview img { width: 100%; height: 270px; object-fit: cover; display: block; }
+    .beyond-preview img { width: 100%; height: 340px; object-fit: cover; display: block; }
+    .beyond-copy .section-title { margin-bottom: 24px; }
     .beyond-copy p { margin-bottom: 18px; }
     .beyond-copy .photo-caption { font-size: .8rem; }
     .visitor-layout { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 42px; align-items: center; }
@@ -223,7 +255,21 @@
     .visitor-stats dt { font-size: .75rem; color: var(--fp-text-sub); font-weight: 400; }
     .visitor-stats dd { font-size: 2rem; font-weight: 700; color: var(--fp-primary); margin: 0; }
     .visitor-copy .visitor-location:empty { display: none; }
+    @media (min-width: 900px) {
+        .experience-previews { grid-template-columns: repeat(3, minmax(0,1fr)); }
+        .experience-preview { padding: 22px; }
+        .experience-preview .preview-heading { display: block; }
+        .experience-preview .preview-date { display: block; margin-bottom: 14px; }
+    }
     @media (max-width: 650px) {
+        .homepage-section { margin-top: 48px; }
+        .homepage-section--surface { padding: 22px 18px; border-radius: 16px; }
+        .homepage-section .section-header { margin-bottom: 22px; }
+        .beyond-preview { gap: 24px; }
+        .beyond-preview img { height: 260px; }
+        .timeline-desktop-wrapper { display: none; }
+        .timeline-desktop { display: none; }
+        .timeline-mobile { display: block; }
         .hero-name { font-size: 2.5rem; overflow-wrap: anywhere; }
         .timeline-legend { flex-wrap: wrap; gap: 12px; }
         .research-previews, .beyond-preview, .visitor-layout { grid-template-columns: 1fr; }

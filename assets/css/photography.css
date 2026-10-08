@@ -1,0 +1,160 @@
+/* 12-COLUMN GRID SYSTEM */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    grid-auto-flow: row;
+    margin-bottom: 3rem;
+}
+
+/* DESKTOP RULES (Min-width 700px) */
+@media (min-width: 700px) {
+    .gallery-grid {
+        grid-template-columns: repeat(12, 1fr);
+    }
+    .gallery-item { grid-column: span 4; }
+    .gallery-item.wide { grid-column: span 8; }
+    .gallery-item.half { grid-column: span 6; }
+    .gallery-item.full { grid-column: span 12; }
+    .gallery-item.square:last-child { grid-column: 5 / span 4; }
+}
+
+/* CINEMATIC CARD STYLING */
+.gallery-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s;
+}
+
+/* Keep these signed photographs intact rather than cropping the grid previews. */
+.gallery-item.preserve-frame img {
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: contain;
+    background: #faf9f6;
+}
+
+.gallery-item.preserve-frame:hover img {
+    transform: none;
+    filter: none;
+}
+
+/* Match the Moon's landscape proportions without enlarging or cropping the skyline. */
+.gallery-item.panorama img {
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    object-position: center;
+}
+
+.gallery-item.square {
+    align-self: start;
+}
+
+.gallery-item.square img {
+    aspect-ratio: 1 / 1;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+.gallery-caption {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+    color: #555;
+    border-top: 1px solid #eee;
+    text-align: center;
+    background: #fff;
+    z-index: 5;
+}
+
+/* LIGHTBOX STYLING */
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.95);
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+#lightbox-container {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: inline-block;
+    cursor: default;
+}
+
+#lightbox-img {
+    width: 100%;
+    height: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    transform: scale(0.95);
+    animation: popIn 0.3s forwards;
+}
+
+#lightbox-shield {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 10;
+}
+
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes popIn { to { transform: scale(1); } }
+
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.video-wrapper {
+    min-width: 326px;
+    max-width: 540px;
+    width: 100%;
+}
+
+.video-wrapper .instagram-media {
+    background: #FFF;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15);
+    margin: 1px;
+    padding: 0;
+    width: 99.375%;
+    width: -webkit-calc(100% - 2px);
+    width: calc(100% - 2px);
+}

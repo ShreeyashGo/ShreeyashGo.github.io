@@ -6,6 +6,95 @@ permalink: /index.html
 homepage: true
 header: no
 
+# Homepage copy and repeatable items. The layout supplies markup and styling.
+hero:
+  name: "Shreeyash Gowaikar"
+  image: /images/Photo_whiteBG1.jpg
+  image_alt: "Shreeyash Gowaikar"
+  research_url: /research/
+  research_label: "Explore my research →"
+  # Each paragraph supports the same small HTML highlights/links as before.
+  paragraphs:
+    - >-
+      Hi there! I'm a <span class="highlight">Computer Science master's student</span> at <span class="highlight">Georgia Tech</span>, specializing in Machine Learning. I work with <a href="https://guaguakai.com" target="_blank">Prof. Kai Wang</a> in the <strong>AI for Social Impact Team</strong>.
+    - >-
+      My research has taken me from responsible AI at <strong>UdeM</strong> to agentic systems and code intelligence at <strong>Microsoft Research</strong>, and applied research on self-healing production agents at <strong>DoorDash</strong>. Across these settings, a recurring challenge has been making AI dependable in practice.
+    - >-
+      Those experiences shaped my interest in <span class="highlight">AI robustness and safety</span>. Today, I focus on <span class="highlight">fine-tuning robustness</span>, bringing diffusion models and LLMs together to understand how adaptation affects model behavior and how to preserve safety and reliability.
+
+social_links:
+  - title: Google Scholar
+    icon: scholar
+    url: "https://scholar.google.com/citations?user=zuL9nnwAAAAJ&hl=en"
+  - title: LinkedIn
+    icon: linkedin
+    url: "https://www.linkedin.com/in/shreeyash-gowaikar"
+  - title: GitHub
+    icon: github
+    url: "https://github.com/ShreeyashGo"
+  - title: Email
+    icon: email
+    url: "mailto:shreeyashgo@gmail.com"
+
+logo_dock:
+  - name: DoorDash
+    image: /images/doordash_logo.svg
+    description: Applied Research in Agentic AI
+    url: "#experience"
+    aria_label: "DoorDash — applied research in Agentic AI"
+    image_class: dock-logo--doordash
+  - name: GT
+    image: /images/gt_logo.webp
+    description: AI Robustness & Reliability
+    hide_on_error: true
+  - name: Microsoft
+    image: /images/microsoft_logo.webp
+    description: AI for Software Eng. and AI for Manufacturing
+  - name: UdeM
+    image: /images/udem_logo.webp
+    description: AI for Urban Planning
+  - name: Atlassian
+    image: /images/atlas_logo.webp
+    description: AI for Service Management
+  - name: AIISC
+    image: /images/aiisc_logo.webp
+    description: AI Evaluations (analogical aptitude)
+  - name: BITS
+    image: /images/bits_logo.webp
+    description: Undergraduate Studies
+
+# Only affects the narrow-screen view; desktop shows the entire list in a panel.
+timeline_recent_count: 4
+
+explore_links:
+  - title: Experience
+    url: "#experience"
+  - title: Research
+    url: "#research"
+  - title: Beyond Code
+    url: "#beyond-code"
+  - title: Visitors
+    url: "#visitors"
+
+beyond_code:
+  title: A little beyond the keyboard
+  text: When I’m not coding, you can find me stargazing, taking photos, or petting cats.
+  image: /images/photos/moon.jpeg
+  image_alt: The Moon photographed through a Dobsonian telescope
+  caption: Our only Moon, captured through a Dobsonian telescope.
+  url: /hobbies/photography/
+  link_text: "Explore my photography →"
+
+research_more:
+  url: /research/
+  text: "The questions behind the work →"
+
+section_labels:
+  experience: In practice
+  research: On paper
+  beyond_code: After hours
+  visitors: Small world, good company
+
 news:
   - date: "May 2026"
     type: "job"

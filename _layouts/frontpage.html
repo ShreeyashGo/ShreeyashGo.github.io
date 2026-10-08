@@ -6,49 +6,33 @@ format: frontpage
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/frontpage.css">
+<link rel="stylesheet" href="{{ '/assets/css/frontpage.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 <div class="fp-wrapper">
     
     <header class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-name">Shreeyash Gowaikar</h1>
+            <h1 class="hero-name">{{ page.hero.name | escape }}</h1>
             
             <div class="hero-intro">
-                <p>
-                    Hi there! I'm a <span class="highlight">Computer Science master's student</span> at <span class="highlight">Georgia Tech</span>, specializing in Machine Learning. I work with <a href="https://guaguakai.com" target="_blank">Prof. Kai Wang</a> in the <strong>AI for Social Impact Team</strong>.
-                </p>
-                <br>
-                <p>
-                    My research has taken me from responsible AI at <strong>UdeM</strong> to agentic systems and code intelligence at <strong>Microsoft Research</strong>, and applied research on self-healing production agents at <strong>DoorDash</strong>. Across these settings, a recurring challenge has been making AI dependable in practice.
-                </p>
-                <br>
-                <p>
-                    Those experiences shaped my interest in <span class="highlight">AI robustness and safety</span>. Today, I focus on <span class="highlight">fine-tuning robustness</span>, bringing diffusion models and LLMs together to understand how adaptation affects model behavior and how to preserve safety and reliability.
-                </p>
+                {% for paragraph in page.hero.paragraphs %}
+                <p>{{ paragraph }}</p>
+                {% unless forloop.last %}<br>{% endunless %}
+                {% endfor %}
             </div>
             
             <div class="hero-links" aria-label="Explore my research">
-                <a href="{{ site.baseurl }}/publications/">Explore my research →</a>
+                <a href="{{ page.hero.research_url | relative_url }}">{{ page.hero.research_label | escape }}</a>
             </div>
             <div class="social-row">
-                <a href="https://scholar.google.com/citations?user=zuL9nnwAAAAJ&hl=en" target="_blank" class="social-btn" title="Google Scholar">
-                    <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/shreeyash-gowaikar" target="_blank" class="social-btn" title="LinkedIn">
-                    <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                </a>
-                <a href="https://github.com/ShreeyashGo" target="_blank" class="social-btn" title="GitHub">
-                    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                </a>
-                <a href="mailto:shreeyashgo@gmail.com" class="social-btn" title="Email">
-                    <svg viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg>
-                </a>
+                {% for item in page.social_links %}
+                {% include _homepage-social.html item=item %}
+                {% endfor %}
             </div>
 
         </div>
         <div class="hero-image-wrapper">
-            <img src="images/Photo_whiteBG1.jpg" alt="Shreeyash Gowaikar" class="hero-photo">
+            <img src="{{ page.hero.image | relative_url }}" alt="{{ page.hero.image_alt | escape }}" class="hero-photo">
         </div>
     </header>
 
@@ -58,92 +42,34 @@ format: frontpage
         </div>
         
         <div class="logo-dock">
-            <a class="dock-item" href="#experience" aria-label="DoorDash — applied research in Agentic AI">
-                <img src="{{ site.baseurl }}/images/doordash_logo.svg" alt="DoorDash" class="dock-logo dock-logo--doordash">
-                <div class="dock-tooltip">Applied Research in Agentic AI</div>
-            </a>
-            <div class="dock-item">
-                <img src="images/gt_logo.webp" alt="GT" class="dock-logo" onerror="this.style.display='none'">
-                <div class="dock-tooltip">AI Robustness & Reliability</div>
-            </div>
-            <div class="dock-item">
-                <img src="images/microsoft_logo.webp" alt="Microsoft" class="dock-logo">
-                <div class="dock-tooltip">AI for Software Eng. and AI for Manufacturing</div>
-            </div>
-            <div class="dock-item">
-                <img src="images/udem_logo.webp" alt="UdeM" class="dock-logo">
-                <div class="dock-tooltip">AI for Urban Planning</div>
-            </div>
-            <div class="dock-item">
-                <img src="images/atlas_logo.webp" alt="Atlassian" class="dock-logo">
-                <div class="dock-tooltip">AI for Service Management</div>
-            </div>
-            <div class="dock-item">
-                <img src="images/aiisc_logo.webp" alt="AIISC" class="dock-logo">
-                <div class="dock-tooltip">AI Evaluations (analogical aptitude)</div>
-            </div>
-            <div class="dock-item">
-                <img src="images/bits_logo.webp" alt="BITS" class="dock-logo">
-                <div class="dock-tooltip">Undergraduate Studies</div>
-            </div>
+            {% for item in page.logo_dock %}
+            {% include _homepage-logo.html item=item %}
+            {% endfor %}
         </div>
     </div>
 
-    {% if page.news %}
-    <section aria-labelledby="updates-title">
-        <div class="section-header">
-            <h2 class="section-title" id="updates-title">Latest Updates</h2>
-            <div class="timeline-legend">
-                <span class="legend-item">📄 Paper</span>
-                <span class="legend-item">👨🏽‍💻 Work</span>
-                <span class="legend-item">🎓 Academic</span>
-            </div>
-        </div>
-        <div class="timeline-window">
-            <div class="timeline-container">
-                {% for item in page.news limit:4 %}
-                    {% include _homepage-update.html item=item %}
-                {% endfor %}
-                {% if page.news.size > 4 %}
-                <details class="updates-archive">
-                    <summary>Earlier updates <span aria-hidden="true">↓</span></summary>
-                    <div class="archive-items">
-                        {% for item in page.news offset:4 %}
-                            {% include _homepage-update.html item=item %}
-                        {% endfor %}
-                    </div>
-                </details>
-                {% endif %}
-            </div>
-        </div>
-    </section>
-    {% endif %}
+    {% include _homepage-timeline.html %}
 
     <nav class="explore-nav" aria-label="Explore this page">
         <span class="explore-label">Keep exploring</span>
-        <a href="#experience">Experience <span aria-hidden="true">↓</span></a>
-        <a href="#research">Research <span aria-hidden="true">↓</span></a>
-        <a href="#beyond-code">Beyond Code <span aria-hidden="true">↓</span></a>
-        <a href="#visitors">Visitors <span aria-hidden="true">↓</span></a>
+        {% for item in page.explore_links %}
+        <a href="{{ item.url | escape }}">{{ item.title | escape }} <span aria-hidden="true">↓</span></a>
+        {% endfor %}
     </nav>
 
     {% assign profile = site.pages | where: "permalink", "/aboutMe/" | first %}
-    <section class="homepage-section" id="experience" aria-labelledby="experience-title">
+    <section class="homepage-section homepage-section--surface" id="experience" aria-labelledby="experience-title">
         <div class="section-header">
-            <h2 class="section-title" id="experience-title">Experience</h2>
+            <div class="section-heading">
+                <p class="section-label">{{ page.section_labels.experience | escape }}</p>
+                <h2 class="section-title" id="experience-title">Experience</h2>
+            </div>
             <a class="section-link" href="{{ site.baseurl }}/aboutMe/#experience">Full experience →</a>
         </div>
         <div class="experience-previews">
             {% for job in profile.experience %}
                 {% if job.homepage_summary %}
-                <article class="experience-preview">
-                    <div class="preview-heading">
-                        <h3>{{ job.company }}</h3>
-                        <span class="preview-date">{{ job.dates }}</span>
-                    </div>
-                    <p class="preview-role">{{ job.role }}</p>
-                    <p>{{ job.homepage_summary }}</p>
-                </article>
+                {% include _homepage-experience.html job=job %}
                 {% endif %}
             {% endfor %}
         </div>
@@ -152,43 +78,44 @@ format: frontpage
     {% assign publication_page = site.pages | where: "permalink", "/publications/" | first %}
     <section class="homepage-section" id="research" aria-labelledby="research-title">
         <div class="section-header">
-            <h2 class="section-title" id="research-title">Selected Research</h2>
+            <div class="section-heading">
+                <p class="section-label">{{ page.section_labels.research | escape }}</p>
+                <h2 class="section-title" id="research-title">Selected Research</h2>
+            </div>
             <a class="section-link" href="{{ site.baseurl }}/publications/">All publications →</a>
         </div>
         <div class="research-previews">
             {% for paper in publication_page.publications %}
                 {% if paper.homepage_featured %}
-                <article class="research-preview">
-                    <span class="paper-type">{{ paper.type }}</span>
-                    <h3><a href="{{ paper.paper_link }}" target="_blank" rel="noopener noreferrer">{{ paper.title }}</a></h3>
-                    <p>{{ paper.homepage_summary }}</p>
-                    <span class="paper-venue">{{ paper.venue }}</span>
-                    <a class="preview-link" href="{{ paper.paper_link }}" target="_blank" rel="noopener noreferrer">Read paper <span aria-hidden="true">↗</span></a>
-                </article>
+                {% include _homepage-paper.html paper=paper %}
                 {% endif %}
             {% endfor %}
         </div>
-        <a class="section-link projects-link" href="{{ site.baseurl }}/projects/">Explore more projects →</a>
+        <a class="section-link research-overview-link" href="{{ page.research_more.url | relative_url }}">{{ page.research_more.text | escape }}</a>
     </section>
 
     <section class="homepage-section" id="beyond-code" aria-labelledby="beyond-title">
-        <div class="section-header"><h2 class="section-title" id="beyond-title">Beyond Code</h2></div>
         <div class="beyond-preview">
-            <a href="{{ site.baseurl }}/hobbies/photography/" class="beyond-image-link" aria-label="Explore my photography">
-                <img src="{{ site.baseurl }}/images/photos/moon.jpeg" alt="The Moon photographed through a Dobsonian telescope" loading="lazy" width="800" height="600">
+            <a href="{{ page.beyond_code.url | relative_url }}" class="beyond-image-link" aria-label="{{ page.beyond_code.link_text | escape }}">
+                <img src="{{ page.beyond_code.image | relative_url }}" alt="{{ page.beyond_code.image_alt | escape }}" loading="lazy" width="800" height="600">
             </a>
             <div class="beyond-copy">
-                <h3>A little beyond the keyboard</h3>
-                <p>When I’m not coding, you can find me stargazing, taking photos, or petting cats.</p>
-                <p class="photo-caption">Our only Moon, captured through a Dobsonian telescope.</p>
-                <a class="preview-link" href="{{ site.baseurl }}/hobbies/photography/">Explore my photography →</a>
+                <p class="section-label">{{ page.section_labels.beyond_code | escape }}</p>
+                <h2 class="section-title" id="beyond-title">Beyond Code</h2>
+                <h3>{{ page.beyond_code.title | escape }}</h3>
+                <p>{{ page.beyond_code.text | escape }}</p>
+                <p class="photo-caption">{{ page.beyond_code.caption | escape }}</p>
+                <a class="preview-link" href="{{ page.beyond_code.url | relative_url }}">{{ page.beyond_code.link_text | escape }}</a>
             </div>
         </div>
     </section>
 
-    <section class="homepage-section" id="visitors" aria-labelledby="visitors-title">
+    <section class="homepage-section homepage-section--surface" id="visitors" aria-labelledby="visitors-title">
         <div class="section-header visitor-header">
-            <h2 class="section-title" id="visitors-title">A Little Corner of the Internet</h2>
+            <div class="section-heading">
+                <p class="section-label">{{ page.section_labels.visitors | escape }}</p>
+                <h2 class="section-title" id="visitors-title">A Little Corner of the Internet</h2>
+            </div>
             <details class="visitor-info">
                 <summary aria-label="About visitor statistics and privacy" title="Visitor statistics &amp; privacy"><span aria-hidden="true">ⓘ</span></summary>
                 <div class="visitor-info-panel">
@@ -227,3 +154,4 @@ format: frontpage
     </section>
 </div>
 <script src="{{ site.baseurl }}/assets/js/visitor-globe.js" defer></script>
+<script src="{{ '/assets/js/homepage-timeline.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
