@@ -118,7 +118,8 @@ language: 'en'
 compress_html:
   clippings: all
   comments: ["<!-- ", " -->"]
-  endings: all
+  # Keep closing tags: removing </p> inside linked cards changes browser parsing.
+  endings: []
   profile: false
   ignore:
     envs: [development]

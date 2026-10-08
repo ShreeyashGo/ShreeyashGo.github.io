@@ -269,7 +269,10 @@ Before sharing changes, check the edited pages at desktop and mobile widths, fol
 
 ```sh
 JEKYLL_ENV=production bundle exec jekyll build --source . --config _config.yml
+python3 _scripts/check_research_html.py _site/research/index.html
 git diff --check
 ```
+
+Keep `JEKYLL_ENV=production` in that check: development previews skip HTML compression. The compressor retains closing tags because dropping `</p>` inside a linked card changes how browsers parse the card.
 
 When changing the counter or Worker, also run `node --test cloudflare/visitor-counter/counter.test.mjs`. These local checks do not publish the site or confirm a deployed Worker’s behavior.
