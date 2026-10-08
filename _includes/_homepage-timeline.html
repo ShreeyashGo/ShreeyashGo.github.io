@@ -1,0 +1,40 @@
+    {% if page.news %}
+    <section aria-labelledby="updates-title">
+        <div class="section-header">
+            <h2 class="section-title" id="updates-title">Latest Updates</h2>
+            <div class="timeline-legend">
+                <span class="legend-item">📄 Paper</span>
+                <span class="legend-item">👨🏽‍💻 Work</span>
+                <span class="legend-item">🎓 Academic</span>
+            </div>
+        </div>
+        {% comment %}Both views read the same news list; CSS selects the appropriate view by width.{% endcomment %}
+        <div class="timeline-desktop-wrapper" data-homepage-timeline>
+            <div class="timeline-window timeline-desktop" role="region" aria-labelledby="updates-title" tabindex="0">
+                <div class="timeline-container">
+                    {% for item in page.news %}
+                        {% include _homepage-update.html item=item %}
+                    {% endfor %}
+                </div>
+            </div>
+            <button type="button" class="timeline-top" data-timeline-top aria-label="Back to the top of the updates" title="Back to the top of the updates" hidden><span aria-hidden="true">↑</span></button>
+        </div>
+        <div class="timeline-window timeline-mobile">
+            <div class="timeline-container">
+                {% for item in page.news limit:page.timeline_recent_count %}
+                    {% include _homepage-update.html item=item %}
+                {% endfor %}
+                {% if page.news.size > page.timeline_recent_count %}
+                <details class="updates-archive">
+                    <summary>Show older updates</summary>
+                    <div class="archive-items">
+                        {% for item in page.news offset:page.timeline_recent_count %}
+                            {% include _homepage-update.html item=item %}
+                        {% endfor %}
+                    </div>
+                </details>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    {% endif %}

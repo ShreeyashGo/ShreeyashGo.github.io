@@ -1,0 +1,36 @@
+<div class="pub-card"{% if include.pub.id %} id="{{ include.pub.id | escape }}"{% endif %}>
+
+    <div class="pub-header">
+        <span class="pub-badge {{ include.pub.type | downcase }}">{{ include.pub.type }}</span>
+        <span class="pub-venue">{{ include.pub.venue }}</span>
+    </div>
+
+    <h3 class="pub-title">{{ include.pub.title }}</h3>
+    {% if include.pub.homepage_summary %}<p class="pub-summary">{{ include.pub.homepage_summary }}</p>{% endif %}
+
+    {% if include.pub.authors %}
+    <div class="pub-authors">{{ include.pub.authors | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+    {% endif %}
+
+    <div class="pub-actions">
+        {% if include.pub.paper_link %}
+        <a href="{{ include.pub.paper_link }}" target="_blank" class="btn btn-paper">
+            <i class="fa fa-file-text-o"></i> Read Paper
+        </a>
+        {% endif %}
+
+        {% if include.pub.audio_link %}
+        <a href="{{ include.pub.audio_link }}" target="_blank" class="btn btn-audio">
+            <i class="fa fa-headphones"></i> Listen to NotebookLM
+            {% if include.pub.audio_note %}
+            <span class="audio-note">({{ include.pub.audio_note }})</span>
+            {% endif %}
+        </a>
+        {% endif %}
+    </div>
+
+    <details class="pub-abstract">
+        <summary>Read Abstract</summary>
+        <p>{{ include.pub.abstract }}</p>
+    </details>
+</div>

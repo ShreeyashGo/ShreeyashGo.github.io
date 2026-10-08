@@ -7,6 +7,11 @@ $('audio,video').mediaelementplayer();
 
 <script src="{{ site.url }}{{ site.baseurl }}/assets/js/javascript.min.js"></script>
 
+{% assign counter_site_url = site.url | downcase %}
+{% if site.visitor_counter.enabled and counter_site_url == 'https://shreeyashgo.github.io' %}
+<script src="{{ site.baseurl }}/assets/js/visitor-counter.js" data-visitor-counter data-endpoint="{{ site.visitor_counter.endpoint | escape }}" defer></script>
+{% endif %}
+
 
 {% if page.header.image_fullwidth %}
 <script>
@@ -38,4 +43,3 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 {% endif %}
-

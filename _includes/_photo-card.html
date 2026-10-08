@@ -1,0 +1,8 @@
+{% assign photo = include.photo %}
+<div class="gallery-item {% if photo.size == 'wide' or photo.wide %}wide{% elsif photo.size == 'half' %}half{% elsif photo.size == 'full' %}full{% endif %}{% if photo.preserve_frame %} preserve-frame{% endif %}{% if photo.panorama %} panorama{% endif %}{% if photo.square %} square{% endif %}"
+    data-lightbox-src="{{ photo.image | relative_url | escape }}">
+    <img src="{{ photo.thumbnail | default: photo.image | relative_url }}" alt="{{ photo.alt | default: photo.caption | escape }}" loading="lazy" decoding="async"{% if photo.width and photo.height %} width="{{ photo.width }}" height="{{ photo.height }}"{% endif %}>
+    {% if photo.caption %}
+    <div class="gallery-caption">{{ photo.caption | escape }}</div>
+    {% endif %}
+</div>

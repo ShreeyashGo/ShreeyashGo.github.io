@@ -1,0 +1,17 @@
+<a class="research-link" href="{{ include.item.url | relative_url }}" aria-labelledby="research-link-title-{{ include.index }}">
+    <span class="research-link-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+            {% case include.item.icon %}
+            {% when 'projects' %}
+            <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>
+            {% when 'publications' %}
+            <path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h4M9 12h6M9 16h6"/>
+            {% when 'teaching' %}
+            <path d="m2 9 10-5 10 5-10 5zM6 11v6c3 3 9 3 12 0v-6M22 9v7"/>
+            {% endcase %}
+        </svg>
+    </span>
+    <h3 id="research-link-title-{{ include.index }}">{{ include.item.title | escape }}</h3>
+    <p>{{ include.item.text | escape }}</p>
+    <span class="research-link-action">{{ include.item.link_text | escape }} <span aria-hidden="true">→</span></span>
+</a>

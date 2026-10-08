@@ -1,0 +1,6 @@
+<article class="blog-note-card">
+    <time datetime="{{ include.post.date | date: '%Y-%m-%d' }}">{{ include.post.date | date: '%B %-d, %Y' }}</time>
+    <h2><a href="{{ include.post.url | relative_url }}">{{ include.post.title | escape }}</a></h2>
+    <p>{{ include.post.teaser | default: include.post.excerpt | strip_html | truncate: 180 }}</p>
+    <a class="blog-note-action" href="{{ include.post.url | relative_url }}">Read the note <span aria-hidden="true">→</span></a>
+</article>

@@ -1,0 +1,9 @@
+<div class="card teaching-card">
+    <div class="card-header{% if include.teach.role_style %} card-header--{{ include.teach.role_style }}{% endif %}">{{ include.teach.code | escape }}</div>
+    <div class="card-body">
+        <h6>{{ include.teach.name | escape }}</h6>
+        <span class="teaching-role{% if include.teach.role_style %} teaching-role--{{ include.teach.role_style }}{% endif %}">{{ include.teach.role | escape }}</span>
+        <p class="date">{{ include.teach.dates | escape }}</p>
+        {% if include.teach.summary %}<p class="teaching-summary">{{ include.teach.summary | escape }}</p>{% endif %}
+    </div>
+</div>

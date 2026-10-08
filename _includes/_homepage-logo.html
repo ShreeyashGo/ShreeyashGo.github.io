@@ -1,0 +1,8 @@
+{% if include.item.url %}
+<a class="dock-item" href="{{ include.item.url | escape }}" aria-label="{{ include.item.aria_label | default: include.item.name | escape }}">
+{% else %}
+<div class="dock-item">
+{% endif %}
+    <img src="{{ include.item.image | relative_url }}" alt="{{ include.item.name | escape }}" class="dock-logo{% if include.item.image_class %} {{ include.item.image_class | escape }}{% endif %}"{% if include.item.hide_on_error %} onerror="this.style.display='none'"{% endif %}>
+    <div class="dock-tooltip">{{ include.item.description | escape }}</div>
+{% if include.item.url %}</a>{% else %}</div>{% endif %}

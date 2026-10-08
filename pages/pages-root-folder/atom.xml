@@ -2,6 +2,7 @@
 layout: null
 title: "Atom Feed"
 permalink: /atom.xml
+sitemap: false
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="{{ site.baseurl }}/assets/xslt/atom.xslt" ?>
@@ -35,7 +36,8 @@ permalink: /atom.xml
 
 	<generator uri="http://jekyllrb.com" version="{{ jekyll.version }}">Jekyll</generator>
 
-	{% for post in site.posts limit: 10 %}
+	{% assign feed_posts = site.posts | where_exp: 'post', 'post.noindex != true' %}
+	{% for post in feed_posts limit: 10 %}
 		<entry>
 			<id>{{ site.url }}{{ site.baseurl }}{{ post.url }}</id>
 			<title>{{ post.title | strip_html | strip_newlines | xml_escape }}</title>

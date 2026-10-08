@@ -1,0 +1,5 @@
+<section class="contact-option{% if include.option.primary %} contact-option-primary{% endif %}" aria-labelledby="contact-{{ include.option.id | escape }}-title">
+    <h2 id="contact-{{ include.option.id | escape }}-title">{{ include.option.title | escape }}</h2>
+    <p>{{ include.option.text | escape }}</p>
+    <a class="contact-action" href="{% if include.option.external %}{{ include.option.url | escape }}{% else %}{{ include.option.url | relative_url }}{% endif %}"{% if include.option.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ include.option.link_text | escape }} <span aria-hidden="true">{{ include.option.arrow | escape }}</span></a>
+</section>

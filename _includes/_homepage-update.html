@@ -1,0 +1,10 @@
+{% assign update_icon = "📌" %}
+{% if include.item.type == 'paper' %}{% assign update_icon = "📄" %}{% elsif include.item.type == 'job' %}{% assign update_icon = "👨🏽‍💻" %}{% elsif include.item.type == 'academic' %}{% assign update_icon = "🎓" %}{% endif %}
+<div class="tl-item">
+    <div class="tl-icon" aria-hidden="true">{{ update_icon }}</div>
+    <div class="tl-content">
+        <div class="tl-date">{{ include.item.date }}</div>
+        <div class="tl-title">{{ include.item.title }}</div>
+        <div class="tl-desc">{{ include.item.desc }}</div>
+    </div>
+</div>

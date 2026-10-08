@@ -6,251 +6,33 @@ format: frontpage
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-    /* --- VARIABLES --- */
-    :root {
-        --fp-font: 'Inter', sans-serif;
-        --fp-primary: #3A6351;
-        --fp-text-main: #1a202c;
-        --fp-text-sub: #58687a;
-        --fp-bg-card: #ffffff;
-        --radius: 12px;
-    }
-
-    /* --- GLOBAL LAYOUT --- */
-    .fp-wrapper {
-        font-family: var(--fp-font);
-        color: var(--fp-text-main);
-        max-width: 1050px;
-        margin: 0 auto;
-        padding: 60px 20px;
-    }
-
-    h1, h2, h3, h4, p { margin: 0; }
-    a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
-
-    /* --- 1. HERO SECTION --- */
-    .hero-section {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 50px;
-        align-items: center;
-        margin-bottom: 60px;
-    }
-    @media (min-width: 850px) {
-        .hero-section { grid-template-columns: 1.4fr 0.6fr; }
-    }
-    .hero-content { order: 2; }
-    @media (min-width: 850px) { .hero-content { order: 1; } }
-    
-    .hero-name {
-        font-size: 3.5rem;
-        font-weight: 800;
-        letter-spacing: -0.03em;
-        color: var(--fp-primary);
-        margin-bottom: 20px;
-        line-height: 1.1;
-    }
-    .hero-intro {
-        font-size: 1.05rem;
-        line-height: 1.75;
-        color: var(--fp-text-sub);
-        margin-bottom: 30px;
-        font-weight: 400;
-        max-width: 680px;
-    }
-
-    .highlight {
-        background: rgba(161, 208, 68, 0.15);
-        color: var(--fp-primary);
-        font-weight: 600;
-        padding: 1px 6px;
-        border-radius: 4px;
-        display: inline-block;
-    }
-    
-    /* Social Icons */
-    .social-row { display: flex; gap: 15px; margin-top: 25px; justify-content: left; }
-    .social-btn {
-        display: flex; align-items: center; justify-content: center;
-        width: 49px; height: 49px; border-radius: 50%;
-        background: #f7fafc; border: 1px solid #edf2f7;
-        color: var(--fp-primary); transition: all 0.2s ease;
-    }
-    .social-btn:hover {
-        background: var(--fp-primary); color: white; border-color: var(--fp-primary);
-        transform: translateY(-2px); box-shadow: 0 4px 12px rgba(58, 99, 81, 0.2);
-    }
-    .social-btn svg { width: 18px; height: 18px; fill: currentColor; }
-
-    /* HERO IMAGE */
-    .hero-image-wrapper {
-        order: 1; position: relative; justify-self: center; width: 100%; max-width: 210px;
-    }
-    @media (min-width: 850px) { .hero-image-wrapper { order: 2; justify-self: end; } }
-
-    .hero-photo {
-        width: 100%; height: auto; border-radius: var(--radius);
-        box-shadow: 0 28px 49px -21px rgba(0,0,0,0.15); display: block;
-        transform: rotate(2deg); transition: transform 0.3s ease;
-    }
-    .hero-photo:hover { transform: rotate(0deg) scale(1.02); }
-
-
-    /* --- 2. LOGO DOCK --- */
-    .logo-section { margin-bottom: 80px; text-align: center; }
-
-    .section-divider {
-        display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 30px;
-    }
-    .section-divider::before, .section-divider::after {
-        content: ''; height: 1px; background: #e2e8f0; width: 60px; display: block;
-    }
-    .divider-text {
-        font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: #a0aec0; font-weight: 700;
-    }
-
-    .logo-dock { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px; }
-    .dock-item { position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-    .dock-logo {
-        height: 42px; width: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.4; transition: all 0.3s ease;
-    }
-    .dock-item:hover .dock-logo { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
-    .dock-tooltip {
-        position: absolute; bottom: 150%; left: 50%; transform: translateX(-50%) translateY(10px);
-        background: #2D3748; color: white; padding: 6px 10px; border-radius: 6px;
-        font-size: 0.7rem; font-weight: 600; white-space: nowrap; pointer-events: none;
-        opacity: 0; visibility: hidden; transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1); z-index: 10;
-    }
-    .dock-tooltip::after {
-        content: ''; position: absolute; top: 100%; left: 50%; margin-left: -5px;
-        border-width: 5px; border-style: solid; border-color: #2D3748 transparent transparent transparent;
-    }
-    .dock-item:hover .dock-tooltip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-
-
-    /* --- 3. TIMELINE (INTERNAL SCROLL BUTTON) --- */
-    .section-header {
-        display: flex; align-items: center; justify-content: space-between;
-        margin-bottom: 25px; border-bottom: 2px solid #f7fafc; padding-bottom: 15px;
-    }
-    .section-title { font-size: 1.5rem; font-weight: 800; color: var(--fp-primary); letter-spacing: -0.02em; }
-    .timeline-legend { display: flex; gap: 15px; font-size: 0.75rem; color: #718096; font-weight: 600; }
-    .legend-item { display: flex; align-items: center; gap: 4px; }
-
-    .timeline-window {
-        max-height: 400px; 
-        overflow-y: auto; 
-        padding-right: 15px;
-        scrollbar-width: thin; scrollbar-color: #cbd5e0 #f7fafc;
-        margin-bottom: 50px;
-    }
-    .timeline-window::-webkit-scrollbar { width: 5px; }
-    .timeline-window::-webkit-scrollbar-track { background: transparent; }
-    .timeline-window::-webkit-scrollbar-thumb { background-color: #cbd5e0; border-radius: 10px; }
-
-    .timeline-container { position: relative; padding-top: 10px; }
-    .timeline-container::before {
-        content: ''; position: absolute; top: 0; bottom: 0; left: 15px; width: 2px; background: #edf2f7; z-index: 0;
-    }
-
-    .tl-item { position: relative; margin-bottom: 35px; padding-left: 55px; }
-    .tl-icon {
-        position: absolute; left: 0; top: 0; width: 32px; height: 32px;
-        background: #fff; border: 2px solid #edf2f7; border-radius: 50%;
-        display: flex; align-items: center; justify-content: center; font-size: 16px; z-index: 1;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-    }
-    .tl-date {
-        font-size: 0.75rem; font-weight: 700; color: #a0aec0;
-        text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; margin-top: 5px; 
-    }
-    .tl-title { font-size: 1.05rem; font-weight: 700; color: var(--fp-text-main); margin-bottom: 5px; }
-    .tl-desc { font-size: 0.95rem; color: var(--fp-text-sub); line-height: 1.5; }
-
-    /* Internal Loader Button */
-    .internal-load-wrapper {
-        padding-left: 55px; /* Alignment with axis content */
-        margin-bottom: 30px;
-    }
-    .btn-load-more {
-        background: white;
-        border: 1px solid #e2e8f0;
-        padding: 8px 16px;
-        border-radius: 8px;
-        color: #718096;
-        font-size: 0.8rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s ease;
-    }
-    .btn-load-more:hover {
-        border-color: var(--fp-primary);
-        color: var(--fp-primary);
-    }
-
-    #older-events { display: none; }
-
-
-    /* --- 4. WIDGETS --- */
-    .widgets-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 60px; }
-    @media (min-width: 768px) { .widgets-grid { grid-template-columns: repeat(3, 1fr); } }
-    
-    .widget-card {
-        background: white; border-radius: var(--radius); overflow: hidden;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.03); display: flex; flex-direction: column;
-        height: 100%; transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);
-    }
-    .widget-card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1); }
-    .widget-img { width: 100%; height: 180px; object-fit: cover; }
-    .widget-content { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; }
-    .widget-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; color: var(--fp-primary); }
-    .widget-desc { font-size: 0.95rem; color: #666; margin-bottom: 20px; line-height: 1.5; }
-    .widget-link { margin-top: auto; font-weight: 700; font-size: 0.9rem; color: var(--fp-primary); display: flex; align-items: center; gap:5px; }
-    .widget-link::after { content: '→'; transition: transform 0.2s; }
-    .widget-card:hover .widget-link::after { transform: translateX(4px); }
-
-</style>
+<link rel="stylesheet" href="{{ '/assets/css/frontpage.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 <div class="fp-wrapper">
     
     <header class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-name">Shreeyash Gowaikar</h1>
+            <h1 class="hero-name">{{ page.hero.name | escape }}</h1>
             
             <div class="hero-intro">
-                <p>
-                    Hi there! I'm a <span class="highlight">Computer Science Masters student</span> at <span class="highlight">Georgia Tech</span> specializing in Machine Learning, and working in the <strong>AI for Social Impact Team</strong> under <a href="https://guaguakai.com" target="_blank">Prof. Kai Wang</a>.
-                </p>
-                <br>
-                <p>
-                    Through my experiences at <strong>UdeM</strong> and <strong>Microsoft Research</strong>, I witnessed the immense potential AI holds to solve seemingly difficult but highly socially relevant questions.
-                </p>
-                <br>
-                <p>
-                    However, seeing these systems in action also revealed a critical gap in their reliability. This drove me toward my current research focus on <span class="highlight">AI Robustness</span>, where I am specifically investigating <span class="highlight">Fine-tuning Robustness</span> to ensure models remain safe and stable as they adapt.
-                </p>
+                {% for paragraph in page.hero.paragraphs %}
+                <p>{{ paragraph }}</p>
+                {% unless forloop.last %}<br>{% endunless %}
+                {% endfor %}
             </div>
             
+            <div class="hero-links" aria-label="Explore my research">
+                <a href="{{ page.hero.research_url | relative_url }}">{{ page.hero.research_label | escape }}</a>
+            </div>
             <div class="social-row">
-                <a href="https://scholar.google.com/citations?user=zuL9nnwAAAAJ&hl=en" target="_blank" class="social-btn" title="Google Scholar">
-                    <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/shreeyash-gowaikar" target="_blank" class="social-btn" title="LinkedIn">
-                    <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                </a>
-                <a href="https://github.com/ShreeyashGo" target="_blank" class="social-btn" title="GitHub">
-                    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                </a>
-                <a href="mailto:shreeyashgo@gmail.com" class="social-btn" title="Email">
-                    <svg viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg>
-                </a>
+                {% for item in page.social_links %}
+                {% include _homepage-social.html item=item %}
+                {% endfor %}
             </div>
 
         </div>
         <div class="hero-image-wrapper">
-            <img src="images/Photo_whiteBG1.jpg" alt="Shreeyash Gowaikar" class="hero-photo">
+            <img src="{{ page.hero.image | relative_url }}" alt="{{ page.hero.image_alt | escape }}" class="hero-photo">
         </div>
     </header>
 
@@ -260,122 +42,116 @@ format: frontpage
         </div>
         
         <div class="logo-dock">
-            <div class="dock-item">
-                <img src="images/gt_logo.webp" alt="GT" class="dock-logo" onerror="this.style.display='none'">
-                <div class="dock-tooltip">AI Robustness & Reliability</div>
-            </div>
-            <div class="dock-item">
-                <img src="images/microsoft_logo.webp" alt="Microsoft" class="dock-logo">
-                <div class="dock-tooltip">AI for Software Eng. and AI for Manufacturing</div>
-            </div>
-            <div class="dock-item">
-                <img src="images/udem_logo.webp" alt="UdeM" class="dock-logo">
-                <div class="dock-tooltip">AI for Urban Planning</div>
-            </div>
-            <div class="dock-item">
-                <img src="images/atlas_logo.webp" alt="Atlassian" class="dock-logo">
-                <div class="dock-tooltip">AI for Service Management</div>
-            </div>
-            <div class="dock-item">
-                <img src="images/aiisc_logo.webp" alt="AIISC" class="dock-logo">
-                <div class="dock-tooltip">AI Evaluations (analogical aptitude)</div>
-            </div>
-            <div class="dock-item">
-                <img src="images/bits_logo.webp" alt="BITS" class="dock-logo">
-                <div class="dock-tooltip">Undergraduate Studies</div>
-            </div>
-        </div>
-    </div>
-
-    {% if page.news %}
-    <div class="section-header">
-        <h3 class="section-title">Latest Updates</h3>
-        <div class="timeline-legend">
-            <span class="legend-item">📄 Paper Update</span>
-            <span class="legend-item">👨🏽‍💻 Position Update</span>
-            <span class="legend-item">🎓 Academic Update</span>
-        </div>
-    </div>
-    
-    <div class="timeline-window">
-        <div class="timeline-container">
-            
-            {% for item in page.news %}
-                {% unless item.hidden %}
-                    {% assign icon = "📌" %}
-                    {% if item.type == 'paper' %}{% assign icon = "📄" %}{% elsif item.type == 'job' %}{% assign icon = "👨🏽‍💻" %}{% elsif item.type == 'academic' %}{% assign icon = "🎓" %}{% endif %}
-
-                    <div class="tl-item">
-                        <div class="tl-icon">{{ icon }}</div>
-                        <div class="tl-content">
-                            <div class="tl-date">{{ item.date }}</div>
-                            <div class="tl-title">{{ item.title }}</div>
-                            <div class="tl-desc">{{ item.desc }}</div>
-                        </div>
-                    </div>
-                {% endunless %}
+            {% for item in page.logo_dock %}
+            {% include _homepage-logo.html item=item %}
             {% endfor %}
-
-            {% assign hidden_items = page.news | where: "hidden", true %}
-            {% if hidden_items.size > 0 %}
-                <div class="internal-load-wrapper" id="load-trigger">
-                    <button class="btn-load-more" onclick="document.getElementById('older-events').style.display='block'; document.getElementById('load-trigger').style.display='none'">
-                        + Load Archived Events
-                    </button>
-                </div>
-
-                <div id="older-events">
-                    {% for item in hidden_items %}
-                        {% assign icon = "📌" %}
-                        {% if item.type == 'paper' %}{% assign icon = "📄" %}{% elsif item.type == 'job' %}{% assign icon = "👨🏽‍💻" %}{% elsif item.type == 'academic' %}{% assign icon = "🎓" %}{% endif %}
-
-                        <div class="tl-item">
-                            <div class="tl-icon">{{ icon }}</div>
-                            <div class="tl-content">
-                                <div class="tl-date">{{ item.date }}</div>
-                                <div class="tl-title">{{ item.title }}</div>
-                                <div class="tl-desc">{{ item.desc }}</div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            {% endif %}
-
         </div>
     </div>
-    {% endif %}
 
-    <div class="widgets-grid">
-        {% if page.widget1.title %}
-        <a href="{{ page.widget1.url }}" class="widget-card">
-            <img src="{{ page.widget1.image }}" class="widget-img">
-            <div class="widget-content">
-                <h4 class="widget-title">{{ page.widget1.title }}</h4>
-                <p class="widget-desc">{{ page.widget1.text }}</p>
-                <span class="widget-link">Read More</span>
-            </div>
-        </a>
-        {% endif %}
-        {% if page.widget2.title %}
-        <a href="{{ page.widget2.url }}" class="widget-card">
-            <img src="{{ page.widget2.image }}" class="widget-img">
-            <div class="widget-content">
-                <h4 class="widget-title">{{ page.widget2.title }}</h4>
-                <p class="widget-desc">{{ page.widget2.text }}</p>
-                <span class="widget-link">View Projects</span>
-            </div>
-        </a>
-        {% endif %}
-        {% if page.widget3.title %}
-        <a href="{{ page.widget3.url }}" class="widget-card">
-            <img src="{{ page.widget3.image }}" class="widget-img">
-            <div class="widget-content">
-                <h4 class="widget-title">{{ page.widget3.title }}</h4>
-                <p class="widget-desc">{{ page.widget3.text }}</p>
-                <span class="widget-link">Check Hobbies</span>
-            </div>
-        </a>
-        {% endif %}
-    </div>
+    {% include _homepage-timeline.html %}
 
+    <nav class="explore-nav" aria-label="Explore this page">
+        <span class="explore-label">Keep exploring</span>
+        {% for item in page.explore_links %}
+        <a href="{{ item.url | escape }}">{{ item.title | escape }} <span aria-hidden="true">↓</span></a>
+        {% endfor %}
+    </nav>
+
+    {% assign profile = site.pages | where: "permalink", "/aboutMe/" | first %}
+    <section class="homepage-section homepage-section--surface" id="experience" aria-labelledby="experience-title">
+        <div class="section-header">
+            <div class="section-heading">
+                <p class="section-label">{{ page.section_labels.experience | escape }}</p>
+                <h2 class="section-title" id="experience-title">Experience</h2>
+            </div>
+            <a class="section-link" href="{{ site.baseurl }}/aboutMe/#experience">Full experience →</a>
+        </div>
+        <div class="experience-previews">
+            {% for job in profile.experience %}
+                {% if job.homepage_summary %}
+                {% include _homepage-experience.html job=job %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+
+    {% assign publication_page = site.pages | where: "permalink", "/publications/" | first %}
+    <section class="homepage-section" id="research" aria-labelledby="research-title">
+        <div class="section-header">
+            <div class="section-heading">
+                <p class="section-label">{{ page.section_labels.research | escape }}</p>
+                <h2 class="section-title" id="research-title">Selected Research</h2>
+            </div>
+            <a class="section-link" href="{{ site.baseurl }}/publications/">All publications →</a>
+        </div>
+        <div class="research-previews">
+            {% for paper in publication_page.publications %}
+                {% if paper.homepage_featured %}
+                {% include _homepage-paper.html paper=paper %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <a class="section-link research-overview-link" href="{{ page.research_more.url | relative_url }}">{{ page.research_more.text | escape }}</a>
+    </section>
+
+    <section class="homepage-section" id="beyond-code" aria-labelledby="beyond-title">
+        <div class="beyond-preview">
+            <a href="{{ page.beyond_code.url | relative_url }}" class="beyond-image-link" aria-label="{{ page.beyond_code.link_text | escape }}">
+                <img src="{{ page.beyond_code.image | relative_url }}" alt="{{ page.beyond_code.image_alt | escape }}" loading="lazy" width="800" height="600">
+            </a>
+            <div class="beyond-copy">
+                <p class="section-label">{{ page.section_labels.beyond_code | escape }}</p>
+                <h2 class="section-title" id="beyond-title">Beyond Code</h2>
+                <h3>{{ page.beyond_code.title | escape }}</h3>
+                <p>{{ page.beyond_code.text | escape }}</p>
+                <p class="photo-caption">{{ page.beyond_code.caption | escape }}</p>
+                <a class="preview-link" href="{{ page.beyond_code.url | relative_url }}">{{ page.beyond_code.link_text | escape }}</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="homepage-section homepage-section--surface" id="visitors" aria-labelledby="visitors-title">
+        <div class="section-header visitor-header">
+            <div class="section-heading">
+                <p class="section-label">{{ page.section_labels.visitors | escape }}</p>
+                <h2 class="section-title" id="visitors-title">A Little Corner of the Internet</h2>
+            </div>
+            <details class="visitor-info">
+                <summary aria-label="About visitor statistics and privacy" title="Visitor statistics &amp; privacy"><span aria-hidden="true">ⓘ</span></summary>
+                <div class="visitor-info-panel">
+                    <p>My counter saves approximate visit totals and grouped locations, not raw IP addresses or individual visit histories. A temporary per-tab flag avoids recounting. Cloudflare processes the network requests.</p>
+                    <a href="{{ site.baseurl }}/privacy/">Privacy details →</a>
+                </div>
+            </details>
+        </div>
+        {% assign counter_site_url = site.url | downcase %}
+        {% assign counter_active = false %}
+        {% if site.visitor_counter.enabled and counter_site_url == 'https://shreeyashgo.github.io' %}{% assign counter_active = true %}{% endif %}
+        <div class="visitor-layout" data-visitor-globe data-land-url="{{ site.baseurl }}/assets/data/visitor-land.json" data-stats-url="{% if counter_active %}{{ site.visitor_counter.endpoint | escape }}/stats{% else %}{{ site.baseurl }}/assets/data/visitors.json{% endif %}">
+            <div class="visitor-visual">
+                <canvas class="visitor-canvas" width="420" height="420" tabindex="0" role="img" aria-label="A dot-matrix cat batting a rotating dotted globe. Drag to rotate, or use the arrow keys when focused. Pause stops both the cat and the globe."></canvas>
+                <div class="globe-controls">
+                    <span>Drag to rotate · arrow keys work too</span>
+                    <div>
+                        <button type="button" class="globe-button" data-globe-pause aria-pressed="false">Pause</button>
+                        <button type="button" class="globe-button" data-globe-reset>Reset</button>
+                    </div>
+                </div>
+            </div>
+            <div class="visitor-copy">
+                <h3>Thanks for stopping by 👋</h3>
+                <p>It’s a small world. I’m glad our corners of it crossed. The cat thinks it’s a toy.</p>
+                <p class="visitor-status" data-globe-status aria-live="polite">{% if counter_active %}Loading visitor statistics…{% elsif site.visitor_counter.enabled %}Local preview · visits aren’t recorded here.{% else %}Visitor counting is off.{% endif %}</p>
+                <dl class="visitor-stats" data-globe-stats hidden>
+                    <div><dt>Visits</dt><dd data-globe-visits></dd></div>
+                    <div><dt>Countries / regions</dt><dd data-globe-countries></dd></div>
+                </dl>
+                <p class="visitor-location" data-globe-location aria-live="polite"></p>
+                <p class="visitor-note" data-globe-note>{% if counter_active %}Location dots appear as visits arrive.{% elsif site.visitor_counter.enabled %}Live counts and location dots appear on the published site.{% else %}Enjoy the globe and its very curious cat.{% endif %}</p>
+            </div>
+        </div>
+        <noscript><p>The interactive globe needs JavaScript. Thanks for visiting!</p></noscript>
+    </section>
 </div>
+<script src="{{ site.baseurl }}/assets/js/visitor-globe.js" defer></script>
+<script src="{{ '/assets/js/homepage-timeline.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

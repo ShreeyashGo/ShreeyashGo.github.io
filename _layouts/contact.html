@@ -1,0 +1,19 @@
+---
+layout: default
+format: page-fullwidth
+---
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/contact.css">
+<main class="contact-page">
+    <header>
+        <p class="contact-eyebrow">{{ page.contact_eyebrow | escape }}</p>
+        <h1>{{ page.contact_heading | escape }}</h1>
+        <p class="contact-intro">{{ page.teaser }}</p>
+        {{ content }}
+    </header>
+    <div class="contact-options">
+        {% for option in page.contact_options %}
+        {% include _contact-option.html option=option %}
+        {% endfor %}
+    </div>
+    <p class="contact-work">{{ page.contact_work_intro | escape }} {% for link in page.contact_work_links %}{% unless forloop.first %}{% if forloop.last %} and {% else %}, {% endif %}{% endunless %}<a href="{{ link.url | escape }}" target="_blank" rel="noopener noreferrer">{{ link.text | escape }}</a>{% endfor %}.</p>
+</main>

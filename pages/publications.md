@@ -1,12 +1,17 @@
 ---
 layout: publications
 title: "Publications and Pre-prints"
-teaser: "My contributions to the research community, featuring AI-generated audio summaries."
+meta_title: "Publications | Shreeyash Gowaikar"
+meta_description: "Research papers by Shreeyash Gowaikar on long-context reasoning, agentic engineering diagrams, fairness in preference learning, and responsible AI."
+teaser: "Research on dependable reasoning, agentic systems, and responsible AI. Read a quick summary, explore the abstract, or open the paper."
 permalink: "/publications/"
 header: no
 
 publications:
   - title: "COSMIR: Chain Orchestrated Structured Memory for Iterative Reasoning"
+    id: cosmir
+    homepage_featured: true
+    homepage_summary: "Structured memory and verifiable sub-steps for reasoning over long inputs."
     authors: "Gupta, N., **Gowaikar, S.**, Iyer, A., Shiragur, K., Bairi, R. B., Maurya, R., Maiti, R., Damle, S., Mishra Gupta, S."
     venue: "NeurIPS'25 Workshop on Foundations of Reasoning in Language Models (FoRLM@NeurIPS'25)"
     type: "Workshop"
@@ -16,6 +21,8 @@ publications:
     abstract: "Reasoning over very long inputs remains difficult for LLMs. We introduce COSMIR, a chain-style framework that replaces ad hoc messages with a structured memory. A Planner agent turns a query into sub-questions, and worker agents process chunks via a fixed micro-cycle (Extract, Infer, Refine). This yields higher faithfulness and better long-range aggregation on datasets like HELMET."
 
   - title: "An Agentic Approach to Automatic Creation of P&ID Diagrams"
+    id: agentic-diagrams
+    homepage_summary: "An iterative agentic copilot for turning natural-language descriptions into engineering diagrams."
     authors: "**Gowaikar, S.**, Iyengar, S., Segal, S., Kalyanaraman, S."
     venue: "AAAI'25 Workshop on AI for Science (AI2SE@AAAI'25)"
     type: "Workshop"
@@ -25,6 +32,9 @@ publications:
     abstract: "We introduce a novel copilot for automating the generation of P&IDs from natural language descriptions. Leveraging a multi-step agentic workflow, our copilot provides a structured and iterative approach to diagram creation directly from Natural Language prompts."
 
   - title: "From Efficiency to Equity: Measuring Fairness in Preference Learning"
+    id: preference-fairness
+    homepage_featured: true
+    homepage_summary: "Fairness metrics for preference learning, informed by inequality measures and Rawlsian justice."
     authors: "**Gowaikar, S.**, Berard, H., Mushkani, R., Koseki, S."
     venue: "AAAI/ACM AI Ethics and Society'25 (AIES'25)"
     type: "Conference"
@@ -34,6 +44,8 @@ publications:
     abstract: "We introduce a novel framework for evaluating epistemic fairness in preference learning models inspired by economic theories of inequality and Rawlsian justice. We propose metrics adapted from the Gini Coefficient and Atkinson Index to quantify fairness in these models."
 
   - title: "AI-EDI-SPACE: A Co-designed Dataset for Public Spaces"
+    id: ai-edi-space
+    homepage_summary: "Co-designing data and models with stakeholders to capture diverse perspectives on public-space quality."
     authors: "**Gowaikar, S.**, Berard, H., Mushkani, R., Marchand, E., Ammar, T., Koseki, S."
     venue: "CVPR'24 Workshop on Responsible Data"
     type: "Workshop"
@@ -43,6 +55,8 @@ publications:
     abstract: "We propose a methodology involving a co-design model that actively engages stakeholders, integrating principles of Equity, Diversity, and Inclusion (EDI). We apply this to develop a dataset and AI model for evaluating public space quality using street view images, demonstrating effectiveness in capturing diverse perspectives."
 
   - title: "ANALOGICAL: A Novel Benchmark for Long Text Analogy Evaluation"
+    id: analogical
+    homepage_summary: "A benchmark for evaluating whether language models recognize analogies across longer texts."
     authors: "Wijesiriwardene, T., Wickramarachchi, R., Gajera, B., **Gowaikar, S.**, Gupta, C., Chadha, A., Reganti, A., Sheth, A., Das, A."
     venue: "Findings of ACL'23"
     type: "Conference"
