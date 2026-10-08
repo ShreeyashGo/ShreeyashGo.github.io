@@ -8,7 +8,7 @@ layout: page-fullwidth
     display: grid;
     grid-template-columns: repeat(1, 1fr); 
     gap: 1.5rem;
-    grid-auto-flow: dense;
+    grid-auto-flow: row;
     margin-bottom: 3rem;
 }
 
@@ -21,6 +21,7 @@ layout: page-fullwidth
     .gallery-item.wide { grid-column: span 8; }
     .gallery-item.half { grid-column: span 6; }
     .gallery-item.full { grid-column: span 12; }
+    .gallery-item.square:last-child { grid-column: 5 / span 4; }
 }
 
 /* CINEMATIC CARD STYLING */
@@ -42,6 +43,34 @@ layout: page-fullwidth
     object-fit: cover;
     display: block;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s;
+}
+
+/* Keep these signed photographs intact rather than cropping the grid previews. */
+.gallery-item.preserve-frame img {
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: contain;
+    background: #faf9f6;
+}
+
+.gallery-item.preserve-frame:hover img {
+    transform: none;
+    filter: none;
+}
+
+/* Match the Moon's landscape proportions without enlarging or cropping the skyline. */
+.gallery-item.panorama img {
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    object-position: center;
+}
+
+.gallery-item.square {
+    align-self: start;
+}
+
+.gallery-item.square img {
+    aspect-ratio: 1 / 1;
 }
 
 .gallery-item:hover {
@@ -133,13 +162,13 @@ layout: page-fullwidth
                 {% if photo.size == 'wide' or photo.wide %}wide
                 {% elsif photo.size == 'half' %}half
                 {% elsif photo.size == 'full' %}full
-                {% endif %}" 
-                onclick="window.openLightbox('{{ photo.image }}')">
+                {% endif %}{% if photo.preserve_frame %} preserve-frame{% endif %}{% if photo.panorama %} panorama{% endif %}{% if photo.square %} square{% endif %}"
+                onclick="window.openLightbox('{{ photo.image | relative_url }}', this.querySelector('img').alt)">
                 
-                <img src="{{ photo.image }}" alt="{{ photo.caption }}" onContextMenu="alert('Copyright Protected: Please contact me for image use!!'); return false;">
+                <img src="{{ photo.thumbnail | default: photo.image | relative_url }}" alt="{{ photo.alt | default: photo.caption | escape }}" loading="lazy" decoding="async"{% if photo.width and photo.height %} width="{{ photo.width }}" height="{{ photo.height }}"{% endif %} onContextMenu="alert('Copyright Protected: Please contact me for image use!!'); return false;">
                 
                 {% if photo.caption %}
-                <div class="gallery-caption">{{ photo.caption }}</div>
+                <div class="gallery-caption">{{ photo.caption | escape }}</div>
                 {% endif %}
             </div>
             {% endfor %}
@@ -181,12 +210,13 @@ layout: page-fullwidth
 
 <script>
     /* Define functions on window to ensure global scope and avoid minification errors */
-    window.openLightbox = function(imageSrc) {
+    window.openLightbox = function(imageSrc, imageAlt) {
         var lightbox = document.getElementById('lightbox');
         var img = document.getElementById('lightbox-img');
         
         /* Set the image source */
         img.src = imageSrc;
+        img.alt = imageAlt || '';
         
         /* Show the lightbox */
         lightbox.style.display = 'flex';

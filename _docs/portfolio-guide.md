@@ -61,6 +61,10 @@ For a photo, put the image in `images/photos/` and add an entry to `gallery_phot
 
 `size` can be `wide`, `half`, or `full`; omit it for the standard size. Resize large originals before adding them so gallery pages remain light.
 
+The three October additions use an optional `thumbnail` path for a small grid preview; `image` remains the larger version opened on click. Set `preserve_frame: true` to show the entire photograph, including its signature, in a contained preview. The skyline sits beside Cloud Waves with `size: wide` and `panorama: true`: the same width and landscape proportions as the Moon, with the complete square photograph contained inside the preview. `alt` describes what is visible for screen readers, while `caption` is the displayed title. Optional `width` and `height` describe the thumbnail's pixel dimensions. Gallery order follows this list on desktop and mobile. Published copies have EXIF metadata removed; the original files remain untouched.
+
+The lens photograph closes the gallery with `square: true` and `preserve_frame: true` for a centred square preview that contains the complete photograph.
+
 ## Preview and review
 
 In the existing local Bundler environment, run:
@@ -75,4 +79,4 @@ The current checkout has pre-existing local Gemfile and development-config edits
 
 For the PR, start with content files, then homepage/contact/publication layouts and CSS, then the two custom visitor scripts and Worker, and finally indexing/security changes. [Indexing policy](indexing.md) explains `robots.txt`, the sitemap, and `noindex`. Search Console measures search traffic; the visitor counter measures approximate tab sessions and does not measure clicks on links within the site.
 
-Additional commits on `codex/oct26-updates` will update the draft PR. Projects and new photos remain to be added before it is ready to merge.
+Additional commits on `codex/oct26-updates` will update the draft PR. The three supplied photographs are included; projects and code review remain before it is ready to merge.
