@@ -16,6 +16,15 @@
     }
 
     const radians = Math.PI / 180;
+    let colors;
+    function readColors() {
+        const styles = getComputedStyle(document.documentElement);
+        colors = {};
+        for (const name of ['globe-fill', 'globe-outline', 'globe-grid', 'globe-land', 'cat-edge', 'cat-dots', 'cat-tail', 'cat-detail', 'globe-marker', 'globe-marker-border']) {
+            colors[name] = styles.getPropertyValue('--' + name).trim();
+        }
+    }
+    readColors();
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let longitude = -25, latitude = 20, size = 420;
     let land = [], locations = [], targets = [];
@@ -100,7 +109,7 @@
             for (const [x, y, boundary] of dots) {
                 if (boundary === edge) dot(x, y, edge ? 1.15 : .8);
             }
-            context.fillStyle = edge ? '#5f785f' : '#92a192';
+            context.fillStyle = edge ? colors['cat-edge'] : colors['cat-dots'];
             context.fill();
         }
     }
@@ -119,10 +128,10 @@
         context.rotate(Math.sin(playTime / 900) * .04);
         context.beginPath();
         for (const [x, y] of tailDots) dot(x - 27, y - 160, .9);
-        context.fillStyle = '#788f78'; context.fill();
+        context.fillStyle = colors['cat-tail']; context.fill();
         context.restore();
-        context.fillStyle = '#fafbf9';
-        context.strokeStyle = '#fafbf9';
+        context.fillStyle = colors['globe-fill'];
+        context.strokeStyle = colors['globe-fill'];
         context.lineWidth = 4;
         context.fill(catShape); context.stroke(catShape);
         fillDots(catDots);
@@ -138,18 +147,18 @@
         dottedLine(77, 120, 74, 144); dottedLine(74, 144, 79, 166);
         dottedLine(43, 143, 55, 150); dottedLine(55, 150, 52, 165);
         dottedLine(85, 165, 86, 171); dottedLine(92, 165, 93, 171);
-        context.fillStyle = '#4f6b4f'; context.fill();
+        context.fillStyle = colors['cat-detail']; context.fill();
         context.beginPath(); dot(61, 60, 1.8);
-        context.fillStyle = '#aa5262'; context.fill();
+        context.fillStyle = colors['globe-marker']; context.fill();
 
         // A short, bent foreleg taps the globe at its left edge.
         context.translate(77, 95);
         context.rotate(-.12 + bat * .20);
-        context.fillStyle = '#fafbf9'; context.fill(pawShape); context.stroke(pawShape);
+        context.fillStyle = colors['globe-fill']; context.fill(pawShape); context.stroke(pawShape);
         fillDots(pawDots);
         context.beginPath();
         dottedLine(62, -51, 67, -49); dottedLine(60, -46, 65, -44);
-        context.fillStyle = '#4f6b4f'; context.fill();
+        context.fillStyle = colors['cat-detail']; context.fill();
         context.restore();
     }
 
@@ -180,12 +189,12 @@
         context.clearRect(0, 0, size, size);
         context.beginPath();
         context.arc(centerX, centerY, radius, 0, Math.PI * 2);
-        context.fillStyle = '#fafbf9';
+        context.fillStyle = colors['globe-fill'];
         context.fill();
-        context.strokeStyle = '#dce3db';
+        context.strokeStyle = colors['globe-outline'];
         context.lineWidth = 1;
         context.stroke();
-        context.strokeStyle = '#e4e9e2';
+        context.strokeStyle = colors['globe-grid'];
         context.lineWidth = .7;
         for (const line of graticules) {
             let pen = false;
@@ -198,7 +207,7 @@
             }
             context.stroke();
         }
-        context.fillStyle = '#8f9d8f';
+        context.fillStyle = colors['globe-land'];
         context.beginPath();
         for (const v of land) {
             const p = project(v);
@@ -215,9 +224,9 @@
             const r = Math.min(6, 2.5 + Math.log1p(place.count) * .4) * size / 420;
             context.beginPath();
             context.arc(p[0], p[1], r, 0, Math.PI * 2);
-            context.fillStyle = '#aa5262';
+            context.fillStyle = colors['globe-marker'];
             context.fill();
-            context.strokeStyle = '#ffffff';
+            context.strokeStyle = colors['globe-marker-border'];
             context.lineWidth = 1.2;
             context.stroke();
             targets.push({x: p[0], y: p[1], place});
@@ -233,6 +242,7 @@
         context.setTransform(ratio, 0, 0, ratio, 0, 0);
         draw();
     }
+    document.addEventListener('themechange', () => { readColors(); draw(); });
     new ResizeObserver(resize).observe(canvas);
 
     function shouldAnimate() {
