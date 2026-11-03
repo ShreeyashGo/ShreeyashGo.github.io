@@ -36,7 +36,7 @@
     function draw() {
         frame = null;
         context.clearRect(0, 0, width, height);
-        context.fillStyle = '#3a6351';
+        context.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--theme-accent').trim();
         points.forEach(function (point) {
             var x = point.x;
             var y = point.y;
@@ -97,4 +97,5 @@
         scheduleDraw();
     });
     reducedMotion.addEventListener('change', scheduleDraw);
+    document.addEventListener('themechange', scheduleDraw);
 })();

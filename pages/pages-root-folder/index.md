@@ -40,8 +40,6 @@ logo_dock:
   - name: DoorDash
     image: /images/doordash_logo.svg
     description: Applied Research in Agentic AI
-    url: "#experience"
-    aria_label: "DoorDash — applied research in Agentic AI"
     image_class: dock-logo--doordash
   - name: GT
     image: /images/gt_logo.webp

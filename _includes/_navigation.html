@@ -12,6 +12,7 @@
     </li>
        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar toggle-topbar-click menu-icon"><a><span>Nav</span></a></li>
+      <li class="theme-toggle-mobile">{% include _theme-toggle.html %}</li>
     </ul>
     <section class="top-bar-section">
 {% comment %}
@@ -117,6 +118,12 @@
             {% if link.dropdown == nil %}
               <li class="divider"></li>
               <li{% if link.url == page.url %} class="active"{% elsif page.homepage == true and link.url == '/' %} class="active"{% endif %}><a {% if link.class %}class="{{link.class}}"{% endif %} href="{{ domain }}{{ site.baseurl }}{{ link.url }}"{% if link.url contains 'http' %} target="_blank"{% endif %}>{{ link.title | escape }}</a></li>
+
+              {% if link.url == '/contact/' %}
+              <li class="theme-toggle-item">
+                {% include _theme-toggle.html %}
+              </li>
+              {% endif %}
 
             {% comment %}   If right side WITH dropdown menu do   {% endcomment %}
             {% else %}

@@ -142,19 +142,26 @@
 }
 
 .video-wrapper {
-    min-width: 326px;
+    min-width: 0;
     max-width: 540px;
     width: 100%;
 }
 
 .video-wrapper .instagram-media {
+    /* Instagram adds inline sizing when replacing the blockquote with an iframe. */
+    box-sizing: border-box;
+    min-width: 0 !important;
+    max-width: calc(100% - 2px) !important;
     background: #FFF;
     border: 0;
     border-radius: 3px;
     box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15);
     margin: 1px;
     padding: 0;
-    width: 99.375%;
-    width: -webkit-calc(100% - 2px);
-    width: calc(100% - 2px);
+    width: calc(100% - 2px) !important;
+}
+
+/* Keep the loaded player inside its wrapper, including during Instagram's resize. */
+.video-wrapper iframe.instagram-media {
+    position: static !important;
 }

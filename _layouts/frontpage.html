@@ -153,5 +153,5 @@ format: frontpage
         <noscript><p>The interactive globe needs JavaScript. Thanks for visiting!</p></noscript>
     </section>
 </div>
-<script src="{{ site.baseurl }}/assets/js/visitor-globe.js" defer></script>
+<script src="{{ '/assets/js/visitor-globe.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 <script src="{{ '/assets/js/homepage-timeline.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

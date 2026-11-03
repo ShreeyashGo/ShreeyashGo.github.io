@@ -47,11 +47,9 @@ Add a logo under `logo_dock` after copying its image to `images/`:
   - name: "Organization name"
     image: /images/your-logo.webp
     description: "Short tooltip about your work there"
-    url: "#experience"
-    aria_label: "Organization name — your role"
 ```
 
-`url` and `aria_label` are optional; omit `url` for a logo without a link. `image_class` is optional for an existing special size treatment (currently `dock-logo--doordash`); new logos use the shared styling. Optional `hide_on_error: true` hides a missing image, but check that your copied file loads before publishing.
+Logo dock entries are deliberately non-clickable, including DoorDash. Their grayscale/opacity, color-on-hover effect, and descriptive tooltip are shared. `image_class` is optional for an existing special size treatment (currently `dock-logo--doordash`); new logos use the shared styling. Optional `hide_on_error: true` hides a missing image, but check that your copied file loads before publishing.
 
 Add a link under `explore_links`:
 
@@ -254,6 +252,16 @@ For `/research/`, `pages/research.md` chooses the `research` layout, which inser
 The theme’s minified JavaScript bundle is served to visitors; keep both bundles consistent when changing dependencies. Content edits generally do not require template, CSS, or script edits.
 
 ## Preview and review
+
+### Light and dark themes
+
+The sun/moon button sits between Contact and CV on desktop and beside Nav on mobile. `assets/js/theme.js` runs before the stylesheets to apply the saved `site-theme` local-storage preference, or the system preference until the visitor chooses a mode. If storage is blocked, the toggle still works for that page. With JavaScript disabled, the existing light theme stays available and the toggle stays hidden.
+
+`assets/css/theme.css` adds color-only dark overrides under `html[data-theme="dark"]`; the original light styles, page geometry, photographs, and header logo remain unchanged. The globe/cat and Blog canvas read CSS color properties and redraw on `themechange`, including while paused. External PDF documents and Instagram's embedded content retain their own appearance.
+
+For theme changes, review both themes on every main route and project detail, plus mobile navigation, preference persistence after navigation/reload, timeline connectors, logo hover, disclosures, gallery lightbox, and the paused globe switching colors without resetting. Test with a fresh storage preference to check system mode, and with storage blocked to check the page-local fallback.
+
+Run `node --test _scripts/theme.test.cjs` for first-paint system selection, saved preferences, both controls, storage denial, and preference changes between tabs.
 
 In the existing local Bundler environment:
 

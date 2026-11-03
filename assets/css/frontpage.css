@@ -106,7 +106,7 @@
     }
 
     .logo-dock { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px; }
-    .dock-item { position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .dock-item { position: relative; cursor: default; display: flex; align-items: center; justify-content: center; }
     .dock-logo {
         height: 42px; width: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.4; transition: all 0.3s ease;
     }
