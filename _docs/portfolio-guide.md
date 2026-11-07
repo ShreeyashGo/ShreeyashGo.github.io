@@ -51,6 +51,8 @@ Add a logo under `logo_dock` after copying its image to `images/`:
 
 Logo dock entries are deliberately non-clickable, including DoorDash. Their grayscale/opacity, color-on-hover effect, and descriptive tooltip are shared. `image_class` is optional for an existing special size treatment (currently `dock-logo--doordash`); new logos use the shared styling. Optional `hide_on_error: true` hides a missing image, but check that your copied file loads before publishing.
 
+AIISC and BITS use sibling `*-transparent.png` copies with their white backgrounds removed. The original WebP files remain intact. These copies preserve the source dimensions and RGB values; only background alpha changes. BITS' enclosed white lettering is retained.
+
 Add a link under `explore_links`:
 
 ```yaml
@@ -169,6 +171,9 @@ Add a photo under `gallery_photos` in `pages/photovideo.md`:
   - image: /images/photos/your-photo.jpg
     thumbnail: /images/photos/your-photo-thumb.jpg
     caption: "Your displayed title"
+    story: >-
+      Your short paragraph about the moment, why you took the photograph,
+      or what it means to you.
     alt: "Describe what is visible in the photograph."
     preserve_frame: true
     size: wide
@@ -176,7 +181,11 @@ Add a photo under `gallery_photos` in `pages/photovideo.md`:
 
 Only `image` is essential to display the photo. `thumbnail` is optional: it loads in the grid while `image` opens on click. `caption` is optional; provide a descriptive `alt` for screen readers. `size` can be `wide`, `half`, or `full`; omit it for the standard width. Gallery order follows the list on desktop and mobile.
 
-Optional `preserve_frame: true` contains the whole photograph instead of cropping it, including signatures. `panorama: true` uses landscape proportions; the existing skyline combines it with `size: wide` and `preserve_frame: true`. `square: true` makes a square preview; the existing closing lens photo is also centered on desktop. Optional `width` and `height` describe the displayed thumbnail’s actual pixel dimensions. `instagram_videos` uses entries with a `url` and loads Instagram’s external embed script when videos are present.
+Opening a photograph shows its `caption` as a centered title and its plain-text `story` beneath it. At phone widths (650px or less), the paragraph starts collapsed under “Read the story”; desktop views show it in full. Empty or omitted stories default to the photograph's `alt` text; a custom story takes precedence. The story section is hidden only when neither is supplied. The grid keeps its existing short titles. The viewer supports keyboard opening, an explicit Close button, Escape, and returns focus to the photo when closed.
+
+Optional `preserve_frame: true` contains the whole photograph instead of cropping it, including signatures. `panorama: true` uses landscape proportions; the existing skyline combines it with `size: wide` and `preserve_frame: true`. `square: true` makes a square preview; the existing closing lens photo is also centered on desktop. Optional `width` and `height` describe the displayed thumbnail’s actual pixel dimensions.
+
+The video section is temporarily disabled by commenting out `instagram_videos` in `pages/photovideo.md`; no video heading, player, or Instagram embed script is rendered. To restore it, uncomment `instagram_videos:` and only the desired entries (the Nirmaan video was the previously active entry). The page ends with a photo/video editing collaboration invitation linking to Contact; its text lives in `_layouts/photo-portfolio.html`.
 
 For a project, copy a card in `pages/projects.md` (`title`, `url`, `image`, `description`, optional `tags`) and create or update its Markdown writeup in `pages/projects/`. Card URLs must match the writeup’s `permalink`. Existing project writeups have `noindex: true`; revisit that deliberately when refreshing their content.
 
@@ -240,6 +249,7 @@ Jekyll orders posts by date, newest first. The blog layout automatically replace
 | Publication cards and native abstracts | `_layouts/publications.html`, `_includes/_publication-card.html`; `assets/css/publications.css` |
 | Research overview / navigation cards | `_layouts/research.html`, `_includes/_research-link-card.html`; `assets/css/research.css` |
 | Contact options | `_layouts/contact.html`, `_includes/_contact-option.html`; `assets/css/contact.css` |
+| Embedded CV | `pages/cv.md`, `_layouts/cv.html`; `assets/css/cv.css` |
 | Teaching | `pages/teaching.md`, `_includes/_teaching-card.html`; `assets/css/teaching.css` |
 | Gallery and lightbox | `_layouts/photo-portfolio.html`, `_includes/_photo-card.html`; `assets/css/photography.css`, `assets/js/photography.js` |
 | Blog empty state and future article list | `_layouts/blog-notes.html`, `_includes/_blog-note-card.html`; `assets/css/blog-notes.css`, `assets/js/blog-dots.js`, `images/blog-dot-waves.svg` |
@@ -251,11 +261,21 @@ For `/research/`, `pages/research.md` chooses the `research` layout, which inser
 
 The theme’s minified JavaScript bundle is served to visitors; keep both bundles consistent when changing dependencies. Content edits generally do not require template, CSS, or script edits.
 
+### CV and profile shortcuts
+
+`/CV/` embeds the existing Google Drive PDF inside the shared site shell. The “Open in new tab” link opens the normal Drive viewer and remains available if the embedded preview fails. The PDF stays in Drive; replace its contents using Drive's file-version tools to keep the existing file ID, or update `drive_file_id` in `pages/cv.md` when switching files. The surrounding page follows the site theme; the PDF viewer keeps Google's appearance.
+
+For visitors to see the PDF without signing in, its Drive access must allow anyone with the link to view. Download, print, and copy controls must be restricted in the file's Drive sharing settings; embedding alone does not disable them or prevent screenshots. No Drive permissions are changed by the site code.
+
+`/linkedin/` redirects to the LinkedIn profile, just as `/GoogleScholar/` redirects to Scholar. Their destinations live in `pages/linkedin.md` and `pages/googleScholar.md`.
+
 ## Preview and review
 
 ### Light and dark themes
 
-The sun/moon button sits between Contact and CV on desktop and beside Nav on mobile. `assets/js/theme.js` runs before the stylesheets to apply the saved `site-theme` local-storage preference, or the system preference until the visitor chooses a mode. If storage is blocked, the toggle still works for that page. With JavaScript disabled, the existing light theme stays available and the toggle stays hidden.
+The sun/moon button sits before Contact and CV on desktop (toggle → Contact → CV) and beside Nav on mobile. `assets/js/theme.js` runs before the stylesheets to apply the saved `site-theme` local-storage preference, or the system preference until the visitor chooses a mode. If storage is blocked, the toggle still works for that page. With JavaScript disabled, the existing light theme stays available and the toggle stays hidden.
+
+The globe's cat slowly blinks while playing. Tap the cat or use “Pet the cat” for happy eyes, a small heart, and an extra tail/paw movement. Its reaction uses the globe's animation clock: Pause freezes both, Reset clears the reaction, and reduced-motion mode starts still. The pet button provides the same interaction without requiring a pointer.
 
 `assets/css/theme.css` adds color-only dark overrides under `html[data-theme="dark"]`; the original light styles, page geometry, photographs, and header logo remain unchanged. The globe/cat and Blog canvas read CSS color properties and redraw on `themechange`, including while paused. External PDF documents and Instagram's embedded content retain their own appearance.
 

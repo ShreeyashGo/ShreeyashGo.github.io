@@ -1,6 +1,9 @@
 {% assign photo = include.photo %}
 <div class="gallery-item {% if photo.size == 'wide' or photo.wide %}wide{% elsif photo.size == 'half' %}half{% elsif photo.size == 'full' %}full{% endif %}{% if photo.preserve_frame %} preserve-frame{% endif %}{% if photo.panorama %} panorama{% endif %}{% if photo.square %} square{% endif %}"
-    data-lightbox-src="{{ photo.image | relative_url | escape }}">
+    role="button" tabindex="0" aria-label="View photo: {{ photo.caption | default: photo.alt | escape }}"
+    data-lightbox-src="{{ photo.image | relative_url | escape }}"
+    data-lightbox-title="{{ photo.caption | escape }}"
+    data-lightbox-story="{{ photo.story | default: photo.alt | escape }}">
     <img src="{{ photo.thumbnail | default: photo.image | relative_url }}" alt="{{ photo.alt | default: photo.caption | escape }}" loading="lazy" decoding="async"{% if photo.width and photo.height %} width="{{ photo.width }}" height="{{ photo.height }}"{% endif %}>
     {% if photo.caption %}
     <div class="gallery-caption">{{ photo.caption | escape }}</div>

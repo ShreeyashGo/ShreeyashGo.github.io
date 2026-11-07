@@ -22,14 +22,30 @@ layout: page-fullwidth
 </div>
 {% endif %}
 
-<div id="lightbox">
+<dialog id="lightbox" aria-labelledby="lightbox-title">
     <div id="lightbox-container">
-        <img id="lightbox-img" src="">
-        <div id="lightbox-shield"></div>
+        <button type="button" id="lightbox-close" aria-label="Close photograph">Close <span aria-hidden="true">×</span></button>
+        <figure class="lightbox-figure">
+            <div class="lightbox-image-wrap">
+                <img id="lightbox-img" alt="">
+                <div id="lightbox-shield"></div>
+            </div>
+            <figcaption class="lightbox-caption">
+                <h2 id="lightbox-title"></h2>
+                <details id="lightbox-story-panel" hidden>
+                    <summary>Read the story</summary>
+                    <p id="lightbox-story" hidden></p>
+                </details>
+            </figcaption>
+        </figure>
+    </div>
+</dialog>
+
+<div class="row">
+    <div class="medium-12 columns">
+        <p class="photography-collaboration">I also spend a lot of time editing photos and videos. If you have a project in mind, <a href="{{ '/contact/' | relative_url }}">let’s collaborate</a>.</p>
     </div>
 </div>
-
-<div class="row"><hr></div>
 
 {% if page.instagram_videos %}
 <div class="row">
@@ -52,4 +68,4 @@ layout: page-fullwidth
 <script async src="//www.instagram.com/embed.js"></script>
 {% endif %}
 
-<script src="{{ '/assets/js/photography.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/photography.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
