@@ -129,14 +129,16 @@ format: frontpage
         {% if site.visitor_counter.enabled and counter_site_url == 'https://shreeyashgo.github.io' %}{% assign counter_active = true %}{% endif %}
         <div class="visitor-layout" data-visitor-globe data-land-url="{{ site.baseurl }}/assets/data/visitor-land.json" data-stats-url="{% if counter_active %}{{ site.visitor_counter.endpoint | escape }}/stats{% else %}{{ site.baseurl }}/assets/data/visitors.json{% endif %}">
             <div class="visitor-visual">
-                <canvas class="visitor-canvas" width="420" height="420" tabindex="0" role="img" aria-label="A dot-matrix cat batting a rotating dotted globe. Drag to rotate, or use the arrow keys when focused. Pause stops both the cat and the globe."></canvas>
+                <canvas class="visitor-canvas" width="420" height="420" tabindex="0" role="img" aria-label="A dot-matrix cat batting a rotating dotted globe. Drag to rotate, or use the arrow keys when focused. Tap the cat or use Pet the cat for a happy reaction. Pause stops both the cat and the globe."></canvas>
                 <div class="globe-controls">
                     <span>Drag to rotate · arrow keys work too</span>
                     <div>
                         <button type="button" class="globe-button" data-globe-pause aria-pressed="false">Pause</button>
                         <button type="button" class="globe-button" data-globe-reset>Reset</button>
+                        <button type="button" class="globe-button" data-cat-pet>Pet the cat</button>
                     </div>
                 </div>
+                <p class="cat-message" data-cat-message aria-live="polite"></p>
             </div>
             <div class="visitor-copy">
                 <h3>Thanks for stopping by 👋</h3>

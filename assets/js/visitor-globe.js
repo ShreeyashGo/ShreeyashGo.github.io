@@ -9,9 +9,12 @@
     const resetButton = root.querySelector('[data-globe-reset]');
     const status = root.querySelector('[data-globe-status]');
     const locationLabel = root.querySelector('[data-globe-location]');
+    const petButton = root.querySelector('[data-cat-pet]');
+    const catMessage = root.querySelector('[data-cat-message]');
     if (!context) {
         status.textContent = 'The globe is unavailable in this browser. Thanks for visiting!';
         pauseButton.disabled = resetButton.disabled = true;
+        petButton.disabled = true;
         return;
     }
 
@@ -31,6 +34,7 @@
     let loaded = false, loading = false, inView = false;
     let paused = reducedMotion.matches, dragging = false, pointer = null;
     let frame = null, previousTime = null, playTime = 0;
+    let petUntil = 0, pets = 0;
 
     // A seated cat silhouette, sampled once into a reusable dot matrix.
     const catShape = new Path2D();
@@ -118,14 +122,17 @@
         return phase < .3 ? Math.sin(Math.PI * phase / .3) : 0;
     }
     function drawCat() {
-        const bat = catBat();
+        const happy = playTime < petUntil;
+        const petPhase = happy ? (1800 - petUntil + playTime) / 1800 : 0;
+        const bat = happy ? Math.sin(petPhase * Math.PI * 4) * .8 : catBat();
+        const blink = happy || (!reducedMotion.matches && playTime % 5200 > 5000);
         context.save();
         context.translate(size * .02, size * .38);
         context.scale(size / 420, size / 420);
         // The tail curls beside the haunch, rather than stretching up the body.
         context.save();
         context.translate(27, 160);
-        context.rotate(Math.sin(playTime / 900) * .04);
+        context.rotate(Math.sin(playTime / (happy ? 200 : 900)) * (happy ? .14 : .04));
         context.beginPath();
         for (const [x, y] of tailDots) dot(x - 27, y - 160, .9);
         context.fillStyle = colors['cat-tail']; context.fill();
@@ -138,7 +145,12 @@
 
         // Small facial and leg details keep the silhouette readable at phone sizes.
         context.beginPath();
-        dot(50, 49, 2.3); dot(75, 49, 2.3);
+        if (blink) {
+            dottedLine(46, 50, 50, 47); dottedLine(50, 47, 54, 50);
+            dottedLine(71, 50, 75, 47); dottedLine(75, 47, 79, 50);
+        } else {
+            dot(50, 49, 2.3); dot(75, 49, 2.3);
+        }
         dottedLine(41, 28, 46, 35); dottedLine(84, 28, 81, 35);
         dottedLine(55, 28, 55, 36); dottedLine(61, 27, 61, 35); dottedLine(67, 28, 67, 36);
         dottedLine(61, 64, 57, 68); dottedLine(61, 64, 65, 68);
@@ -150,6 +162,19 @@
         context.fillStyle = colors['cat-detail']; context.fill();
         context.beginPath(); dot(61, 60, 1.8);
         context.fillStyle = colors['globe-marker']; context.fill();
+
+        if (happy) {
+            // A tiny dotted heart; the same paused clock freezes the reaction.
+            context.beginPath();
+            const lift = reducedMotion.matches ? 0 : Math.sin(petPhase * Math.PI) * 8;
+            dottedLine(95, 11 - lift, 89, 5 - lift);
+            dottedLine(89, 5 - lift, 91, 1 - lift);
+            dottedLine(91, 1 - lift, 95, 4 - lift);
+            dottedLine(95, 4 - lift, 99, 1 - lift);
+            dottedLine(99, 1 - lift, 101, 5 - lift);
+            dottedLine(101, 5 - lift, 95, 11 - lift);
+            context.fillStyle = colors['globe-marker']; context.fill();
+        }
 
         // A short, bent foreleg taps the globe at its left edge.
         context.translate(77, 95);
@@ -273,9 +298,18 @@
         if (shouldAnimate()) frame = requestAnimationFrame(tick);
     }
     pauseButton.addEventListener('click', () => { paused = !paused; syncAnimation(); });
+    function petCat() {
+        petUntil = playTime + 1800;
+        const messages = ['Purr. You’ve been approved.', 'One more pet, then back to geography.', 'The world can wait a second.'];
+        catMessage.textContent = messages[pets++ % messages.length];
+        draw();
+    }
+    petButton.addEventListener('click', petCat);
     resetButton.addEventListener('click', () => {
         longitude = -25; latitude = 20; playTime = 0;
         paused = reducedMotion.matches;
+        petUntil = 0; pets = 0;
+        catMessage.textContent = '';
         locationLabel.textContent = '';
         draw(); syncAnimation();
     });
@@ -304,6 +338,12 @@
         const text = nearest ? `${nearest.place.label}: ${nearest.place.count.toLocaleString()} visits` : '';
         if (locationLabel.textContent !== text) locationLabel.textContent = text;
     }
+    function overCat(clientX, clientY) {
+        const box = canvas.getBoundingClientRect();
+        const x = (clientX - box.left - size * .02) * 420 / size;
+        const y = (clientY - box.top - size * .38) * 420 / size;
+        return x >= 0 && x <= 140 && y >= 15 && y <= 180;
+    }
     canvas.addEventListener('pointerdown', event => {
         if (!event.isPrimary || (event.pointerType === 'mouse' && event.button !== 0)) return;
         pointer = {id: event.pointerId, x: event.clientX, y: event.clientY, startX: event.clientX, startY: event.clientY};
@@ -313,7 +353,10 @@
     });
     canvas.addEventListener('pointermove', event => {
         if (!pointer || pointer.id !== event.pointerId) {
-            if (event.pointerType === 'mouse') showNearest(event.clientX, event.clientY);
+            if (event.pointerType === 'mouse') {
+                canvas.style.cursor = overCat(event.clientX, event.clientY) ? 'pointer' : '';
+                showNearest(event.clientX, event.clientY);
+            }
             return;
         }
         longitude -= (event.clientX - pointer.x) * .4;
@@ -325,7 +368,8 @@
     function release(event) {
         if (!pointer || pointer.id !== event.pointerId) return;
         if (event.type === 'pointerup' && Math.hypot(event.clientX - pointer.startX, event.clientY - pointer.startY) < 5) {
-            showNearest(event.clientX, event.clientY);
+            if (overCat(event.clientX, event.clientY)) petCat();
+            else showNearest(event.clientX, event.clientY);
         }
         if (canvas.hasPointerCapture(event.pointerId)) canvas.releasePointerCapture(event.pointerId);
         pointer = null; dragging = false; syncAnimation();

@@ -248,6 +248,7 @@
     .globe-controls>span { font-size: .75rem; color: var(--fp-text-sub); }
     .globe-controls>div { display: flex; gap: 8px; }
     .globe-button { cursor: pointer; font-family: inherit; }
+    .fp-wrapper .cat-message { min-height: 1.5em; margin: 10px 0 0; color: var(--fp-text-sub); font-size: .8rem; }
     .visitor-copy p { margin-bottom: 15px; }
     .visitor-copy .visitor-status, .visitor-copy .visitor-note, .visitor-copy .visitor-location { font-size: .8rem; }
     .visitor-stats { display: flex; gap: 32px; margin: 24px 0; }

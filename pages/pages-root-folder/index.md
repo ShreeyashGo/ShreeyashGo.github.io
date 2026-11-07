@@ -55,10 +55,10 @@ logo_dock:
     image: /images/atlas_logo.webp
     description: AI for Service Management
   - name: AIISC
-    image: /images/aiisc_logo.webp
+    image: /images/aiisc_logo-transparent.png
     description: AI Evaluations (analogical aptitude)
   - name: BITS
-    image: /images/bits_logo.webp
+    image: /images/bits_logo-transparent.png
     description: Undergraduate Studies
 
 # Only affects the narrow-screen view; desktop shows the entire list in a panel.

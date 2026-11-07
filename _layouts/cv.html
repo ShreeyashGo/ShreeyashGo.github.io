@@ -1,0 +1,20 @@
+---
+layout: default
+format: page-fullwidth
+---
+<link rel="stylesheet" href="{{ '/assets/css/cv.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+{% assign drive_file_url = 'https://drive.google.com/file/d/' | append: page.drive_file_id %}
+<main class="cv-page">
+    <header class="cv-header">
+        <h1 class="cv-title">{{ page.title | escape }}</h1>
+        <a class="cv-open" href="{{ drive_file_url }}/view" target="_blank" rel="noopener noreferrer">Open in new tab <span aria-hidden="true">↗</span></a>
+    </header>
+    <div class="cv-frame">
+        <iframe class="cv-viewer"
+            src="{{ drive_file_url }}/preview"
+            title="Shreeyash Gowaikar's curriculum vitae"
+            allow="fullscreen"></iframe>
+    </div>
+    <p class="cv-help">Preview not loading? <a href="{{ drive_file_url }}/view" target="_blank" rel="noopener noreferrer">Open the CV in a new tab</a>.</p>
+    {{ content }}
+</main>
